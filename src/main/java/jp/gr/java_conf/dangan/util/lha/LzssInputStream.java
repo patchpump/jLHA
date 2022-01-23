@@ -3,64 +3,65 @@
 
 /**
  * LzssInputStream.java
- *
+ * 
  * Copyright (C) 2001-2002  Michel Ishizuka  All rights reserved.
- *
- * ï¿½È‰ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½É“ï¿½ï¿½Ó‚ï¿½ï¿½ï¿½È‚ï¿½Îƒ\ï¿½[ï¿½Xï¿½Æƒoï¿½Cï¿½iï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ÌÄ”zï¿½zï¿½ÆŽgï¿½pï¿½ï¿½
- * ï¿½ÏXï¿½Ì—Lï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½ç‚¸ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½B
- *
- * ï¿½Pï¿½Dï¿½\ï¿½[ï¿½Xï¿½Rï¿½[ï¿½hï¿½ÌÄ”zï¿½zï¿½É‚ï¿½ï¿½ï¿½ï¿½Ä’ï¿½ï¿½ìŒ ï¿½\ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½Xï¿½g
- *     ï¿½ï¿½ï¿½ï¿½Ñ‰ï¿½ï¿½Lï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÛŽï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Ä‚Í‚È‚ï¿½È‚ï¿½ï¿½B
- *
- * ï¿½Qï¿½Dï¿½oï¿½Cï¿½iï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ÌÄ”zï¿½zï¿½É‚ï¿½ï¿½ï¿½ï¿½Ä’ï¿½ï¿½ìŒ ï¿½\ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½Xï¿½g
- *     ï¿½ï¿½ï¿½ï¿½Ñ‰ï¿½ï¿½Lï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½Ì”zï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
- *     ï¿½Ü‚ÞŽï¿½ï¿½ï¿½ï¿½É‹Lï¿½qï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚È‚ï¿½È‚ï¿½ï¿½B
- *
- * ï¿½ï¿½ï¿½Ìƒ\ï¿½tï¿½gï¿½Eï¿½Fï¿½Aï¿½ÍÎ’Ë”ï¿½ï¿½ï¿½Ú‚É‚ï¿½ï¿½ï¿½Ä–ï¿½ï¿½ÛØ‚Å’ñ‹Ÿ‚ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½Ì–ï¿½
- * ï¿½Iï¿½ï¿½Bï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ÛØAï¿½ï¿½ï¿½iï¿½ï¿½ï¿½lï¿½ï¿½ï¿½Lï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ÛØ‚É‚Æ‚Ç‚Ü‚ç‚¸ï¿½A
- * ï¿½ï¿½ï¿½ï¿½ï¿½È‚é–¾ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ÑˆÃŽï¿½ï¿½Iï¿½È•ÛØ‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½B
- * ï¿½Î’Ë”ï¿½ï¿½ï¿½Ú‚ï¿½ ï¿½ï¿½ï¿½Ìƒ\ï¿½tï¿½gï¿½Eï¿½Fï¿½Aï¿½ÌŽgï¿½pï¿½É‚ï¿½é’¼ï¿½Ú“Iï¿½Aï¿½ÔÚ“Iï¿½Aï¿½ï¿½ï¿½ï¿½
- * ï¿½Iï¿½Aï¿½ï¿½ï¿½ï¿½ÈAï¿½Tï¿½^ï¿½Iï¿½ÈAï¿½ï¿½ï¿½é‚¢ï¿½Í•Kï¿½Rï¿½Iï¿½È‘ï¿½ï¿½Q(ï¿½gï¿½pï¿½É‚ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½
- * ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Æ–ï¿½ï¿½Ì’ï¿½ï¿½fï¿½âŒ©ï¿½ï¿½ï¿½Ü‚ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ÌˆâŽ¸ï¿½Aï¿½ï¿½Öï¿½ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
- * ï¿½Tï¿½[ï¿½rï¿½Xï¿½Ì“ï¿½ï¿½ï¿½ï¿½ï“™ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½é‚ªï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ê‚¾ï¿½ï¿½ï¿½ÉŒï¿½ï¿½è‚³ï¿½ï¿½È‚ï¿½
- * ï¿½ï¿½ï¿½Q)ï¿½É‘Î‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½È‚éŽ–ï¿½Ô‚ÌŒï¿½ï¿½ï¿½ï¿½Æ‚È‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½Aï¿½_ï¿½ï¿½ï¿½Ìï¿½
- * ï¿½Cï¿½â–³ï¿½ßŽï¿½ï¿½Ó”Cï¿½ï¿½ï¿½Ü‚ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½Ó”Cï¿½ï¿½ï¿½ï¿½ï¿½ë‚¤ï¿½Æ‚ï¿½ï¿½Aï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ê‚ªï¿½s
- * ï¿½ï¿½ï¿½sï¿½×‚Ì‚ï¿½ï¿½ß‚Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½Aï¿½Ü‚ï¿½ï¿½Í‚ï¿½ï¿½Ì‚æ‚¤ï¿½È‘ï¿½ï¿½Qï¿½Ì‰Â”\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
- * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Ø‚ÌÓ”Cï¿½ð•‰‚ï¿½È‚ï¿½ï¿½ï¿½ï¿½Ì‚Æ‚ï¿½ï¿½ï¿½B
+ * 
+ * ˆÈ‰º‚ÌðŒ‚É“¯ˆÓ‚·‚é‚È‚ç‚Îƒ\[ƒX‚ÆƒoƒCƒiƒŠŒ`Ž®‚ÌÄ”z•z‚ÆŽg—p‚ð
+ * •ÏX‚Ì—L–³‚É‚©‚©‚í‚ç‚¸‹–‰Â‚·‚éB
+ * 
+ * ‚PDƒ\[ƒXƒR[ƒh‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\Ž¦‚Æ ‚±‚ÌðŒ‚ÌƒŠƒXƒg
+ *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ð•ÛŽ‚µ‚È‚­‚Ä‚Í‚È‚ç‚È‚¢B
+ * 
+ * ‚QDƒoƒCƒiƒŠŒ`Ž®‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\Ž¦‚Æ ‚±‚ÌðŒ‚ÌƒŠƒXƒg
+ *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ðŽg—pà–¾‘‚à‚µ‚­‚Í ‚»‚Ì‘¼‚Ì”z•z•¨“à‚É
+ *     ŠÜ‚ÞŽ‘—¿‚É‹Lq‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢B
+ * 
+ * ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚ÍÎ’Ë”üŽì—Ú‚É‚æ‚Á‚Ä–³•ÛØ‚Å’ñ‹Ÿ‚³‚êA“Á’è‚Ì–Ú
+ * “I‚ð’B¬‚Å‚«‚é‚Æ‚¢‚¤•ÛØA¤•i‰¿’l‚ª—L‚é‚Æ‚¢‚¤•ÛØ‚É‚Æ‚Ç‚Ü‚ç‚¸A
+ * ‚¢‚©‚È‚é–¾Ž¦“I‚¨‚æ‚ÑˆÃŽ¦“I‚È•ÛØ‚à‚µ‚È‚¢B
+ * Î’Ë”üŽì—Ú‚Í ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚ÌŽg—p‚É‚æ‚é’¼Ú“IAŠÔÚ“IA‹ô”­
+ * “IA“ÁŽê‚ÈA“TŒ^“I‚ÈA‚ ‚é‚¢‚Í•K‘R“I‚È‘¹ŠQ(Žg—p‚É‚æ‚éƒf[ƒ^‚Ì
+ * ‘¹Ž¸A‹Æ–±‚Ì’†’f‚âŒ©ž‚Ü‚ê‚Ä‚¢‚½—˜‰v‚ÌˆâŽ¸A‘ã‘Ö»•i‚à‚µ‚­‚Í
+ * ƒT[ƒrƒX‚Ì“±“ü”ï“™‚ªl‚¦‚ç‚ê‚é‚ªAŒˆ‚µ‚Ä‚»‚ê‚¾‚¯‚ÉŒÀ’è‚³‚ê‚È‚¢
+ * ‘¹ŠQ)‚É‘Î‚µ‚ÄA‚¢‚©‚È‚éŽ–‘Ô‚ÌŒ´ˆö‚Æ‚È‚Á‚½‚Æ‚µ‚Ä‚àAŒ_–ñã‚ÌÓ
+ * ”C‚â–³‰ßŽ¸Ó”C‚ðŠÜ‚Þ ‚¢‚©‚È‚éÓ”C‚ª‚ ‚ë‚¤‚Æ‚àA‚½‚Æ‚¦‚»‚ê‚ª•s
+ * ³sˆ×‚Ì‚½‚ß‚Å‚ ‚Á‚½‚Æ‚µ‚Ä‚àA‚Ü‚½‚Í‚»‚Ì‚æ‚¤‚È‘¹ŠQ‚Ì‰Â”\«‚ª•ñ
+ * ‚³‚ê‚Ä‚¢‚½‚Æ‚µ‚Ä‚àˆêØ‚ÌÓ”C‚ð•‰‚í‚È‚¢‚à‚Ì‚Æ‚·‚éB
  */
 
 package jp.gr.java_conf.dangan.util.lha;
 
-import java.io.EOFException;
-//import exceptions
-import java.io.IOException;
 //import classes and interfaces
 import java.io.InputStream;
-import java.util.Arrays;
+import jp.gr.java_conf.dangan.util.lha.PreLzssDecoder;
+
+//import exceptions
+import java.io.IOException;
+import java.io.EOFException;
 
 /**
- * LZSS ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ð“€‚ï¿½ï¿½È‚ï¿½ï¿½ç‹Ÿï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½B<br>
- *
+ * LZSS ˆ³k‚³‚ê‚½ƒf[ƒ^‚ð‰ð“€‚µ‚È‚ª‚ç‹Ÿ‹‹‚·‚é“ü—ÍƒXƒgƒŠ[ƒ€B<br>
+ * 
  * <pre>
  * -- revision history --
  * $Log: LzssInputStream.java,v $
  * Revision 1.1  2002/12/08 00:00:00  dangan
  * [bug fix]
- *     mark() ï¿½ï¿½ï¿½ÅÚ‘ï¿½ï¿½ï¿½ï¿½ê‚½ PreLzssDecoder ï¿½ï¿½
- *     mark ï¿½É—^ï¿½ï¿½ï¿½ï¿½ readLimit ï¿½ÌŒvï¿½Zï¿½ï¿½ï¿½Ã‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Cï¿½ï¿½ï¿½B
+ *     mark() “à‚ÅÚ‘±‚³‚ê‚½ PreLzssDecoder ‚Ì 
+ *     mark ‚É—^‚¦‚é readLimit ‚ÌŒvŽZ‚ªŠÃ‚©‚Á‚½‚Ì‚ðC³B
  *
  * Revision 1.0  2002/07/25 00:00:00  dangan
  * add to version control
  * [bug fix]
- *     available() ï¿½ÌƒXï¿½yï¿½ï¿½ï¿½~ï¿½Xï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½B
- *     skip() ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½ decode() ï¿½ï¿½ï¿½Ä‚Ô”ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôˆï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Cï¿½ï¿½ï¿½B
+ *     available() ‚ÌƒXƒyƒ‹ƒ~ƒX‚ðC³B
+ *     skip() ‚É‚¨‚¢‚Ä decode() ‚ðŒÄ‚Ô”»’èðŒ‚ªŠÔˆá‚Á‚Ä‚¢‚½‚Ì‚ðC³B
  * [maintenance]
- *     ï¿½\ï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½
- *     ï¿½^ï¿½uï¿½pï¿½~
- *     ï¿½ï¿½ï¿½Cï¿½Zï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ÌCï¿½ï¿½
+ *     ƒ\[ƒX®”õ
+ *     ƒ^ƒu”pŽ~
+ *     ƒ‰ƒCƒZƒ“ƒX•¶‚ÌC³
  *
  * </pre>
- *
+ * 
  * @author  $Author: dangan $
  * @version $Revision: 1.1 $
  */
@@ -75,7 +76,7 @@ public class LzssInputStream extends InputStream{
     //  private PreLzssDecoder decoder
     //------------------------------------------------------------------
     /**
-     * LZSSï¿½ï¿½ï¿½kï¿½Rï¿½[ï¿½hï¿½ï¿½Ô‚ï¿½ï¿½ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
+     * LZSSˆ³kƒR[ƒh‚ð•Ô‚·“ü—ÍƒXƒgƒŠ[ƒ€
      */
     private PreLzssDecoder decoder;
 
@@ -90,19 +91,19 @@ public class LzssInputStream extends InputStream{
     //  private long Length
     //------------------------------------------------------------------
     /**
-     * LZSSï¿½ï¿½ï¿½kï¿½ÉŽgï¿½pï¿½ï¿½ï¿½ï¿½ï¿½è‡’lï¿½B
-     * ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì’lï¿½Èï¿½Å‚ï¿½ï¿½ï¿½ÎAï¿½ï¿½ï¿½kï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½ï¿½B
+     * LZSSˆ³k‚ÉŽg—p‚³‚ê‚éè‡’lB
+     * ˆê’v’·‚ª ‚±‚Ì’lˆÈã‚Å‚ ‚ê‚ÎAˆ³kƒR[ƒh‚ðo—Í‚·‚éB
      */
     private int Threshold;
 
     /**
-     * LZSSï¿½ï¿½ï¿½kï¿½ÉŽgï¿½pï¿½ï¿½ï¿½ï¿½ï¿½lï¿½B
-     * ï¿½Å‘ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+     * LZSSˆ³k‚ÉŽg—p‚³‚ê‚é’lB
+     * Å‘åˆê’v’·‚ðŽ¦‚·B
      */
     private int MaxMatch;
 
     /**
-     * ï¿½ð“€Œï¿½Ìƒfï¿½[ï¿½^ï¿½Tï¿½Cï¿½Y
+     * ‰ð“€Œã‚Ìƒf[ƒ^ƒTƒCƒY
      */
     private long Length;
 
@@ -117,19 +118,19 @@ public class LzssInputStream extends InputStream{
     //  private long TextDecoded
     //------------------------------------------------------------------
     /**
-     * LZSSï¿½ï¿½ï¿½kï¿½ï¿½Wï¿½Jï¿½ï¿½ï¿½é‚½ï¿½ß‚Ìƒoï¿½bï¿½tï¿½@ï¿½B
+     * LZSSˆ³k‚ð“WŠJ‚·‚é‚½‚ß‚Ìƒoƒbƒtƒ@B
      */
     private byte[] TextBuffer;
 
     /**
-     * ï¿½ï¿½ï¿½Ý“Ç‚Ýï¿½ï¿½ÝˆÊ’uï¿½B
-     * read() ï¿½É‚ï¿½ï¿½ï¿½ÄŠOï¿½ï¿½ï¿½É“Ç‚Ýoï¿½ï¿½ï¿½ê‚½ï¿½Ê’uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+     * Œ»Ý“Ç‚Ýž‚ÝˆÊ’uB
+     * read() ‚É‚æ‚Á‚ÄŠO•”‚É“Ç‚Ýo‚³‚ê‚½ˆÊ’u‚ðŽ¦‚·B
      */
     private long TextPosition;
 
     /**
-     * ï¿½ï¿½ï¿½Ý“Ç‚Ýï¿½ï¿½ÝˆÊ’uï¿½B
-     * LZSSï¿½ï¿½ï¿½kï¿½Rï¿½[ï¿½hï¿½ï¿½Wï¿½Jï¿½ï¿½ï¿½Ä“ï¿½ï¿½ï¿½ê‚½ï¿½Ê’uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+     * Œ»Ý“Ç‚Ýž‚ÝˆÊ’uB
+     * LZSSˆ³kƒR[ƒh‚ð“WŠJ‚µ‚Ä“¾‚ç‚ê‚½ˆÊ’u‚ðŽ¦‚·B
      */
     private long TextDecoded;
 
@@ -143,13 +144,13 @@ public class LzssInputStream extends InputStream{
     //  private long MarkTextPosition
     //  private long MarkTextDecoded
     //------------------------------------------------------------------
-    /** TextBuffer ï¿½Ìƒoï¿½bï¿½Nï¿½Aï¿½bï¿½vï¿½p */
+    /** TextBuffer ‚ÌƒoƒbƒNƒAƒbƒv—p */
     private byte[] MarkTextBuffer;
 
-    /** TextPosition ï¿½Ìƒoï¿½bï¿½Nï¿½Aï¿½bï¿½vï¿½p */
+    /** TextPosition ‚ÌƒoƒbƒNƒAƒbƒv—p */
     private long MarkTextPosition;
 
-    /** TextDecoded ï¿½Ìƒoï¿½bï¿½Nï¿½Aï¿½bï¿½vï¿½p */
+    /** TextDecoded ‚ÌƒoƒbƒNƒAƒbƒv—p */
     private long MarkTextDecoded;
 
 
@@ -161,33 +162,33 @@ public class LzssInputStream extends InputStream{
     //  public LzssInputStream( PreLzssDecoder decoder, long length )
     //------------------------------------------------------------------
     /**
-     * ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½B
-     * ï¿½gï¿½pï¿½sï¿½ÂB
+     * ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^B
+     * Žg—p•s‰ÂB
      */
     private LzssInputStream(){ }
 
     /**
-     * in ï¿½ï¿½ï¿½ï¿½ LZSSï¿½ï¿½ï¿½kï¿½fï¿½[ï¿½^ ï¿½Ì“ï¿½ï¿½Í‚ï¿½ï¿½ó‚¯‚ÄA
-     * ï¿½ð“€‚ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½ñ‹Ÿ‚ï¿½ï¿½ï¿½ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½zï¿½ï¿½ï¿½ï¿½B
-     * ï¿½ï¿½ï¿½ÌƒRï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ï¿½ï¿½ç¶ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ LzssInputStreamï¿½ï¿½
-     * -lh1-ï¿½ï¿½ï¿½Ì‰ð“€ƒfï¿½[ï¿½^ï¿½ÌÅŒï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½Ç‚Ýï¿½ï¿½ñ‚¾Œï¿½A
-     * ï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½Ì“Ç‚ÝŽï¿½ï¿½Å•Kï¿½ï¿½EndOfStreamï¿½É’Bï¿½ï¿½ï¿½ï¿½Æ‚ï¿½
-     * ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½fï¿½[ï¿½^ï¿½ð³ï¿½É•ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½(ï¿½Iï¿½[ï¿½È~ï¿½ÉƒSï¿½~
-     * ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½Â‚ï¿½ï¿½Â”\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½B
-     *
-     * @param decoder LZSSï¿½ï¿½ï¿½kï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
+     * in ‚©‚ç LZSSˆ³kƒf[ƒ^ ‚Ì“ü—Í‚ðŽó‚¯‚ÄA
+     * ‰ð“€‚³‚ê‚½ƒf[ƒ^‚ð’ñ‹Ÿ‚·‚é“ü—ÍƒXƒgƒŠ[ƒ€‚ð\’z‚·‚éB
+     * ‚±‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^‚©‚ç¶¬‚³‚ê‚½ LzssInputStream‚Í
+     * -lh1-“™‚Ì‰ð“€ƒf[ƒ^‚ÌÅŒã‚Ìƒf[ƒ^‚ð“Ç‚Ýž‚ñ‚¾ŒãA
+     * ŽŸ‚Ìƒf[ƒ^‚Ì“Ç‚ÝŽæ‚è‚Å•K‚¸EndOfStream‚É’B‚·‚é‚Æ‚Í
+     * ŒÀ‚ç‚È‚¢ƒf[ƒ^‚ð³í‚É•œŒ³‚Å‚«‚È‚¢(I’[ˆÈ~‚ÉƒSƒ~
+     * ƒf[ƒ^‚ª‚Â‚­‰Â”\«‚ª‚ ‚é)B
+     * 
+     * @param decoder LZSSˆ³kƒf[ƒ^‹Ÿ‹‹ƒXƒgƒŠ[ƒ€
      */
     public LzssInputStream( PreLzssDecoder decoder ){
         this( decoder, Long.MAX_VALUE );
     }
 
     /**
-     * in ï¿½ï¿½ï¿½ï¿½ LZSSï¿½ï¿½ï¿½kï¿½fï¿½[ï¿½^ ï¿½Ì“ï¿½ï¿½Í‚ï¿½ï¿½ó‚¯‚ÄA
-     * ï¿½ð“€‚ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½ñ‹Ÿ‚ï¿½ï¿½ï¿½ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½zï¿½ï¿½ï¿½ï¿½B
-     *
-     *
-     * @param decoder LZSSï¿½ï¿½ï¿½kï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
-     * @param length  ï¿½ð“€Œï¿½ÌƒTï¿½Cï¿½Y
+     * in ‚©‚ç LZSSˆ³kƒf[ƒ^ ‚Ì“ü—Í‚ðŽó‚¯‚ÄA
+     * ‰ð“€‚³‚ê‚½ƒf[ƒ^‚ð’ñ‹Ÿ‚·‚é“ü—ÍƒXƒgƒŠ[ƒ€‚ð\’z‚·‚éB
+     * 
+     * 
+     * @param decoder LZSSˆ³kƒf[ƒ^‹Ÿ‹‹ƒXƒgƒŠ[ƒ€
+     * @param length  ‰ð“€Œã‚ÌƒTƒCƒY
      */
     public LzssInputStream( PreLzssDecoder decoder,
                             long           length ){
@@ -199,9 +200,6 @@ public class LzssInputStream extends InputStream{
         this.TextBuffer     = new byte[ decoder.getDictionarySize() ];
         this.TextPosition   = 0;
         this.TextDecoded    = 0;
-
-        // memset(&text[pos], ' ', dicsiz); from encode() slide.c
-        Arrays.fill(TextBuffer, (byte)0x20);
 
         if( this.decoder instanceof PreLz5Decoder )
             this.initLz5TextBuffer();
@@ -219,12 +217,12 @@ public class LzssInputStream extends InputStream{
     //  public long skip( long length )
     //------------------------------------------------------------------
     /**
-     * ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ÅŽwï¿½è‚³ï¿½ê‚½ PreLzssDecoder ï¿½ï¿½
-     * ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ð“€‚ï¿½ï¿½A1ï¿½oï¿½Cï¿½gï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
-     *
-     * @return ï¿½ð“€‚ï¿½ï¿½ê‚½ 1ï¿½oï¿½Cï¿½gï¿½Ìƒfï¿½[ï¿½^
-     *
-     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÅŽw’è‚³‚ê‚½ PreLzssDecoder ‚Ì
+     * ˆ³k‚³‚ê‚½ƒf[ƒ^‚ð‰ð“€‚µA1ƒoƒCƒg‚Ìƒf[ƒ^‚ð‹Ÿ‹‹‚·‚éB
+     * 
+     * @return ‰ð“€‚³‚ê‚½ 1ƒoƒCƒg‚Ìƒf[ƒ^
+     * 
+     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
      */
     public int read() throws IOException {
         if( this.TextDecoded <= this.TextPosition ){
@@ -241,32 +239,32 @@ public class LzssInputStream extends InputStream{
     }
 
     /**
-     * ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ÅŽwï¿½è‚³ï¿½ê‚½ PreLzssDecoder ï¿½ï¿½
-     * ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ð“€‚ï¿½ï¿½Abufferï¿½ð–ž‚ï¿½ï¿½ï¿½ï¿½æ‚¤ï¿½ï¿½
-     * ï¿½ð“€‚ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½Ç‚Ýï¿½ï¿½ÞB
-     *
-     * @param buffer ï¿½fï¿½[ï¿½^ï¿½ï¿½Ç‚Ýï¿½ï¿½Þƒoï¿½bï¿½tï¿½@
-     *
-     * @return ï¿½Ç‚Ý‚ï¿½ï¿½ñ‚¾ƒfï¿½[ï¿½^ï¿½ï¿½
-     *
-     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÅŽw’è‚³‚ê‚½ PreLzssDecoder ‚Ì
+     * ˆ³k‚³‚ê‚½ƒf[ƒ^‚ð‰ð“€‚µAbuffer‚ð–ž‚½‚·‚æ‚¤‚É
+     * ‰ð“€‚³‚ê‚½ƒf[ƒ^‚ð“Ç‚Ýž‚ÞB
+     * 
+     * @param buffer ƒf[ƒ^‚ð“Ç‚Ýž‚Þƒoƒbƒtƒ@
+     * 
+     * @return “Ç‚Ý‚±‚ñ‚¾ƒf[ƒ^—Ê
+     * 
+     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
      */
     public int read( byte[] buffer ) throws IOException {
         return this.read( buffer, 0, buffer.length );
     }
 
     /**
-     * ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½ÅŽwï¿½è‚³ï¿½ê‚½ PreLzssDecoder ï¿½ï¿½
-     * ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ð“€‚ï¿½ï¿½Abuffer ï¿½ï¿½ index ï¿½ï¿½ï¿½ï¿½
-     * length ï¿½oï¿½Cï¿½gï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½Ç‚Ýï¿½ï¿½ÞB
-     *
-     * @param buffer ï¿½fï¿½[ï¿½^ï¿½ï¿½Ç‚Ýï¿½ï¿½Þƒoï¿½bï¿½tï¿½@
-     * @param index  buffer ï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½Ç‚Ý‚ï¿½ï¿½ÝŠJï¿½nï¿½Ê’u
-     * @param length ï¿½Ç‚Ýï¿½ï¿½Þƒfï¿½[ï¿½^ï¿½ï¿½
-     *
-     * @return ï¿½Ç‚Ý‚ï¿½ï¿½ñ‚¾ƒfï¿½[ï¿½^ï¿½ï¿½
-     *
-     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚ÅŽw’è‚³‚ê‚½ PreLzssDecoder ‚Ì
+     * ˆ³k‚³‚ê‚½ƒf[ƒ^‚ð‰ð“€‚µAbuffer ‚Ì index ‚©‚ç
+     * length ƒoƒCƒg‚Ìƒf[ƒ^‚ð“Ç‚Ýž‚ÞB
+     * 
+     * @param buffer ƒf[ƒ^‚ð“Ç‚Ýž‚Þƒoƒbƒtƒ@
+     * @param index  buffer “à‚Ìƒf[ƒ^“Ç‚Ý‚±‚ÝŠJŽnˆÊ’u
+     * @param length “Ç‚Ýž‚Þƒf[ƒ^—Ê
+     * 
+     * @return “Ç‚Ý‚±‚ñ‚¾ƒf[ƒ^—Ê
+     * 
+     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
      */
     public int read( byte[] buffer, int index, int length ) throws IOException {
         int position = index;
@@ -288,13 +286,13 @@ public class LzssInputStream extends InputStream{
     }
 
     /**
-     * ï¿½ð“€‚ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½ lengthï¿½oï¿½Cï¿½gï¿½Ç‚Ý”ï¿½Î‚ï¿½ï¿½B
-     *
-     * @param length ï¿½Ç‚Ý”ï¿½Î‚ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½(ï¿½Pï¿½Ê‚Íƒoï¿½Cï¿½g)
-     *
-     * @return ï¿½ï¿½ï¿½Û‚É“Ç‚Ý”ï¿½Î‚ï¿½ï¿½ï¿½ï¿½oï¿½Cï¿½gï¿½ï¿½
-     *
-     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     * ‰ð“€‚³‚ê‚½ƒf[ƒ^‚ð lengthƒoƒCƒg“Ç‚Ý”ò‚Î‚·B
+     * 
+     * @param length “Ç‚Ý”ò‚Î‚·ƒf[ƒ^—Ê(’PˆÊ‚ÍƒoƒCƒg)
+     * 
+     * @return ŽÀÛ‚É“Ç‚Ý”ò‚Î‚µ‚½ƒoƒCƒg”
+     * 
+     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
      */
     public long skip( long length ) throws IOException {
         long end = this.TextPosition + length;
@@ -323,21 +321,21 @@ public class LzssInputStream extends InputStream{
     //  public boolean markSupported()
     //------------------------------------------------------------------
     /**
-     * ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ÝˆÊ’uï¿½Éƒ}ï¿½[ï¿½Nï¿½ï¿½Ý’è‚µï¿½A
-     * reset() ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Åƒ}ï¿½[ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ ï¿½Ç‚Ýï¿½ï¿½ÝˆÊ’uï¿½ï¿½
-     * ï¿½ß‚ï¿½ï¿½æ‚¤ï¿½É‚ï¿½ï¿½ï¿½B<br>
-     * InputStream ï¿½ï¿½ mark() ï¿½Æˆá‚¢ï¿½A readLimit ï¿½ÅÝ’è‚µï¿½ï¿½
-     * ï¿½ï¿½ï¿½Eï¿½oï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Éƒ}ï¿½[ï¿½Nï¿½Ê’uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½Â”\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
-     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AreadLimit ï¿½ð–³Žï¿½ï¿½ï¿½ï¿½Ä–ï¿½ï¿½ï¿½ï¿½ï¿½ reset() ï¿½Â”\ï¿½ï¿½
-     * InputStream ï¿½ÆÚ‘ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ê‡ï¿½ï¿½ readLimit ï¿½ï¿½
-     * ï¿½Ç‚Ì‚æ‚¤ï¿½È’lï¿½ï¿½Ý’è‚³ï¿½ï¿½Ä‚ï¿½
-     * reset() ï¿½Å•Kï¿½ï¿½ï¿½}ï¿½[ï¿½Nï¿½Ê’uï¿½É•ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½éŽ–ï¿½ï¿½ÛØ‚ï¿½ï¿½ï¿½B<br>
-     *
-     * @param readLimit ï¿½}ï¿½[ï¿½Nï¿½Ê’uï¿½É–ß‚ï¿½ï¿½ï¿½ï¿½Eï¿½Ìƒoï¿½Cï¿½gï¿½ï¿½ï¿½B
-     *                  ï¿½ï¿½ï¿½Ìƒoï¿½Cï¿½gï¿½ï¿½ï¿½ð’´‚ï¿½ï¿½Äƒfï¿½[ï¿½^ï¿½ï¿½Ç‚ï¿½
-     *                  ï¿½ï¿½ï¿½ñ‚¾ê‡ reset()ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½È‚ï¿½ï¿½
-     *                  ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B<br>
-     *
+     * Ú‘±‚³‚ê‚½“ü—ÍƒXƒgƒŠ[ƒ€‚ÌŒ»ÝˆÊ’u‚Éƒ}[ƒN‚ðÝ’è‚µA
+     * reset() ƒƒ\ƒbƒh‚Åƒ}[ƒN‚µ‚½Žž“_‚Ì “Ç‚Ýž‚ÝˆÊ’u‚É
+     * –ß‚ê‚é‚æ‚¤‚É‚·‚éB<br>
+     * InputStream ‚Ì mark() ‚Æˆá‚¢A readLimit ‚ÅÝ’è‚µ‚½
+     * ŒÀŠEƒoƒCƒg”‚æ‚è‘O‚Éƒ}[ƒNˆÊ’u‚ª–³Œø‚É‚È‚é‰Â”\«‚ª‚ ‚éB
+     * ‚½‚¾‚µAreadLimit ‚ð–³Ž‹‚µ‚Ä–³ŒÀ‚É reset() ‰Â”\‚È 
+     * InputStream ‚ÆÚ‘±‚µ‚Ä‚¢‚éê‡‚Í readLimit ‚É
+     * ‚Ç‚Ì‚æ‚¤‚È’l‚ðÝ’è‚³‚ê‚Ä‚à
+     * reset() ‚Å•K‚¸ƒ}[ƒNˆÊ’u‚É•œ‹Œ‚Å‚«‚éŽ–‚ð•ÛØ‚·‚éB<br>
+     * 
+     * @param readLimit ƒ}[ƒNˆÊ’u‚É–ß‚ê‚éŒÀŠE‚ÌƒoƒCƒg”B
+     *                  ‚±‚ÌƒoƒCƒg”‚ð’´‚¦‚Äƒf[ƒ^‚ð“Ç‚Ý
+     *                  ž‚ñ‚¾ê‡ reset()‚Å‚«‚È‚­‚È‚é‰Â
+     *                  ”\«‚ª‚ ‚éB<br>
+     * 
      * @see PreLzssDecoder#mark(int)
      */
     public void mark( int readLimit ){
@@ -347,10 +345,10 @@ public class LzssInputStream extends InputStream{
         this.decoder.mark( Math.max( readLimit, 0 ) );
 
         if( this.MarkTextBuffer == null ){
-            this.MarkTextBuffer = this.TextBuffer.clone();
+            this.MarkTextBuffer = (byte[])this.TextBuffer.clone();
         }else{
-            System.arraycopy( this.TextBuffer, 0,
-                              this.MarkTextBuffer, 0,
+            System.arraycopy( this.TextBuffer, 0, 
+                              this.MarkTextBuffer, 0, 
                               this.TextBuffer.length );
         }
         this.MarkTextPosition = this.TextPosition;
@@ -358,22 +356,22 @@ public class LzssInputStream extends InputStream{
     }
 
     /**
-     * ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Ì“Ç‚Ýï¿½ï¿½ÝˆÊ’uï¿½ï¿½ï¿½ÅŒï¿½ï¿½
-     * mark() ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ï¿½Ä‚Ñoï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ÌˆÊ’uï¿½ÉÝ’è‚·ï¿½ï¿½B<br>
-     *
-     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     * Ú‘±‚³‚ê‚½“ü—ÍƒXƒgƒŠ[ƒ€‚Ì“Ç‚Ýž‚ÝˆÊ’u‚ðÅŒã‚É
+     * mark() ƒƒ\ƒbƒh‚ªŒÄ‚Ño‚³‚ê‚½‚Æ‚«‚ÌˆÊ’u‚ÉÝ’è‚·‚éB<br>
+     * 
+     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
      */
     public void reset() throws IOException {
         if( this.MarkTextBuffer == null ){
             throw new IOException( "not marked." );
-        }else if( this.TextDecoded - this.MarkTextPosition
+        }else if( this.TextDecoded - this.MarkTextPosition 
                <= this.TextBuffer.length ){
             this.TextPosition = this.MarkTextPosition;
         }else if( this.decoder.markSupported() ){
             //reset
             this.decoder.reset();                                               //throws IOException
-            System.arraycopy( this.MarkTextBuffer, 0,
-                              this.TextBuffer, 0,
+            System.arraycopy( this.MarkTextBuffer, 0, 
+                              this.TextBuffer, 0, 
                               this.TextBuffer.length );
             this.TextPosition = this.MarkTextPosition;
             this.TextDecoded  = this.MarkTextDecoded;
@@ -383,12 +381,12 @@ public class LzssInputStream extends InputStream{
     }
 
     /**
-     * ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ mark() ï¿½ï¿½ reset() ï¿½ï¿½
-     * ï¿½Tï¿½|ï¿½[ï¿½gï¿½ï¿½ï¿½é‚©ï¿½ð“¾‚ï¿½B<br>
-     *
-     * @return ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ mark() ï¿½ï¿½ reset() ï¿½ï¿½
-     *         ï¿½Tï¿½|ï¿½[ï¿½gï¿½ï¿½ï¿½ï¿½ê‡ï¿½ï¿½ trueï¿½B<br>
-     *         ï¿½Tï¿½|ï¿½[ï¿½gï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½ï¿½ falseï¿½B<br>
+     * Ú‘±‚³‚ê‚½“ü—ÍƒXƒgƒŠ[ƒ€‚ª mark() ‚Æ reset() ‚ð
+     * ƒTƒ|[ƒg‚·‚é‚©‚ð“¾‚éB<br>
+     * 
+     * @return ƒXƒgƒŠ[ƒ€‚ª mark() ‚Æ reset() ‚ð
+     *         ƒTƒ|[ƒg‚·‚éê‡‚Í trueB<br>
+     *         ƒTƒ|[ƒg‚µ‚È‚¢ê‡‚Í falseB<br>
      */
     public boolean markSupported(){
         return  this.decoder.markSupported();
@@ -404,12 +402,12 @@ public class LzssInputStream extends InputStream{
     //  public void close()
     //------------------------------------------------------------------
     /**
-     * ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½
-     * ï¿½Ç‚Ýï¿½ï¿½Þ‚ï¿½ï¿½Æ‚Ì‚Å‚ï¿½ï¿½ï¿½oï¿½Cï¿½gï¿½ï¿½ï¿½ð“¾‚ï¿½B<br>
-     *
-     * @return ï¿½uï¿½ï¿½ï¿½bï¿½Nï¿½ï¿½ï¿½È‚ï¿½ï¿½Å“Ç‚Ýoï¿½ï¿½ï¿½ï¿½oï¿½Cï¿½gï¿½ï¿½ï¿½B<br>
-     *
-     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     * Ú‘±‚³‚ê‚½“ü—ÍƒXƒgƒŠ[ƒ€‚©‚çƒuƒƒbƒN‚µ‚È‚¢‚Å
+     * “Ç‚Ýž‚Þ‚±‚Æ‚Ì‚Å‚«‚éƒoƒCƒg”‚ð“¾‚éB<br>
+     * 
+     * @return ƒuƒƒbƒN‚µ‚È‚¢‚Å“Ç‚Ýo‚¹‚éƒoƒCƒg”B<br>
+     * 
+     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
      */
     public int available() throws IOException {
         return (int)( this.TextDecoded - this.TextPosition )
@@ -417,10 +415,10 @@ public class LzssInputStream extends InputStream{
     }
 
     /**
-     * ï¿½ï¿½ï¿½Ì“ï¿½ï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½Aï¿½gï¿½pï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
-     * ï¿½Sï¿½Ä‚Ìƒï¿½ï¿½\ï¿½[ï¿½Xï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B<br>
-     *
-     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     * ‚±‚Ì“ü—ÍƒXƒgƒŠ[ƒ€‚ð•Â‚¶AŽg—p‚µ‚Ä‚¢‚½
+     * ‘S‚Ä‚ÌƒŠƒ\[ƒX‚ðŠJ•ú‚·‚éB<br>
+     * 
+     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
      */
     public void close() throws IOException {
         this.decoder.close();
@@ -438,21 +436,21 @@ public class LzssInputStream extends InputStream{
     //  private void initLz5TextBuffer()
     //------------------------------------------------------------------
     /**
-     * privateï¿½Ïï¿½ this.in ï¿½ï¿½ï¿½çˆ³ï¿½kï¿½fï¿½[ï¿½^ï¿½ï¿½Ç‚Ýï¿½ï¿½ï¿½
-     * ï¿½ð“€‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ TextBuffer ï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÞB
-     *
-     * @exception IOException  ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
-     * @exception EOFException ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Iï¿½[ï¿½É’Bï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     * private•Ï” this.in ‚©‚çˆ³kƒf[ƒ^‚ð“Ç‚Ýž‚Ý
+     * ‰ð“€‚µ‚È‚ª‚ç TextBuffer ‚Éƒf[ƒ^‚ð‘‚«‚±‚ÞB
+     * 
+     * @exception IOException  “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception EOFException ƒXƒgƒŠ[ƒ€I’[‚É’B‚µ‚½ê‡
      */
     private void decode() throws IOException {
         if( this.TextDecoded < this.Length ){
             final int  TextMask  = this.TextBuffer.length - 1;
             final int  TextStart = (int)this.TextDecoded & TextMask;
             int        TextPos   = TextStart;
-            int        TextLimit = (int)( Math.min( this.TextPosition
-                                                         + this.TextBuffer.length
+            int        TextLimit = (int)( Math.min( this.TextPosition 
+                                                         + this.TextBuffer.length 
                                                          - this.MaxMatch,
-                                                     this.Length )
+                                                     this.Length ) 
                                            - this.TextDecoded ) + TextStart;
             try{
                 while( TextPos < TextLimit ){
@@ -478,23 +476,23 @@ public class LzssInputStream extends InputStream{
     }
 
     /**
-     * private ï¿½Ïï¿½ this.TextBuffer ï¿½ï¿½ï¿½ï¿½ bufferï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
-     *
-     * @param buffer   TextBufferï¿½Ì“ï¿½ï¿½eï¿½ï¿½ï¿½Rï¿½sï¿½[ï¿½ï¿½ï¿½ï¿½oï¿½bï¿½tï¿½@
-     * @param position bufferï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝŒï¿½ï¿½ÝˆÊ’u
-     * @param end      bufferï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝIï¿½ï¿½ï¿½Ê’u
-     *
-     * @return bufferï¿½ÌŽï¿½ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½×‚ï¿½ï¿½Ê’u
+     * private •Ï” this.TextBuffer ‚©‚ç buffer‚Éƒf[ƒ^‚ð“]‘—‚·‚éB
+     * 
+     * @param buffer   TextBuffer‚Ì“à—e‚ðƒRƒs[‚·‚éƒoƒbƒtƒ@
+     * @param position buffer“à‚Ì‘‚«ž‚ÝŒ»ÝˆÊ’u
+     * @param end      buffer“à‚Ì‘‚«ž‚ÝI—¹ˆÊ’u
+     * 
+     * @return buffer‚ÌŽŸ‚É‘‚«ž‚Ý‚ªs‚í‚ê‚é‚×‚«ˆÊ’u
      */
     private int copyTextBufferToBuffer( byte[] buffer, int position, int end ){
         if( ( this.TextPosition & ~( this.TextBuffer.length - 1 ) )
               < ( this.TextDecoded & ~( this.TextBuffer.length - 1 ) ) ){
-            int length = Math.min( this.TextBuffer.length -
-                                     ( (int)this.TextPosition
+            int length = Math.min( this.TextBuffer.length - 
+                                     ( (int)this.TextPosition 
                                           & this.TextBuffer.length - 1 ),
                                      end - position );
 
-            System.arraycopy( this.TextBuffer,
+            System.arraycopy( this.TextBuffer, 
                               (int)this.TextPosition
                                  & this.TextBuffer.length - 1,
                               buffer, position, length  );
@@ -504,11 +502,11 @@ public class LzssInputStream extends InputStream{
         }
 
         if( this.TextPosition < this.TextDecoded ){
-            int length = Math.min( (int)( this.TextDecoded
+            int length = Math.min( (int)( this.TextDecoded 
                                           - this.TextPosition ),
                                      end - position );
 
-            System.arraycopy( this.TextBuffer,
+            System.arraycopy( this.TextBuffer, 
                               (int)this.TextPosition
                                  & this.TextBuffer.length - 1,
                               buffer, position, length  );
@@ -521,7 +519,7 @@ public class LzssInputStream extends InputStream{
     }
 
     /**
-     * -lz5- ï¿½pï¿½ï¿½ TextBuffer ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+     * -lz5- —p‚É TextBuffer ‚ð‰Šú‰»‚·‚éB
      */
     private void initLz5TextBuffer(){
         int position = 18;
