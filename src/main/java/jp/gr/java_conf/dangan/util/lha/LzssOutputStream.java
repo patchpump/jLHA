@@ -3,91 +3,81 @@
 
 /**
  * LzssOutputStream.java
- * 
+ *
  * Copyright (C) 2001-2002  Michel Ishizuka  All rights reserved.
- * 
- * ˆÈ‰º‚ÌðŒ‚É“¯ˆÓ‚·‚é‚È‚ç‚Îƒ\[ƒX‚ÆƒoƒCƒiƒŠŒ`Ž®‚ÌÄ”z•z‚ÆŽg—p‚ð
- * •ÏX‚Ì—L–³‚É‚©‚©‚í‚ç‚¸‹–‰Â‚·‚éB
- * 
- * ‚PDƒ\[ƒXƒR[ƒh‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\Ž¦‚Æ ‚±‚ÌðŒ‚ÌƒŠƒXƒg
- *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ð•ÛŽ‚µ‚È‚­‚Ä‚Í‚È‚ç‚È‚¢B
- * 
- * ‚QDƒoƒCƒiƒŠŒ`Ž®‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\Ž¦‚Æ ‚±‚ÌðŒ‚ÌƒŠƒXƒg
- *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ðŽg—pà–¾‘‚à‚µ‚­‚Í ‚»‚Ì‘¼‚Ì”z•z•¨“à‚É
- *     ŠÜ‚ÞŽ‘—¿‚É‹Lq‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢B
- * 
- * ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚ÍÎ’Ë”üŽì—Ú‚É‚æ‚Á‚Ä–³•ÛØ‚Å’ñ‹Ÿ‚³‚êA“Á’è‚Ì–Ú
- * “I‚ð’B¬‚Å‚«‚é‚Æ‚¢‚¤•ÛØA¤•i‰¿’l‚ª—L‚é‚Æ‚¢‚¤•ÛØ‚É‚Æ‚Ç‚Ü‚ç‚¸A
- * ‚¢‚©‚È‚é–¾Ž¦“I‚¨‚æ‚ÑˆÃŽ¦“I‚È•ÛØ‚à‚µ‚È‚¢B
- * Î’Ë”üŽì—Ú‚Í ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚ÌŽg—p‚É‚æ‚é’¼Ú“IAŠÔÚ“IA‹ô”­
- * “IA“ÁŽê‚ÈA“TŒ^“I‚ÈA‚ ‚é‚¢‚Í•K‘R“I‚È‘¹ŠQ(Žg—p‚É‚æ‚éƒf[ƒ^‚Ì
- * ‘¹Ž¸A‹Æ–±‚Ì’†’f‚âŒ©ž‚Ü‚ê‚Ä‚¢‚½—˜‰v‚ÌˆâŽ¸A‘ã‘Ö»•i‚à‚µ‚­‚Í
- * ƒT[ƒrƒX‚Ì“±“ü”ï“™‚ªl‚¦‚ç‚ê‚é‚ªAŒˆ‚µ‚Ä‚»‚ê‚¾‚¯‚ÉŒÀ’è‚³‚ê‚È‚¢
- * ‘¹ŠQ)‚É‘Î‚µ‚ÄA‚¢‚©‚È‚éŽ–‘Ô‚ÌŒ´ˆö‚Æ‚È‚Á‚½‚Æ‚µ‚Ä‚àAŒ_–ñã‚ÌÓ
- * ”C‚â–³‰ßŽ¸Ó”C‚ðŠÜ‚Þ ‚¢‚©‚È‚éÓ”C‚ª‚ ‚ë‚¤‚Æ‚àA‚½‚Æ‚¦‚»‚ê‚ª•s
- * ³sˆ×‚Ì‚½‚ß‚Å‚ ‚Á‚½‚Æ‚µ‚Ä‚àA‚Ü‚½‚Í‚»‚Ì‚æ‚¤‚È‘¹ŠQ‚Ì‰Â”\«‚ª•ñ
- * ‚³‚ê‚Ä‚¢‚½‚Æ‚µ‚Ä‚àˆêØ‚ÌÓ”C‚ð•‰‚í‚È‚¢‚à‚Ì‚Æ‚·‚éB
+ *
+ * ï¿½È‰ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½É“ï¿½ï¿½Ó‚ï¿½ï¿½ï¿½È‚ï¿½Îƒ\ï¿½[ï¿½Xï¿½Æƒoï¿½Cï¿½iï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ÌÄ”zï¿½zï¿½ÆŽgï¿½pï¿½ï¿½
+ * ï¿½ÏXï¿½Ì—Lï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½ï¿½ï¿½ç‚¸ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½B
+ *
+ * ï¿½Pï¿½Dï¿½\ï¿½[ï¿½Xï¿½Rï¿½[ï¿½hï¿½ÌÄ”zï¿½zï¿½É‚ï¿½ï¿½ï¿½ï¿½Ä’ï¿½ï¿½ìŒ ï¿½\ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½Xï¿½g
+ *     ï¿½ï¿½ï¿½ï¿½Ñ‰ï¿½ï¿½Lï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÛŽï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½Ä‚Í‚È‚ï¿½È‚ï¿½ï¿½B
+ *
+ * ï¿½Qï¿½Dï¿½oï¿½Cï¿½iï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ÌÄ”zï¿½zï¿½É‚ï¿½ï¿½ï¿½ï¿½Ä’ï¿½ï¿½ìŒ ï¿½\ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½ï¿½Ìƒï¿½ï¿½Xï¿½g
+ *     ï¿½ï¿½ï¿½ï¿½Ñ‰ï¿½ï¿½Lï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½Ì”zï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ *     ï¿½Ü‚ÞŽï¿½ï¿½ï¿½ï¿½É‹Lï¿½qï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚È‚ï¿½È‚ï¿½ï¿½B
+ *
+ * ï¿½ï¿½ï¿½Ìƒ\ï¿½tï¿½gï¿½Eï¿½Fï¿½Aï¿½ÍÎ’Ë”ï¿½ï¿½ï¿½Ú‚É‚ï¿½ï¿½ï¿½Ä–ï¿½ï¿½ÛØ‚Å’ñ‹Ÿ‚ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½Ì–ï¿½
+ * ï¿½Iï¿½ï¿½Bï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ÛØAï¿½ï¿½ï¿½iï¿½ï¿½ï¿½lï¿½ï¿½ï¿½Lï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ÛØ‚É‚Æ‚Ç‚Ü‚ç‚¸ï¿½A
+ * ï¿½ï¿½ï¿½ï¿½ï¿½È‚é–¾ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ÑˆÃŽï¿½ï¿½Iï¿½È•ÛØ‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½B
+ * ï¿½Î’Ë”ï¿½ï¿½ï¿½Ú‚ï¿½ ï¿½ï¿½ï¿½Ìƒ\ï¿½tï¿½gï¿½Eï¿½Fï¿½Aï¿½ÌŽgï¿½pï¿½É‚ï¿½é’¼ï¿½Ú“Iï¿½Aï¿½ÔÚ“Iï¿½Aï¿½ï¿½ï¿½ï¿½
+ * ï¿½Iï¿½Aï¿½ï¿½ï¿½ï¿½ÈAï¿½Tï¿½^ï¿½Iï¿½ÈAï¿½ï¿½ï¿½é‚¢ï¿½Í•Kï¿½Rï¿½Iï¿½È‘ï¿½ï¿½Q(ï¿½gï¿½pï¿½É‚ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Æ–ï¿½ï¿½Ì’ï¿½ï¿½fï¿½âŒ©ï¿½ï¿½ï¿½Ü‚ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½vï¿½ÌˆâŽ¸ï¿½Aï¿½ï¿½Öï¿½ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Tï¿½[ï¿½rï¿½Xï¿½Ì“ï¿½ï¿½ï¿½ï¿½ï“™ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½é‚ªï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ê‚¾ï¿½ï¿½ï¿½ÉŒï¿½ï¿½è‚³ï¿½ï¿½È‚ï¿½
+ * ï¿½ï¿½ï¿½Q)ï¿½É‘Î‚ï¿½ï¿½ÄAï¿½ï¿½ï¿½ï¿½ï¿½È‚éŽ–ï¿½Ô‚ÌŒï¿½ï¿½ï¿½ï¿½Æ‚È‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½Aï¿½_ï¿½ï¿½ï¿½Ìï¿½
+ * ï¿½Cï¿½â–³ï¿½ßŽï¿½ï¿½Ó”Cï¿½ï¿½ï¿½Ü‚ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½Ó”Cï¿½ï¿½ï¿½ï¿½ï¿½ë‚¤ï¿½Æ‚ï¿½ï¿½Aï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ê‚ªï¿½s
+ * ï¿½ï¿½ï¿½sï¿½×‚Ì‚ï¿½ï¿½ß‚Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½Aï¿½Ü‚ï¿½ï¿½Í‚ï¿½ï¿½Ì‚æ‚¤ï¿½È‘ï¿½ï¿½Qï¿½Ì‰Â”\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½Ø‚ÌÓ”Cï¿½ð•‰‚ï¿½È‚ï¿½ï¿½ï¿½ï¿½Ì‚Æ‚ï¿½ï¿½ï¿½B
  */
 
 package jp.gr.java_conf.dangan.util.lha;
 
-//import classes and interfaces
-import java.io.OutputStream;
-import jp.gr.java_conf.dangan.lang.reflect.Factory;
-import jp.gr.java_conf.dangan.util.lha.PostLzssEncoder;
-import jp.gr.java_conf.dangan.util.lha.LzssSearchMethod;
-import jp.gr.java_conf.dangan.util.lha.HashAndChainedListSearch;
-
 //import exceptions
 import java.io.IOException;
-import java.lang.NoSuchMethodException;
-import java.lang.ClassNotFoundException;
-import java.lang.InstantiationException;
+//import classes and interfaces
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Arrays;
 
-import java.lang.Error;
-import java.lang.NoSuchMethodError;
-import java.lang.InstantiationError;
-import java.lang.NoClassDefFoundError;
+import jp.gr.java_conf.dangan.lang.reflect.Factory;
 
 
 /**
- * ƒf[ƒ^‚ð LZSSˆ³k‚µ‚È‚ª‚ç
- * Žw’è‚³‚ê‚½ PostLzssEncoder ‚Éo—Í‚·‚éˆ³k—po—ÍƒXƒgƒŠ[ƒ€B<br>
- * 
+ * ï¿½fï¿½[ï¿½^ï¿½ï¿½ LZSSï¿½ï¿½ï¿½kï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½
+ * ï¿½wï¿½è‚³ï¿½ê‚½ PostLzssEncoder ï¿½Éoï¿½Í‚ï¿½ï¿½éˆ³ï¿½kï¿½pï¿½oï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½B<br>
+ *
  * <pre>
  * -- revision history --
  * $Log: LzssOutputStream.java,v $
  * Revision 1.2  2002/12/06 00:00:00  dangan
  * [change]
- *     flush() ‚Å write() ‚³‚ê‚½‘S‚Ä‚Ìƒf[ƒ^‚ð 
- *     Ú‘±‚³‚ê‚½ PostLzssEncoder ‚Éo—Í‚·‚é‚æ‚¤‚ÉC³B
+ *     flush() ï¿½ï¿½ write() ï¿½ï¿½ï¿½ê‚½ï¿½Sï¿½Ä‚Ìƒfï¿½[ï¿½^ï¿½ï¿½
+ *     ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½ PostLzssEncoder ï¿½Éoï¿½Í‚ï¿½ï¿½ï¿½æ‚¤ï¿½ÉCï¿½ï¿½ï¿½B
  * [maintenance]
- *     slide•‚ªí‚É DictionarySize ƒoƒCƒg‚É‚È‚é‚æ‚¤‚ÉC³B
+ *     slideï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DictionarySize ï¿½oï¿½Cï¿½gï¿½É‚È‚ï¿½æ‚¤ï¿½ÉCï¿½ï¿½ï¿½B
  *
  * Revision 1.1  2002/10/20 00:00:00  dangan
  * [bug fix]
- *     ‰Šúó‘Ô‚Å flush() ‚µ‚½‚è ˜A‘±‚Å flush() ‚·‚é‚Æ
- *     ( lastsearchret ‚ª NEEDSEARCH ‚ÌŽž‚É encode() ‚ªŒÄ‚Î‚ê‚é‚Æ )
- *     ’¼Œã‚Ì 1ƒoƒCƒg‚ª‰»‚¯‚Ä‚¢‚½B
- *     flush() Žž‚É putLength() ‚ðl—¶‚µ‚Ä‚¢‚È‚©‚Á‚½‚½‚ß
- *     ŒŸõ‹@\‚ð”j‰ó‚·‚é‚æ‚¤‚È searchAndPut ‚ðs‚Á‚Ä‚¢‚½‚Ì‚ðC³B
- *     flush() Žž‚É TextBuffer ÅŒã”ö‚ÌMaxMatchƒoƒCƒg‚Ìƒf[ƒ^‚ðo—Í‚µ‚Ä‚¢‚È‚©‚Á‚½B
+ *     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½ flush() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Aï¿½ï¿½ï¿½ï¿½ flush() ï¿½ï¿½ï¿½ï¿½ï¿½
+ *     ( lastsearchret ï¿½ï¿½ NEEDSEARCH ï¿½ÌŽï¿½ï¿½ï¿½ encode() ï¿½ï¿½ï¿½Ä‚Î‚ï¿½ï¿½ï¿½ )
+ *     ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½oï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½B
+ *     flush() ï¿½ï¿½ï¿½ï¿½ putLength() ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ *     ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½\ï¿½ï¿½jï¿½ó‚·‚ï¿½æ‚¤ï¿½ï¿½ searchAndPut ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Cï¿½ï¿½ï¿½B
+ *     flush() ï¿½ï¿½ï¿½ï¿½ TextBuffer ï¿½ÅŒï¿½ï¿½ï¿½ï¿½MaxMatchï¿½oï¿½Cï¿½gï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
  *
  * Revision 1.0  2002/07/25 00:00:00  dangan
  * add to version control
  * [bug fix]
- *     getMatchLen() ‚Å searchret >> 22 ‚Æ‚·‚×‚«‚Æ‚±‚ë‚ª 
- *     searchret >>> 22 ‚Æ‚È‚Á‚Ä‚¢‚½‚Ì‚ðC³B
+ *     getMatchLen() ï¿½ï¿½ searchret >> 22 ï¿½Æ‚ï¿½ï¿½×‚ï¿½ï¿½Æ‚ï¿½ï¿½ë‚ª
+ *     searchret >>> 22 ï¿½Æ‚È‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½Cï¿½ï¿½ï¿½B
  * [maintenance]
- *     LhaUtil.createInstance() ‚ÌŽg—p‚ð‚â‚ß
- *     ‘ã‚í‚è‚É Factory.createInstance() ‚ðŽg—p‚·‚éB
- *     ƒ\[ƒX®”õ
- *     ƒ^ƒu”pŽ~
- *     ƒ‰ƒCƒZƒ“ƒX•¶‚ÌC³
+ *     LhaUtil.createInstance() ï¿½ÌŽgï¿½pï¿½ï¿½ï¿½ï¿½ï¿½
+ *     ï¿½ï¿½ï¿½ï¿½ï¿½ Factory.createInstance() ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ï¿½B
+ *     ï¿½\ï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½
+ *     ï¿½^ï¿½uï¿½pï¿½~
+ *     ï¿½ï¿½ï¿½Cï¿½Zï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ÌCï¿½ï¿½
  *
  * </pre>
- * 
+ *
  * @author  $Author: dangan $
  * @version $Revision: 1.2 $
  */
@@ -103,14 +93,14 @@ public class LzssOutputStream extends OutputStream{
     //  private static final int NOMATCH
     //------------------------------------------------------------------
     /**
-     * lastsearchret ‚É“o˜^‚·‚é’lB
-     * searchAndPut‚Ìˆ—‚ª•K—v‚Å‚ ‚éŽ–‚ðŽ¦‚·B
+     * lastsearchret ï¿½É“oï¿½^ï¿½ï¿½ï¿½ï¿½lï¿½B
+     * searchAndPutï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½vï¿½Å‚ï¿½ï¿½éŽ–ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
      */
     private static final int NEEDSEARCH = 0;
 
     /**
-     * searchret ‚ª‚±‚Ì’l‚¾‚Á‚½ê‡A
-     * ŒŸõ‚ÌŒ‹‰ÊAè‡’lˆÈã‚Ìˆê’v‚ªŒ©‚Â‚©‚ç‚È‚©‚Á‚½Ž–‚ðŽ¦‚·B
+     * searchret ï¿½ï¿½ï¿½ï¿½ï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½A
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ÊAè‡’lï¿½Èï¿½Ìˆï¿½vï¿½ï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
      */
     public static final int NOMATCH = -1;
 
@@ -123,7 +113,7 @@ public class LzssOutputStream extends OutputStream{
     //  private PostLzssEncoder encoder
     //------------------------------------------------------------------
     /**
-     * LZSSˆ³kƒR[ƒh‚ð”ro‚·‚éæ‚Ìo—ÍƒXƒgƒŠ[ƒ€
+     * LZSSï¿½ï¿½ï¿½kï¿½Rï¿½[ï¿½hï¿½ï¿½rï¿½oï¿½ï¿½ï¿½ï¿½ï¿½Ìoï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
      */
     private PostLzssEncoder encoder;
 
@@ -138,19 +128,19 @@ public class LzssOutputStream extends OutputStream{
     //  private int MaxMatch
     //------------------------------------------------------------------
     /**
-     * LZSSŽ«‘ƒTƒCƒYB
+     * LZSSï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½Cï¿½Yï¿½B
      */
     private int DictionarySize;
 
     /**
-     * LZSSˆ³k‚ÉŽg—p‚³‚ê‚éè‡’lB
-     * ˆê’v’·‚ª ‚±‚Ì’lˆÈã‚Å‚ ‚ê‚ÎAˆ³kƒR[ƒh‚ðo—Í‚·‚éB
+     * LZSSï¿½ï¿½ï¿½kï¿½ÉŽgï¿½pï¿½ï¿½ï¿½ï¿½ï¿½è‡’lï¿½B
+     * ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì’lï¿½Èï¿½Å‚ï¿½ï¿½ï¿½ÎAï¿½ï¿½ï¿½kï¿½Rï¿½[ï¿½hï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½ï¿½B
      */
     private int Threshold;
 
     /**
-     * LZSSˆ³k‚ÉŽg—p‚³‚ê‚é’lB
-     * Å‘åˆê’v’·‚ðŽ¦‚·B
+     * LZSSï¿½ï¿½ï¿½kï¿½ÉŽgï¿½pï¿½ï¿½ï¿½ï¿½ï¿½lï¿½B
+     * ï¿½Å‘ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
      */
     private int MaxMatch;
 
@@ -167,47 +157,47 @@ public class LzssOutputStream extends OutputStream{
     //  private int searchedPos
     //------------------------------------------------------------------
     /**
-     * LZSSˆ³k‚ðŽ{‚·‚½‚ß‚Ìƒoƒbƒtƒ@B
-     * ‘O”¼‚ÍŽ«‘—ÌˆæA
-     * Œã”¼‚Íˆ³k‚ðŽ{‚·‚½‚ß‚Ìƒf[ƒ^‚Ì“ü‚Á‚½ƒoƒbƒtƒ@B
+     * LZSSï¿½ï¿½ï¿½kï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½ß‚Ìƒoï¿½bï¿½tï¿½@ï¿½B
+     * ï¿½Oï¿½ï¿½ï¿½ÍŽï¿½ï¿½ï¿½ï¿½Ìˆï¿½A
+     * ï¿½ã”¼ï¿½Íˆï¿½ï¿½kï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½ß‚Ìƒfï¿½[ï¿½^ï¿½Ì“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½bï¿½tï¿½@ï¿½B
      */
     private byte[] TextBuffer;
 
     /**
-     * Ž«‘‚ÌŒÀŠEˆÊ’uB 
-     * TextBuffer‘O”¼‚ÌŽ«‘—Ìˆæ‚Éƒf[ƒ^‚ª–³‚¢ê‡‚É
-     * Ž«‘—Ìˆæ‚É‚ ‚é•s’è‚Ìƒf[ƒ^(Java‚Å‚Í0)‚ðŽg—p
-     * ‚µ‚Äˆ³k‚ªs‚í‚ê‚é‚Ì‚ð—}Ž~‚·‚éB
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ÌŒï¿½ï¿½Eï¿½Ê’uï¿½B
+     * TextBufferï¿½Oï¿½ï¿½ï¿½ÌŽï¿½ï¿½ï¿½ï¿½Ìˆï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Ìˆï¿½É‚ï¿½ï¿½ï¿½sï¿½ï¿½Ìƒfï¿½[ï¿½^(Javaï¿½Å‚ï¿½0)ï¿½ï¿½ï¿½gï¿½p
+     * ï¿½ï¿½ï¿½Äˆï¿½ï¿½kï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½Ì‚ï¿½}ï¿½~ï¿½ï¿½ï¿½ï¿½B
      */
     private int DictionaryLimit;
 
     /**
-     * TextBuffer“à‘‚«ž‚ÝŠ®—¹ˆÊ’u
-     * LzssOutputStream.write() ‚É‚æ‚Á‚Ä‘‚«ž‚Ü‚ê‚½ˆÊ’u
-     * 
-     * ˆÈ‰º‚Ì3ŽÒ‚ÌŠÖŒW‚Í putPos <= searchedPos <= writtenPos ‚Æ‚È‚éB
+     * TextBufferï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÝŠï¿½ï¿½ï¿½ï¿½Ê’u
+     * LzssOutputStream.write() ï¿½É‚ï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ê‚½ï¿½Ê’u
+     *
+     * ï¿½È‰ï¿½ï¿½ï¿½3ï¿½Ò‚ÌŠÖŒWï¿½ï¿½ putPos <= searchedPos <= writtenPos ï¿½Æ‚È‚ï¿½B
      */
     private int writtenPos;
 
     /**
-     * TextBuffer“à put() Š®—¹ˆÊ’u
-     * LzssSearchMethod ‚Ì put() ‚à‚µ‚­‚Í searchAndPut() ‚Å
-     * ŒŸõ‹@\‚Ö‚Ì“o˜^‚ªŠ®—¹‚µ‚½ˆÊ’u
+     * TextBufferï¿½ï¿½ put() ï¿½ï¿½ï¿½ï¿½ï¿½Ê’u
+     * LzssSearchMethod ï¿½ï¿½ put() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ searchAndPut() ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½\ï¿½Ö‚Ì“oï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê’u
      */
     private int putPos;
 
     /**
-     * TextBuffer“à Œ»ÝŒŸõˆÊ’u
-     * ŽŸ‚É LzssSearchMethod ‚Ì search() ‚à‚µ‚­‚Í searchAndPut() ‚Å
-     * ŒŸõ‚ð‚·‚×‚«ˆÊ’u
+     * TextBufferï¿½ï¿½ ï¿½ï¿½ï¿½ÝŒï¿½ï¿½ï¿½ï¿½Ê’u
+     * ï¿½ï¿½ï¿½ï¿½ LzssSearchMethod ï¿½ï¿½ search() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ searchAndPut() ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×‚ï¿½ï¿½Ê’u
      */
     private int searchPos;
 
     /**
-     * ‘O‰ñ‚Ìencode‚ÌÅŒã‚Ìsearchret‚ð•Û‘¶‚µ‚Ä‚¨‚­
-     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Å‚Í lastsearchret ‚É–³Œø‚È
-     * ”Žš‚Å‚ ‚éŽ–‚ðŽ¦‚· LzssOutputStream.NEEDSEARCH‚ð
-     * “ü—Í‚µ‚Ä‚¨‚­B
+     * ï¿½Oï¿½ï¿½ï¿½encodeï¿½ÌÅŒï¿½ï¿½searchretï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
+     * ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½Å‚ï¿½ lastsearchret ï¿½É–ï¿½ï¿½ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½éŽ–ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ LzssOutputStream.NEEDSEARCHï¿½ï¿½
+     * ï¿½ï¿½ï¿½Í‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½B
      */
     private int lastsearchret;
 
@@ -220,7 +210,7 @@ public class LzssOutputStream extends OutputStream{
     //  private LzssSearchMethod method
     //------------------------------------------------------------------
     /**
-     * ŒŸõ‚ð‚Â‚©‚³‚Ç‚éƒNƒ‰ƒX
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½Nï¿½ï¿½ï¿½X
      */
     private LzssSearchMethod method;
 
@@ -233,72 +223,72 @@ public class LzssOutputStream extends OutputStream{
     //  public LzssOutputStream( PostLzssEncoder encoder, String SearchMethod )
     //------------------------------------------------------------------
     /**
-     * ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^B
-     * Žg—p•s‰ÂB
+     * ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½B
+     * ï¿½gï¿½pï¿½sï¿½ÂB
      */
     private LzssOutputStream(){ }
 
     /**
-     * write() ‚É‚æ‚Á‚Ä‘‚«‚±‚Ü‚ê‚½ƒf[ƒ^‚ð
-     * LZSS‚Åˆ³k‚µAˆ³k‚µ‚½ƒf[ƒ^‚ð encoder‚Éo—Í‚·‚é
-     * o—ÍƒXƒgƒŠ[ƒ€‚ð\’z‚·‚éB
-     * 
-     * @param encoder LZSSˆ³kƒf[ƒ^o—ÍƒXƒgƒŠ[ƒ€
+     * write() ï¿½É‚ï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½
+     * LZSSï¿½Åˆï¿½ï¿½kï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ encoderï¿½Éoï¿½Í‚ï¿½ï¿½ï¿½
+     * ï¿½oï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½zï¿½ï¿½ï¿½ï¿½B
+     *
+     * @param encoder LZSSï¿½ï¿½ï¿½kï¿½fï¿½[ï¿½^ï¿½oï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
      */
     public LzssOutputStream( PostLzssEncoder encoder ){
-        this( encoder, 
+        this( encoder,
               HashAndChainedListSearch.class.getName(),
               new Object[0] );
     }
 
     /**
-     * write() ‚É‚æ‚Á‚Ä‘‚«‚±‚Ü‚ê‚½ƒf[ƒ^‚ð
-     * LZSS‚Åˆ³k‚µAˆ³k‚µ‚½ƒf[ƒ^‚ð encoder‚Éo—Í‚·‚é
-     * o—ÍƒXƒgƒŠ[ƒ€‚ð\’z‚·‚éB
-     * 
-     * @param encoder LZSSˆ³kƒf[ƒ^o—ÍƒXƒgƒŠ[ƒ€
-     * @param LzssSearchMethodClassName 
-     *                LzssSearchMethod ‚ÌŽÀ‘•‚ðŽ¦‚·ƒpƒbƒP[ƒW–¼‚àŠÜ‚ß‚½ƒNƒ‰ƒX–¼
-     * 
+     * write() ï¿½É‚ï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½
+     * LZSSï¿½Åˆï¿½ï¿½kï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ encoderï¿½Éoï¿½Í‚ï¿½ï¿½ï¿½
+     * ï¿½oï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½zï¿½ï¿½ï¿½ï¿½B
+     *
+     * @param encoder LZSSï¿½ï¿½ï¿½kï¿½fï¿½[ï¿½^ï¿½oï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
+     * @param LzssSearchMethodClassName
+     *                LzssSearchMethod ï¿½ÌŽï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½Pï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ß‚ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+     *
      * @exception NoClassDefFoundError
-     *              LzssSearchMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              Œ©‚Â‚©‚ç‚È‚¢ê‡B
+     *              LzssSearchMethodClassName ï¿½Å—^ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+     *              ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½B
      * @exception InstantiationError
-     *              LzssSearchMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              abstract class ‚Å‚ ‚é‚½‚ßƒCƒ“ƒXƒ^ƒ“ƒX‚ð¶¬‚Å‚«‚È‚¢ê‡B
+     *              LzssSearchMethodClassName ï¿½Å—^ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+     *              abstract class ï¿½Å‚ï¿½ï¿½é‚½ï¿½ßƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ð¶ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½B
      * @exception NoSuchMethodError
-     *              LzssSearchMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              ƒRƒ“ƒXƒgƒ‰ƒNƒ^ LzssSearchMethod( int, int, int, byte[], int )
-     *              ‚ðŽ‚½‚È‚¢ê‡
+     *              LzssSearchMethodClassName ï¿½Å—^ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+     *              ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ LzssSearchMethod( int, int, int, byte[], int )
+     *              ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡
      */
-    public LzssOutputStream( PostLzssEncoder encoder, 
+    public LzssOutputStream( PostLzssEncoder encoder,
                              String          LzssSearchMethodClassName ){
-        this( encoder, 
+        this( encoder,
               LzssSearchMethodClassName,
               new Object[0] );
     }
 
     /**
-     * write() ‚É‚æ‚Á‚Ä‘‚«‚±‚Ü‚ê‚½ƒf[ƒ^‚ð
-     * LZSS‚Åˆ³k‚µAˆ³k‚µ‚½ƒf[ƒ^‚ð encoder‚Éo—Í‚·‚é
-     * o—ÍƒXƒgƒŠ[ƒ€‚ð\’z‚·‚éB
-     * 
-     * @param encoder LZSSˆ³kƒf[ƒ^o—ÍƒXƒgƒŠ[ƒ€
-     * @param LzssSearchMethodClassName 
-     *                LzssSearchMethod ‚ÌŽÀ‘•‚ðŽ¦‚·ƒpƒbƒP[ƒW–¼‚àŠÜ‚ß‚½ƒNƒ‰ƒX–¼
-     * 
+     * write() ï¿½É‚ï¿½ï¿½ï¿½Äï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½
+     * LZSSï¿½Åˆï¿½ï¿½kï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ encoderï¿½Éoï¿½Í‚ï¿½ï¿½ï¿½
+     * ï¿½oï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½zï¿½ï¿½ï¿½ï¿½B
+     *
+     * @param encoder LZSSï¿½ï¿½ï¿½kï¿½fï¿½[ï¿½^ï¿½oï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½
+     * @param LzssSearchMethodClassName
+     *                LzssSearchMethod ï¿½ÌŽï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pï¿½bï¿½Pï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ß‚ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+     *
      * @exception NoClassDefFoundError
-     *              LzssSearchMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              Œ©‚Â‚©‚ç‚È‚¢ê‡B
+     *              LzssSearchMethodClassName ï¿½Å—^ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+     *              ï¿½ï¿½ï¿½Â‚ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½B
      * @exception InstantiationError
-     *              LzssSearchMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              abstract class ‚Å‚ ‚é‚½‚ßƒCƒ“ƒXƒ^ƒ“ƒX‚ð¶¬‚Å‚«‚È‚¢ê‡B
+     *              LzssSearchMethodClassName ï¿½Å—^ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+     *              abstract class ï¿½Å‚ï¿½ï¿½é‚½ï¿½ßƒCï¿½ï¿½ï¿½Xï¿½^ï¿½ï¿½ï¿½Xï¿½ð¶ï¿½ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½B
      * @exception NoSuchMethodError
-     *              LzssSearchMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              ƒRƒ“ƒXƒgƒ‰ƒNƒ^ LzssSearchMethod( int, int, int, byte[] )
-     *              ‚ðŽ‚½‚È‚¢ê‡
+     *              LzssSearchMethodClassName ï¿½Å—^ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Nï¿½ï¿½ï¿½Xï¿½ï¿½
+     *              ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ LzssSearchMethod( int, int, int, byte[] )
+     *              ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡
      */
-    public LzssOutputStream( PostLzssEncoder encoder, 
+    public LzssOutputStream( PostLzssEncoder encoder,
                              String   LzssSearchMethodClassName,
                              Object[] LzssSearchMethodExtraArguments ){
 
@@ -307,13 +297,16 @@ public class LzssOutputStream extends OutputStream{
         this.Threshold       = encoder.getThreshold();
 
         this.encoder         = encoder;
-        this.TextBuffer      = new byte[ this.DictionarySize * 2 
+        this.TextBuffer      = new byte[ this.DictionarySize * 2
                                        + this.MaxMatch ];
         this.writtenPos      = this.DictionarySize;
         this.putPos          = this.DictionarySize;
         this.searchPos       = this.DictionarySize;
         this.DictionaryLimit = this.DictionarySize;
         this.lastsearchret   = LzssOutputStream.NEEDSEARCH;
+
+        // memset(text, ' ', dicsiz); from decode() in slide.c
+        Arrays.fill(TextBuffer, (byte)0x20);
 
         Object[] arguments   = new Object[ LzssSearchMethodExtraArguments.length + 4 ];
         arguments[0] = new Integer( this.DictionarySize );
@@ -325,8 +318,8 @@ public class LzssOutputStream extends OutputStream{
         }
 
         try{
-            this.method = (LzssSearchMethod)Factory.createInstance( 
-                            LzssSearchMethodClassName, 
+            this.method = (LzssSearchMethod)Factory.createInstance(
+                            LzssSearchMethodClassName,
                             arguments );                                        //throw ClasNotfoundException, InvocationTargetException, NoSuchMethodException, InstantiationException
         }catch( ClassNotFoundException exception ){
             throw new NoClassDefFoundError( exception.getMessage() );
@@ -350,49 +343,49 @@ public class LzssOutputStream extends OutputStream{
     //  public void write( byte[] buffer, int index, int length )
     //------------------------------------------------------------------
     /**
-     * ˆ³k‹@\‚É1ƒoƒCƒg‚Ìƒf[ƒ^‚ðo—Í‚·‚éB<br>
-     * ŽÀÛ‚ÉPostLzssEncoder ‚Éƒf[ƒ^‚ª“n‚³‚ê‚é‚Ì‚Í 
-     * TextBuffer ‚ª–ž‚½‚³‚ê‚½‚Æ‚«‚©A
-     * flush ‚Å–¾Ž¦“I‚Éo—Í‚ðŽwŽ¦‚µ‚½Žž‚Ì‚ÝB<br>
-     * 
-     * @param data 1ƒoƒCƒg‚Ìƒf[ƒ^
-     * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * ï¿½ï¿½ï¿½kï¿½@ï¿½\ï¿½ï¿½1ï¿½oï¿½Cï¿½gï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½ï¿½B<br>
+     * ï¿½ï¿½ï¿½Û‚ï¿½PostLzssEncoder ï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½
+     * TextBuffer ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½A
+     * flush ï¿½Å–ï¿½ï¿½ï¿½ï¿½Iï¿½Éoï¿½Í‚ï¿½ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ÝB<br>
+     *
+     * @param data 1ï¿½oï¿½Cï¿½gï¿½Ìƒfï¿½[ï¿½^
+     *
+     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
      */
     public void write( int data ) throws IOException {
         this.TextBuffer[ this.writtenPos++ ] = (byte)data;
 
         if( this.TextBuffer.length <= this.writtenPos ){
             this.encode( false );                                               //throws IOException
-            this.slide();                                                       
+            this.slide();
         }
     }
 
     /**
-     * ˆ³k‹@\‚É buffer “à‚Ìƒf[ƒ^‚ð‘S‚Äo—Í‚·‚éB<br>
-     * ŽÀÛ‚ÉPostLzssEncoder ‚Éƒf[ƒ^‚ª“n‚³‚ê‚é‚Ì‚Í 
-     * TextBuffer ‚ª–ž‚½‚³‚ê‚½‚Æ‚«‚©A
-     * flush ‚Å–¾Ž¦“I‚Éo—Í‚ðŽwŽ¦‚µ‚½Žž‚Ì‚ÝB<br>
-     * 
-     * @param buffer ƒf[ƒ^‚ÌŠi”[‚³‚ê‚½ƒoƒbƒtƒ@
-     * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * ï¿½ï¿½ï¿½kï¿½@ï¿½\ï¿½ï¿½ buffer ï¿½ï¿½ï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½Sï¿½Äoï¿½Í‚ï¿½ï¿½ï¿½B<br>
+     * ï¿½ï¿½ï¿½Û‚ï¿½PostLzssEncoder ï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½
+     * TextBuffer ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½A
+     * flush ï¿½Å–ï¿½ï¿½ï¿½ï¿½Iï¿½Éoï¿½Í‚ï¿½ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ÝB<br>
+     *
+     * @param buffer ï¿½fï¿½[ï¿½^ï¿½ÌŠiï¿½[ï¿½ï¿½ï¿½ê‚½ï¿½oï¿½bï¿½tï¿½@
+     *
+     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
      */
     public void write( byte[] buffer ) throws IOException {
         this.write( buffer, 0, buffer.length );                                 //throws IOException
     }
 
     /**
-     * ˆ³k‹@\‚É buffer “à‚Ì index ‚©‚ç lengthƒoƒCƒg‚Ìƒf[ƒ^‚ðo—Í‚·‚éB<br>
-     * ŽÀÛ‚ÉPostLzssEncoder ‚Éƒf[ƒ^‚ª“n‚³‚ê‚é‚Ì‚Í 
-     * TextBuffer ‚ª–ž‚½‚³‚ê‚½‚Æ‚«‚©A
-     * flush ‚Å–¾Ž¦“I‚Éo—Í‚ðŽwŽ¦‚µ‚½Žž‚Ì‚ÝB<br>
-     * 
-     * @param buffer ƒf[ƒ^‚ÌŠi”[‚³‚ê‚½ƒoƒbƒtƒ@
-     * @param index  buffer“àƒf[ƒ^ŠJŽnˆÊ’u
-     * @param length buffer“àƒf[ƒ^‚Ì’·‚³
-     * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * ï¿½ï¿½ï¿½kï¿½@ï¿½\ï¿½ï¿½ buffer ï¿½ï¿½ï¿½ï¿½ index ï¿½ï¿½ï¿½ï¿½ lengthï¿½oï¿½Cï¿½gï¿½Ìƒfï¿½[ï¿½^ï¿½ï¿½ï¿½oï¿½Í‚ï¿½ï¿½ï¿½B<br>
+     * ï¿½ï¿½ï¿½Û‚ï¿½PostLzssEncoder ï¿½Éƒfï¿½[ï¿½^ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ï¿½
+     * TextBuffer ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½A
+     * flush ï¿½Å–ï¿½ï¿½ï¿½ï¿½Iï¿½Éoï¿½Í‚ï¿½ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì‚ÝB<br>
+     *
+     * @param buffer ï¿½fï¿½[ï¿½^ï¿½ÌŠiï¿½[ï¿½ï¿½ï¿½ê‚½ï¿½oï¿½bï¿½tï¿½@
+     * @param index  bufferï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Jï¿½nï¿½Ê’u
+     * @param length bufferï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½Ì’ï¿½ï¿½ï¿½
+     *
+     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
      */
     public void write( byte[] buffer, int index, int length ) throws IOException {
         int pos = index;
@@ -401,13 +394,13 @@ public class LzssOutputStream extends OutputStream{
         while( pos < end ){
             int space = TextBuffer.length - writtenPos;
             if( end - pos < space ){
-                System.arraycopy( buffer, pos, 
-                                  this.TextBuffer, this.writtenPos, 
+                System.arraycopy( buffer, pos,
+                                  this.TextBuffer, this.writtenPos,
                                   end - pos );
                 this.writtenPos += end - pos;
                 pos = end;
             }else{
-                System.arraycopy( buffer, pos, 
+                System.arraycopy( buffer, pos,
                                   this.TextBuffer, this.writtenPos,
                                   space );
                 this.writtenPos += space;
@@ -428,17 +421,17 @@ public class LzssOutputStream extends OutputStream{
     //  public void close()
     //------------------------------------------------------------------
     /**
-     * ˆ³k‹@\‚É‘‚«ž‚Ü‚ê‚½‘S‚Ä‚Ìƒf[ƒ^‚ð
-     * Ú‘±‚³‚ê‚½ PostLzssEncoder ‚Éo—Í‚µA
-     * Ú‘±‚³‚ê‚½ PostLzssEncoder ‚ð flush() ‚·‚éB<br>
-     * ‚±‚Ì‚Æ‚«Ao—Í‚·‚éƒf[ƒ^‚ÌI’[•t‹ß‚Å‚Í
-     * ŒŸõ‚É search() ‚ðŽg—p‚·‚é‚½‚ßˆ³k‘¬“x‚ª’á‰º‚·‚éB
-     * ‚Ü‚½ flush() ‚µ‚È‚¢ê‡‚Æ”ä‚×‚Äˆ³k—¦‚ª•Ï‰»‚·‚éB
-     * ‚±‚ê‚Í flush() ‚µ‚½ˆÊ’u•t‹ß‚Å‚Íƒf[ƒ^ƒpƒ^ƒ“‚ÌŒŸõ‚É
-     * MaxMatch ‚É–ž‚½‚È‚¢ƒf[ƒ^ƒpƒ^ƒ“‚ðŽg—p‚·‚é‚½‚ßA
-     * ŒŸõŒ‹‰Ê‚ª•sŠ®‘S‚É‚È‚é‚½‚ßB
-     * ‚±‚Ìˆ³k—¦‚Ì•Ï‰»‚ÍA‘½‚­‚Ìê‡ˆ³k—¦‚ª­X’á‰º‚·‚é‚¾‚¯‚Å‚ ‚é‚ªA
-     * —á‚¦‚ÎŽŸ‚Ì‚æ‚¤‚ÈƒR[ƒh‚Í LZ ˆ³k‚ð‘S‚­s‚í‚È‚¢B
+     * ï¿½ï¿½ï¿½kï¿½@ï¿½\ï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ê‚½ï¿½Sï¿½Ä‚Ìƒfï¿½[ï¿½^ï¿½ï¿½
+     * ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½ PostLzssEncoder ï¿½Éoï¿½Í‚ï¿½ï¿½A
+     * ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½ PostLzssEncoder ï¿½ï¿½ flush() ï¿½ï¿½ï¿½ï¿½B<br>
+     * ï¿½ï¿½ï¿½Ì‚Æ‚ï¿½ï¿½Aï¿½oï¿½Í‚ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ÌIï¿½[ï¿½tï¿½ß‚Å‚ï¿½
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ search() ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½é‚½ï¿½ßˆï¿½ï¿½kï¿½ï¿½ï¿½xï¿½ï¿½ï¿½á‰ºï¿½ï¿½ï¿½ï¿½B
+     * ï¿½Ü‚ï¿½ flush() ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½Æ”ï¿½×‚Äˆï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½Ï‰ï¿½ï¿½ï¿½ï¿½ï¿½B
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ flush() ï¿½ï¿½ï¿½ï¿½ï¿½Ê’uï¿½tï¿½ß‚Å‚Íƒfï¿½[ï¿½^ï¿½pï¿½^ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ï¿½ï¿½ï¿½
+     * MaxMatch ï¿½É–ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½fï¿½[ï¿½^ï¿½pï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½é‚½ï¿½ßA
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½ï¿½sï¿½ï¿½ï¿½Sï¿½É‚È‚é‚½ï¿½ßB
+     * ï¿½ï¿½ï¿½Ìˆï¿½ï¿½kï¿½ï¿½ï¿½Ì•Ï‰ï¿½ï¿½ÍAï¿½ï¿½ï¿½ï¿½ï¿½Ìê‡ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½á‰ºï¿½ï¿½ï¿½é‚¾ï¿½ï¿½ï¿½Å‚ï¿½ï¿½é‚ªï¿½A
+     * ï¿½á‚¦ï¿½ÎŽï¿½ï¿½Ì‚æ‚¤ï¿½ÈƒRï¿½[ï¿½hï¿½ï¿½ LZ ï¿½ï¿½ï¿½kï¿½ï¿½Sï¿½ï¿½ï¿½sï¿½ï¿½È‚ï¿½ï¿½B
      * <pre>
      *  public void wrongCompress( InputStream in, LzssOutputSteam out ){
      *      int r;
@@ -448,11 +441,11 @@ public class LzssOutputStream extends OutputStream{
      *      }
      *  }
      * </pre>
-     * ‚Ü‚½A‚±‚Ìƒƒ\ƒbƒh‚Í PostLzssEncoder.flush() ‚ðŒÄ‚Ño‚·‚½‚ß
-     * flush() ‚µ‚È‚¢ê‡‚Æ”ä‚×‚ÄAo—Íƒf[ƒ^‚ª•Ï‰»‚·‚é‰Â”\«‚ª‚ ‚éB<br>
-     * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
-     * 
+     * ï¿½Ü‚ï¿½ï¿½Aï¿½ï¿½ï¿½Ìƒï¿½ï¿½\ï¿½bï¿½hï¿½ï¿½ PostLzssEncoder.flush() ï¿½ï¿½ï¿½Ä‚Ñoï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+     * flush() ï¿½ï¿½ï¿½È‚ï¿½ï¿½ê‡ï¿½Æ”ï¿½×‚ÄAï¿½oï¿½Íƒfï¿½[ï¿½^ï¿½ï¿½ï¿½Ï‰ï¿½ï¿½ï¿½ï¿½ï¿½Â”\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B<br>
+     *
+     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
+     *
      * @see PostLzssEncoder#flush()
      */
     public void flush() throws IOException {
@@ -467,12 +460,12 @@ public class LzssOutputStream extends OutputStream{
     }
 
     /**
-     * ‚±‚ÌƒNƒ‰ƒX‚É’™‚¦‚ç‚ê‚½‘S‚Ä‚Ìƒf[ƒ^‚ðÚ‘±‚³‚ê‚½ 
-     * PostLzssEncoder ‚Éo—Í‚µ ‚±‚Ìo—ÍƒXƒgƒŠ[ƒ€‚ÆA
-     * Ú‘±‚³‚ê‚½ƒXƒgƒŠ[ƒ€‚ð•Â‚¶A
-     * Žg—p‚µ‚Ä‚¢‚½ƒŠƒ\[ƒX‚ðŠJ•ú‚·‚éB
-     * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * ï¿½ï¿½ï¿½ÌƒNï¿½ï¿½ï¿½Xï¿½É’ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Sï¿½Ä‚Ìƒfï¿½[ï¿½^ï¿½ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½
+     * PostLzssEncoder ï¿½Éoï¿½Í‚ï¿½ ï¿½ï¿½ï¿½Ìoï¿½ÍƒXï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ÆA
+     * ï¿½Ú‘ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Xï¿½gï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½Â‚ï¿½ï¿½A
+     * ï¿½gï¿½pï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½[ï¿½Xï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+     *
+     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
      */
     public void close() throws IOException {
         while( this.DictionarySize <= this.writtenPos ){
@@ -499,12 +492,12 @@ public class LzssOutputStream extends OutputStream{
     //  private void slide( int position )
     //------------------------------------------------------------------
     /**
-     * TextBuffer ‚É’™‚¦‚ç‚ê‚½ƒf[ƒ^‚ðˆ³k‚µ‚È‚ª‚ç
-     * private•Ï” this.encoder ‚Éo—Í‚·‚éB
-     * 
-     * @return TextBuffer “à‚Ìo—ÍŠ®—¹‚µ‚½ƒf[ƒ^‚ÌI’[ˆÊ’u + 1
-     * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * TextBuffer ï¿½É’ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½
+     * privateï¿½Ïï¿½ this.encoder ï¿½Éoï¿½Í‚ï¿½ï¿½ï¿½B
+     *
+     * @return TextBuffer ï¿½ï¿½ï¿½Ìoï¿½ÍŠï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ÌIï¿½[ï¿½Ê’u + 1
+     *
+     * @exception IOException ï¿½ï¿½ï¿½oï¿½ÍƒGï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡
      */
     private void encode( boolean last ) throws IOException {
 
@@ -513,22 +506,22 @@ public class LzssOutputStream extends OutputStream{
         if( this.searchPos < end ){
 
             //------------------------------------------------------------------
-            //  ‘Oˆ—
+            //  ï¿½Oï¿½ï¿½ï¿½ï¿½
             if( this.lastsearchret == LzssOutputStream.NEEDSEARCH ){
 
                 //------------------------------------------------------------------
-                //  ŒŸõ‹@\‚É–¢“o˜^‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ð“o˜^
+                //  ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½\ï¿½É–ï¿½ï¿½oï¿½^ï¿½Ìƒfï¿½[ï¿½^ï¿½pï¿½^ï¿½ï¿½ï¿½ï¿½oï¿½^
                 while( this.putPos < this.searchPos - 1 ){
                     this.method.put( ++this.putPos );
 
-                    //’¼‘O‚Ì flush() ‚Å put() ‚Å‚«‚È‚©‚Á‚½
-                    //ƒf[ƒ^ƒpƒ^ƒ“‚ð put() ‚µ‚½‚¾‚¯‚Ìê‡‚Í return
+                    //ï¿½ï¿½ï¿½Oï¿½ï¿½ flush() ï¿½ï¿½ put() ï¿½Å‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½
+                    //ï¿½fï¿½[ï¿½^ï¿½pï¿½^ï¿½ï¿½ï¿½ï¿½ put() ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìê‡ï¿½ï¿½ return
                     if( this.DictionarySize * 2 <= this.putPos ){
                         return;
                     }
                 }
 
-                //  lastsearchret ‚ª NEEDSEARCH ‚È‚Ì‚Å searchAndPut ‚ÅŒŸõ‚·‚éB
+                //  lastsearchret ï¿½ï¿½ NEEDSEARCH ï¿½È‚Ì‚ï¿½ searchAndPut ï¿½ÅŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
                 this.lastsearchret = this.method.searchAndPut( this.searchPos );
             }
 
@@ -540,7 +533,7 @@ public class LzssOutputStream extends OutputStream{
             }
 
             //------------------------------------------------------------------
-            //  ƒƒCƒ“ƒ‹[ƒv
+            //  ï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½v
             while( true ){
                 int lastmatchlen = matchlen;
                 int lastmatchoff = this.searchPos - matchpos - 1;
@@ -598,8 +591,8 @@ public class LzssOutputStream extends OutputStream{
         }// if( this.searchPos < end )
 
         //------------------------------------------------------------------
-        //  flush() ê—p
-        //  putPos ‚Í‚»‚Ì‚Ü‚Ü‚Å searchPos ‚Ì‚Ýi‚ß‚éB
+        //  flush() ï¿½ï¿½p
+        //  putPos ï¿½Í‚ï¿½ï¿½Ì‚Ü‚Ü‚ï¿½ searchPos ï¿½Ì‚Ýiï¿½ß‚ï¿½B
         end = Math.min( this.TextBuffer.length  - this.MaxMatch,
                         this.writtenPos );
         if( !last && this.searchPos < end ){
@@ -645,12 +638,12 @@ public class LzssOutputStream extends OutputStream{
 
 
     /**
-     * TextBuffer“à‚Ìposition‚Ü‚Å‚Ìƒf[ƒ^‚ð
-     * ‘O•û‚ÖˆÚ“®‚·‚é
-     * 
-     * @param position ŽŸ‚É TextBuffer“à‚Å
-     *                 DictionarySize ‚ÌˆÊ’u‚É—ˆ‚é‚×‚«
-     *                 —v‘f‚ªŒ»Ý‚ ‚éindex
+     * TextBufferï¿½ï¿½ï¿½ï¿½positionï¿½Ü‚Å‚Ìƒfï¿½[ï¿½^ï¿½ï¿½
+     * ï¿½Oï¿½ï¿½ï¿½ÖˆÚ“ï¿½ï¿½ï¿½ï¿½ï¿½
+     *
+     * @param position ï¿½ï¿½ï¿½ï¿½ TextBufferï¿½ï¿½ï¿½ï¿½
+     *                 DictionarySize ï¿½ÌˆÊ’uï¿½É—ï¿½ï¿½ï¿½×‚ï¿½
+     *                 ï¿½vï¿½fï¿½ï¿½ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½ï¿½index
      */
     private void slide(){
         this.DictionaryLimit = Math.max( 0, this.DictionaryLimit - this.DictionarySize );
@@ -660,7 +653,7 @@ public class LzssOutputStream extends OutputStream{
         if( this.lastsearchret != LzssOutputStream.NEEDSEARCH ){
             int matchlen = LzssOutputStream.getMatchLen( this.lastsearchret );
             int matchpos = LzssOutputStream.getMatchPos( this.lastsearchret );
-            this.lastsearchret = LzssOutputStream.createSearchReturn( 
+            this.lastsearchret = LzssOutputStream.createSearchReturn(
                                     matchlen, matchpos - this.DictionarySize );
         }
 
@@ -680,42 +673,42 @@ public class LzssOutputStream extends OutputStream{
     //  private static final int getMatchPos( int searchret )
     //------------------------------------------------------------------
     /**
-     * search ‚Ì–ß‚è’l‚ð¶¬‚·‚éB
-     * search ‚Íˆê’vˆÊ’u‚ð•Ô‚·‚ªAˆê’v’·‚à“¯Žž‚É•Ô‚µ‚½‚Ù‚¤‚ª
-     * ”ñí‚É•Ö—˜‚Å‚ ‚é‚½‚ßAˆê’vˆÊ’u‚àˆê’v’·‚à•K—v‚Èƒrƒbƒg”‚ª
-     * ­‚È‚¢‚±‚Æ‚ð—˜—p‚µ‚Ä intŒ^‚Å‚â‚èŽæ‚è‚·‚éB
-     * ‚»‚Ì‚½‚ß‚Ì“ˆê‚µ‚½ˆ—‚ð–ñ‘©‚·‚éŠÖ”B
-     * ‚±‚ÌŠÖ”‚Å¶¬‚³‚ê‚½’l‚©‚ç ˆê’vˆÊ’u‚âˆê’v’·‚ðŽæ‚èo‚·Û‚É‚Í
-     * getMatchLenA getMatchPos ‚ðŽg—p‚·‚éB
-     * 
-     * @param matchlen ˆê’v’·
-     * @param matchpos ˆê’vˆÊ’u
-     * 
-     * @return ˆê’v’·‚Æˆê’vˆÊ’u‚Ìî•ñ‚ðŠÜ‚Þsearch‚Ì–ß‚è’l
+     * search ï¿½Ì–ß‚ï¿½lï¿½ð¶ï¿½ï¿½ï¿½ï¿½ï¿½B
+     * search ï¿½Íˆï¿½vï¿½Ê’uï¿½ï¿½Ô‚ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É•Ô‚ï¿½ï¿½ï¿½ï¿½Ù‚ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½É•Ö—ï¿½ï¿½Å‚ï¿½ï¿½é‚½ï¿½ßAï¿½ï¿½vï¿½Ê’uï¿½ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½vï¿½Èƒrï¿½bï¿½gï¿½ï¿½ï¿½ï¿½
+     * ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½Æ‚ð—˜—pï¿½ï¿½ï¿½ï¿½ intï¿½^ï¿½Å‚ï¿½ï¿½ï¿½è‚·ï¿½ï¿½B
+     * ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ß‚Ì“ï¿½ï¿½ê‚µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ñ‘©‚ï¿½ï¿½ï¿½Öï¿½ï¿½B
+     * ï¿½ï¿½ï¿½ÌŠÖï¿½ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½lï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½vï¿½Ê’uï¿½ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½Û‚É‚ï¿½
+     * getMatchLenï¿½A getMatchPos ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ï¿½B
+     *
+     * @param matchlen ï¿½ï¿½vï¿½ï¿½
+     * @param matchpos ï¿½ï¿½vï¿½Ê’u
+     *
+     * @return ï¿½ï¿½vï¿½ï¿½ï¿½Æˆï¿½vï¿½Ê’uï¿½Ìï¿½ï¿½ï¿½ï¿½Ü‚ï¿½searchï¿½Ì–ß‚ï¿½l
      */
     public static final int createSearchReturn( int matchlen, int matchpos ){
         return matchlen << 22 | matchpos;
     }
 
     /**
-     * createSearchReturn ‚Å¶¬‚³‚ê‚½ search‚Ì–ß‚è’l‚©‚ç
-     * ˆê’v’·‚ðŽæ‚èo‚·B
-     * 
-     * @param searchret search ‚Ì–ß‚è’l
-     * 
-     * @return ˆê’v’·
+     * createSearchReturn ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ searchï¿½Ì–ß‚ï¿½lï¿½ï¿½ï¿½ï¿½
+     * ï¿½ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½B
+     *
+     * @param searchret search ï¿½Ì–ß‚ï¿½l
+     *
+     * @return ï¿½ï¿½vï¿½ï¿½
      */
     public static final int getMatchLen( int searchret ){
         return searchret >> 22;
     }
 
     /**
-     * createSearchReturn ‚Å¶¬‚³‚ê‚½ search‚Ì–ß‚è’l‚©‚ç
-     * ˆê’vˆÊ’u‚ðŽæ‚èo‚·B
-     * 
-     * @param searchret search ‚Ì–ß‚è’l
-     * 
-     * @return ˆê’vˆÊ’u
+     * createSearchReturn ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ searchï¿½Ì–ß‚ï¿½lï¿½ï¿½ï¿½ï¿½
+     * ï¿½ï¿½vï¿½Ê’uï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½B
+     *
+     * @param searchret search ï¿½Ì–ß‚ï¿½l
+     *
+     * @return ï¿½ï¿½vï¿½Ê’u
      */
     public static final int getMatchPos( int searchret ){
         if( 0 <= searchret ) return searchret & 0x3FFFFF;
