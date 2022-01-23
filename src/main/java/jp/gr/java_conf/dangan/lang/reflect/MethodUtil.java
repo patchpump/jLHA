@@ -6,42 +6,38 @@
  * 
  * Copyright (C) 2002  Michel Ishizuka  All rights reserved.
  * 
- * �ȉ��̏����ɓ��ӂ���Ȃ�΃\�[�X�ƃo�C�i���`���̍Ĕz�z�Ǝg�p��
- * �ύX�̗L���ɂ�����炸������B
+ * 以下の条件に同意するならばソースとバイナリ形式の再配布と使用を
+ * 変更の有無にかかわらず許可する。
  * 
- * �P�D�\�[�X�R�[�h�̍Ĕz�z�ɂ����Ē��쌠�\���� ���̏����̃��X�g
- *     ����щ��L�̐�������ێ����Ȃ��Ă͂Ȃ�Ȃ��B
+ * １．ソースコードの再配布において著作権表示と この条件のリスト
+ *     および下記の声明文を保持しなくてはならない。
  * 
- * �Q�D�o�C�i���`���̍Ĕz�z�ɂ����Ē��쌠�\���� ���̏����̃��X�g
- *     ����щ��L�̐��������g�p�������������� ���̑��̔z�z������
- *     �܂ގ����ɋL�q���Ȃ���΂Ȃ�Ȃ��B
+ * ２．バイナリ形式の再配布において著作権表示と この条件のリスト
+ *     および下記の声明文を使用説明書もしくは その他の配布物内に
+ *     含む資料に記述しなければならない。
  * 
- * ���̃\�t�g�E�F�A�͐Β˔���ڂɂ���Ė��ۏ؂Œ񋟂���A����̖�
- * �I��B���ł���Ƃ����ۏ؁A���i���l���L��Ƃ����ۏ؂ɂƂǂ܂炸�A
- * �����Ȃ閾���I����шÎ��I�ȕۏ؂����Ȃ��B
- * �Β˔���ڂ� ���̃\�t�g�E�F�A�̎g�p�ɂ�钼�ړI�A�ԐړI�A����
- * �I�A����ȁA�T�^�I�ȁA���邢�͕K�R�I�ȑ��Q(�g�p�ɂ��f�[�^��
- * �����A�Ɩ��̒��f�〈���܂�Ă������v�̈⎸�A��֐��i��������
- * �T�[�r�X�̓�������l�����邪�A�����Ă��ꂾ���Ɍ��肳��Ȃ�
- * ���Q)�ɑ΂��āA�����Ȃ鎖�Ԃ̌����ƂȂ����Ƃ��Ă��A�_���̐�
- * �C�△�ߎ��ӔC���܂� �����Ȃ�ӔC�����낤�Ƃ��A���Ƃ����ꂪ�s
- * ���s�ׂ̂��߂ł������Ƃ��Ă��A�܂��͂��̂悤�ȑ��Q�̉\������
- * ������Ă����Ƃ��Ă���؂̐ӔC�𕉂�Ȃ����̂Ƃ���B
+ * このソフトウェアは石塚美珠瑠によって無保証で提供され、特定の目
+ * 的を達成できるという保証、商品価値が有るという保証にとどまらず、
+ * いかなる明示的および暗示的な保証もしない。
+ * 石塚美珠瑠は このソフトウェアの使用による直接的、間接的、偶発
+ * 的、特殊な、典型的な、あるいは必然的な損害(使用によるデータの
+ * 損失、業務の中断や見込まれていた利益の遺失、代替製品もしくは
+ * サービスの導入費等が考えられるが、決してそれだけに限定されない
+ * 損害)に対して、いかなる事態の原因となったとしても、契約上の責
+ * 任や無過失責任を含む いかなる責任があろうとも、たとえそれが不
+ * 正行為のためであったとしても、またはそのような損害の可能性が報
+ * 告されていたとしても一切の責任を負わないものとする。
  */
 
 package jp.gr.java_conf.dangan.lang.reflect;
 
+import java.lang.reflect.InvocationTargetException;
 //import classes and interfaces
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-//import exceptions
-import java.lang.ClassNotFoundException;
-import java.lang.NoSuchMethodException;
-import java.lang.reflect.InvocationTargetException;
-
 /**
- * ���\�b�h�Ɋւ��郆�[�e�B���e�B�N���X�B
+ * メソッドに関するユーティリティクラス。
  * 
  * <pre>
  * -- revision history --
@@ -64,8 +60,8 @@ public class MethodUtil{
     //  private MethodUtil()
     //------------------------------------------------------------------
     /**
-     * �f�t�H���g�R���X�g���N�^�B
-     * �g�p�s�B
+     * デフォルトコンストラクタ。
+     * 使用不可。
      */
     private MethodUtil(){  }
 
@@ -78,21 +74,21 @@ public class MethodUtil{
     //  public static Object invoke( Object obj, String name, Object[] args )
     //------------------------------------------------------------------
     /**
-     * �C���X�^���Xobj�� name�Ƃ������O��
-     * ���\�b�h��args�������Ƃ��Ď��s����B
+     * インスタンスobjの nameという名前の
+     * メソッドをargsを引数として実行する。
      * 
-     * @param obj  �C���X�^���X
-     * @param name ���\�b�h��
-     * @param args �����̔z��
+     * @param obj  インスタンス
+     * @param name メソッド名
+     * @param args 引数の配列
      * 
-     * @return �߂�l
+     * @return 戻り値
      * 
      * @exception InvocationTargetException
-     *                 �R���X�g���N�^�ŗ�O�����������ꍇ
+     *                 コンストラクタで例外が発生した場合
      * 
      * @exception NoSuchMethodException
-     *                 args �������Ɏ��� name �Ƃ������O��
-     *                 �C���X�^���X���\�b�h��������Ȃ������ꍇ�B
+     *                 args を引数に取れる name という名前の
+     *                 インスタンスメソッドが見つからなかった場合。
      */
     public static Object invoke( Object obj, String name, Object[] args ) 
                                               throws InvocationTargetException,
@@ -128,24 +124,24 @@ public class MethodUtil{
     //  public static Object invokeStatic( Class type, String name, Object[] args )
     //------------------------------------------------------------------
     /**
-     * classname �Ŏ������N���X�� name�Ƃ������O��
-     * static ���\�b�h��args�������Ƃ��Ď��s����B
+     * classname で示されるクラスの nameという名前の
+     * static メソッドをargsを引数として実行する。
      * 
-     * @param classname �N���X��
-     * @param name      ���\�b�h��
-     * @param args      �����̔z��
+     * @param classname クラス名
+     * @param name      メソッド名
+     * @param args      引数の配列
      * 
-     * @return �߂�l
+     * @return 戻り値
      * 
      * @exception ClassNotFoundException
-     *                 classname �̃N���X��������Ȃ������ꍇ
+     *                 classname のクラスが見つからなかった場合
      * 
      * @exception InvocationTargetException
-     *                 �R���X�g���N�^�ŗ�O�����������ꍇ
+     *                 コンストラクタで例外が発生した場合
      * 
      * @exception NoSuchMethodException
-     *                 args �������Ɏ��� name �Ƃ������O��
-     *                 �C���X�^���X���\�b�h��������Ȃ������ꍇ�B
+     *                 args を引数に取れる name という名前の
+     *                 インスタンスメソッドが見つからなかった場合。
      */
     public static Object invokeStatic( String   classname, 
                                        String   name, 
@@ -159,21 +155,21 @@ public class MethodUtil{
     }
 
     /**
-     * type �Ŏ������N���X�� name�Ƃ������O��
-     * static ���\�b�h��args�������Ƃ��Ď��s����B
+     * type で示されるクラスの nameという名前の
+     * static メソッドをargsを引数として実行する。
      * 
-     * @param type �^���
-     * @param name ���\�b�h��
-     * @param args �����̔z��
+     * @param type 型情報
+     * @param name メソッド名
+     * @param args 引数の配列
      * 
-     * @return �߂�l
+     * @return 戻り値
      * 
      * @exception InvocationTargetException
-     *                 �R���X�g���N�^�ŗ�O�����������ꍇ
+     *                 コンストラクタで例外が発生した場合
      * 
      * @exception NoSuchMethodException
-     *                 args �������Ɏ��� name �Ƃ������O��
-     *                 �C���X�^���X���\�b�h��������Ȃ������ꍇ�B
+     *                 args を引数に取れる name という名前の
+     *                 インスタンスメソッドが見つからなかった場合。
      */
     public static Object invokeStatic( Class type, String name, Object[] args ) 
                                               throws InvocationTargetException,
@@ -214,22 +210,22 @@ public class MethodUtil{
     //                                          Object[] args,    boolean all )
     //------------------------------------------------------------------
     /**
-     * classname �Ŏ������N���X�� public �ȃC���X�^���X���\�b�h�̂����A
-     * name �Ƃ������O�� args �� Type.parse ������
-     * �󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * classname で示されるクラスの public なインスタンスメソッドのうち、
+     * name という名前で args を Type.parse した後
+     * 受け入れることができるものを得る。
      * 
-     * @param classname �N���X���B
-     * @param name      �������郁�\�b�h���B
-     * @param args      �����z��B
-     *                  null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *                  Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *                  �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
+     * @param classname クラス名。
+     * @param name      検索するメソッド名。
+     * @param args      引数配列。
+     *                  null を含めても良いが、null を使用した場合は
+     *                  Object のサブクラスであれば全てマッチしてしまうため、
+     *                  目的のメソッド以外のものが見つかる可能性がある。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      * 
      * @exception ClassNotFoundException
-     *                 classname �Ŏ������N���X�����݂��Ȃ��ꍇ
+     *                 classname で示されるクラスが存在しない場合
      */
     public static Method getInstanceMethod( String   classname,
                                             String   name,
@@ -242,19 +238,19 @@ public class MethodUtil{
     }
 
     /**
-     * type �� public �ȃC���X�^���X���\�b�h�̂����A
-     * name �Ƃ������O�� args �� Type.parse ������
-     * �󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * type の public なインスタンスメソッドのうち、
+     * name という名前で args を Type.parse した後
+     * 受け入れることができるものを得る。
      * 
-     * @param type �^���B
-     * @param name �������郁�\�b�h���B
-     * @param args �����z��B
-     *             null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *             Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *             �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
+     * @param type 型情報。
+     * @param name 検索するメソッド名。
+     * @param args 引数配列。
+     *             null を含めても良いが、null を使用した場合は
+     *             Object のサブクラスであれば全てマッチしてしまうため、
+     *             目的のメソッド以外のものが見つかる可能性がある。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      */
     public static Method getInstanceMethod( Class    type,
                                             String   name,
@@ -263,25 +259,25 @@ public class MethodUtil{
     }
 
     /**
-     * classname �Ŏ������N���X�� �C���X�^���X���\�b�h�̂����A
-     * name �Ƃ������O�� args �� Type.parse ������
-     * �󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * classname で示されるクラスの インスタンスメソッドのうち、
+     * name という名前で args を Type.parse した後
+     * 受け入れることができるものを得る。
      * 
-     * @param classname �N���X���B
-     * @param name      �������郁�\�b�h���B
-     * @param args      �����z��B
-     *                  null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *                  Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *                  �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
-     * @param all       public �̃��\�b�h�݂̂���������Ȃ� false�B
-     *                  public, protected, private, �p�b�P�[�W�v���C�x�[�g��
-     *                  �S�Ẵ��\�b�h����������Ȃ� true�B
+     * @param classname クラス名。
+     * @param name      検索するメソッド名。
+     * @param args      引数配列。
+     *                  null を含めても良いが、null を使用した場合は
+     *                  Object のサブクラスであれば全てマッチしてしまうため、
+     *                  目的のメソッド以外のものが見つかる可能性がある。
+     * @param all       public のメソッドのみを検索するなら false。
+     *                  public, protected, private, パッケージプライベートの
+     *                  全てのメソッドを検索するなら true。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      * 
      * @exception ClassNotFoundException
-     *                 classname �Ŏ������N���X�����݂��Ȃ��ꍇ
+     *                 classname で示されるクラスが存在しない場合
      */
     public static Method getInstanceMethod( String   classname,
                                             String   name,
@@ -295,21 +291,21 @@ public class MethodUtil{
     }
 
     /**
-     * type �� �C���X�^���X���\�b�h�̂����Aname �Ƃ������O�� args ��
-     * Type.parse ������ �󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * type の インスタンスメソッドのうち、name という名前で args を
+     * Type.parse した後 受け入れることができるものを得る。
      * 
-     * @param type �^���B 
-     * @param name �������郁�\�b�h���B
-     * @param args �����z��B
-     *             null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *             Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *             �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
-     * @param all  public �̃��\�b�h�݂̂���������Ȃ� false�B
-     *             public, protected, private, �p�b�P�[�W�v���C�x�[�g��
-     *             �S�Ẵ��\�b�h����������Ȃ� true�B
+     * @param type 型情報。 
+     * @param name 検索するメソッド名。
+     * @param args 引数配列。
+     *             null を含めても良いが、null を使用した場合は
+     *             Object のサブクラスであれば全てマッチしてしまうため、
+     *             目的のメソッド以外のものが見つかる可能性がある。
+     * @param all  public のメソッドのみを検索するなら false。
+     *             public, protected, private, パッケージプライベートの
+     *             全てのメソッドを検索するなら true。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      */
     public static Method getInstanceMethod( Class    type,
                                             String   name,
@@ -356,21 +352,21 @@ public class MethodUtil{
     //                String name,   Object[] args,    boolean all )
     //------------------------------------------------------------------
     /**
-     * classname �Ŏ������N���X�� public �ȃC���X�^���X���\�b�h�̂����A
-     * name �Ƃ������O�� args �� ���ڎ󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * classname で示されるクラスの public なインスタンスメソッドのうち、
+     * name という名前で args を 直接受け入れることができるものを得る。
      * 
-     * @param classname �N���X���B
-     * @param name      �������郁�\�b�h���B
-     * @param args      �����z��B
-     *                  null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *                  Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *                  �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
+     * @param classname クラス名。
+     * @param name      検索するメソッド名。
+     * @param args      引数配列。
+     *                  null を含めても良いが、null を使用した場合は
+     *                  Object のサブクラスであれば全てマッチしてしまうため、
+     *                  目的のメソッド以外のものが見つかる可能性がある。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      * 
      * @exception ClassNotFoundException
-     *                 classname �Ŏ������N���X�����݂��Ȃ��ꍇ
+     *                 classname で示されるクラスが存在しない場合
      */
     public static Method getMatchFullInstanceMethod( String   classname,
                                                      String   name,
@@ -384,18 +380,18 @@ public class MethodUtil{
     }
 
     /**
-     * type �� public �ȃC���X�^���X���\�b�h�̂����A
-     * name �Ƃ������O�� args �𒼐ڎ󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * type の public なインスタンスメソッドのうち、
+     * name という名前で args を直接受け入れることができるものを得る。
      * 
-     * @param type �^���B
-     * @param name �������郁�\�b�h���B
-     * @param args �����z��B
-     *             null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *             Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *             �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
+     * @param type 型情報。
+     * @param name 検索するメソッド名。
+     * @param args 引数配列。
+     *             null を含めても良いが、null を使用した場合は
+     *             Object のサブクラスであれば全てマッチしてしまうため、
+     *             目的のメソッド以外のものが見つかる可能性がある。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      */
     public static Method getMatchFullInstanceMethod( Class    type,
                                                      String   name,
@@ -404,24 +400,24 @@ public class MethodUtil{
     }
 
     /**
-     * classname �Ŏ������N���X�� �C���X�^���X���\�b�h�̂����A
-     * name �Ƃ������O�� args �𒼐ڎ󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * classname で示されるクラスの インスタンスメソッドのうち、
+     * name という名前で args を直接受け入れることができるものを得る。
      * 
-     * @param classname �N���X���B
-     * @param name      �������郁�\�b�h���B
-     * @param args      �����z��B
-     *                  null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *                  Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *                  �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
-     * @param all       public �̃��\�b�h�݂̂���������Ȃ� false�B
-     *                  public, protected, private, �p�b�P�[�W�v���C�x�[�g��
-     *                  �S�Ẵ��\�b�h����������Ȃ� true�B
+     * @param classname クラス名。
+     * @param name      検索するメソッド名。
+     * @param args      引数配列。
+     *                  null を含めても良いが、null を使用した場合は
+     *                  Object のサブクラスであれば全てマッチしてしまうため、
+     *                  目的のメソッド以外のものが見つかる可能性がある。
+     * @param all       public のメソッドのみを検索するなら false。
+     *                  public, protected, private, パッケージプライベートの
+     *                  全てのメソッドを検索するなら true。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      * 
      * @exception ClassNotFoundException
-     *                 classname �Ŏ������N���X�����݂��Ȃ��ꍇ
+     *                 classname で示されるクラスが存在しない場合
      */
     public static Method getMatchFullInstanceMethod( String   classname,
                                                      String   name,
@@ -437,21 +433,21 @@ public class MethodUtil{
 
 
     /**
-     * type �� �C���X�^���X���\�b�h�̂����Aname �Ƃ������O�� 
-     * args �𒼐ڎ󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * type の インスタンスメソッドのうち、name という名前で 
+     * args を直接受け入れることができるものを得る。
      * 
-     * @param type �^���B 
-     * @param name �������郁�\�b�h���B
-     * @param args �����z��B
-     *             null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *             Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *             �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
-     * @param all  public �̃��\�b�h�݂̂���������Ȃ� false�B
-     *             public, protected, private, �p�b�P�[�W�v���C�x�[�g��
-     *             �S�Ẵ��\�b�h����������Ȃ� true�B
+     * @param type 型情報。 
+     * @param name 検索するメソッド名。
+     * @param args 引数配列。
+     *             null を含めても良いが、null を使用した場合は
+     *             Object のサブクラスであれば全てマッチしてしまうため、
+     *             目的のメソッド以外のものが見つかる可能性がある。
+     * @param all  public のメソッドのみを検索するなら false。
+     *             public, protected, private, パッケージプライベートの
+     *             全てのメソッドを検索するなら true。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      */
     public static Method getMatchFullInstanceMethod( Class    type,
                                                      String   name,
@@ -486,22 +482,22 @@ public class MethodUtil{
     //                                        Object[] args,    boolean all )
     //------------------------------------------------------------------
     /**
-     * classname �Ŏ������N���X�� public static ���\�b�h�̂����A
-     * name �Ƃ������O�� args �� Type.parse ������
-     * �󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * classname で示されるクラスの public static メソッドのうち、
+     * name という名前で args を Type.parse した後
+     * 受け入れることができるものを得る。
      * 
-     * @param classname �N���X���B
-     * @param name      �������郁�\�b�h���B
-     * @param args      �����z��B
-     *                  null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *                  Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *                  �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
+     * @param classname クラス名。
+     * @param name      検索するメソッド名。
+     * @param args      引数配列。
+     *                  null を含めても良いが、null を使用した場合は
+     *                  Object のサブクラスであれば全てマッチしてしまうため、
+     *                  目的のメソッド以外のものが見つかる可能性がある。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      * 
      * @exception ClassNotFoundException
-     *                 classname �Ŏ������N���X�����݂��Ȃ��ꍇ
+     *                 classname で示されるクラスが存在しない場合
      */
     public static Method getStaticMethod( String   classname,
                                           String   name,
@@ -514,19 +510,19 @@ public class MethodUtil{
     }
 
     /**
-     * type �� public static�ȃ��\�b�h�̂����A
-     * name �Ƃ������O�� args �� Type.parse ������
-     * �󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * type の public staticなメソッドのうち、
+     * name という名前で args を Type.parse した後
+     * 受け入れることができるものを得る。
      * 
-     * @param type �^���B
-     * @param name �������郁�\�b�h���B
-     * @param args �����z��B
-     *             null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *             Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *             �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
+     * @param type 型情報。
+     * @param name 検索するメソッド名。
+     * @param args 引数配列。
+     *             null を含めても良いが、null を使用した場合は
+     *             Object のサブクラスであれば全てマッチしてしまうため、
+     *             目的のメソッド以外のものが見つかる可能性がある。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      */
     public static Method getStaticMethod( Class    type,
                                           String   name,
@@ -535,25 +531,25 @@ public class MethodUtil{
     }
 
     /**
-     * classname �Ŏ������N���X�� static ���\�b�h�̂����A
-     * name �Ƃ������O�� args �� Type.parse ������
-     * �󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * classname で示されるクラスの static メソッドのうち、
+     * name という名前で args を Type.parse した後
+     * 受け入れることができるものを得る。
      * 
-     * @param classname �N���X���B
-     * @param name      �������郁�\�b�h���B
-     * @param args      �����z��B
-     *                  null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *                  Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *                  �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
-     * @param all       public �̃��\�b�h�݂̂���������Ȃ� false�B
-     *                  public, protected, private, �p�b�P�[�W�v���C�x�[�g��
-     *                  �S�Ẵ��\�b�h����������Ȃ� true�B
+     * @param classname クラス名。
+     * @param name      検索するメソッド名。
+     * @param args      引数配列。
+     *                  null を含めても良いが、null を使用した場合は
+     *                  Object のサブクラスであれば全てマッチしてしまうため、
+     *                  目的のメソッド以外のものが見つかる可能性がある。
+     * @param all       public のメソッドのみを検索するなら false。
+     *                  public, protected, private, パッケージプライベートの
+     *                  全てのメソッドを検索するなら true。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      * 
      * @exception ClassNotFoundException
-     *                 classname �Ŏ������N���X�����݂��Ȃ��ꍇ
+     *                 classname で示されるクラスが存在しない場合
      */
     public static Method getStaticMethod( String   classname,
                                           String   name,
@@ -567,21 +563,21 @@ public class MethodUtil{
     }
 
     /**
-     * type �� static ���\�b�h�̂����Aname �Ƃ������O�� args ��
-     * Type.parse ������ �󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * type の static メソッドのうち、name という名前で args を
+     * Type.parse した後 受け入れることができるものを得る。
      * 
-     * @param type �^���B 
-     * @param name �������郁�\�b�h���B
-     * @param args �����z��B
-     *             null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *             Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *             �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
-     * @param all  public �̃��\�b�h�݂̂���������Ȃ� false�B
-     *             public, protected, private, �p�b�P�[�W�v���C�x�[�g��
-     *             �S�Ẵ��\�b�h����������Ȃ� true�B
+     * @param type 型情報。 
+     * @param name 検索するメソッド名。
+     * @param args 引数配列。
+     *             null を含めても良いが、null を使用した場合は
+     *             Object のサブクラスであれば全てマッチしてしまうため、
+     *             目的のメソッド以外のものが見つかる可能性がある。
+     * @param all  public のメソッドのみを検索するなら false。
+     *             public, protected, private, パッケージプライベートの
+     *             全てのメソッドを検索するなら true。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      */
     public static Method getStaticMethod( Class    type,
                                           String   name,
@@ -628,21 +624,21 @@ public class MethodUtil{
     //                String name,   Object[] args,    boolean all )
     //------------------------------------------------------------------
     /**
-     * classname �Ŏ������N���X�� public static ���\�b�h�̂����A
-     * name �Ƃ������O�� args �� ���ڎ󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * classname で示されるクラスの public static メソッドのうち、
+     * name という名前で args を 直接受け入れることができるものを得る。
      * 
-     * @param classname �N���X���B
-     * @param name      �������郁�\�b�h���B
-     * @param args      �����z��B
-     *                  null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *                  Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *                  �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
+     * @param classname クラス名。
+     * @param name      検索するメソッド名。
+     * @param args      引数配列。
+     *                  null を含めても良いが、null を使用した場合は
+     *                  Object のサブクラスであれば全てマッチしてしまうため、
+     *                  目的のメソッド以外のものが見つかる可能性がある。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      * 
      * @exception ClassNotFoundException
-     *                 classname �Ŏ������N���X�����݂��Ȃ��ꍇ
+     *                 classname で示されるクラスが存在しない場合
      */
     public static Method getMatchFullStaticMethod( String   classname,
                                                    String   name,
@@ -655,18 +651,18 @@ public class MethodUtil{
     }
 
     /**
-     * type �� public static�ȃ��\�b�h�̂����A
-     * name �Ƃ������O�� args �𒼐ڎ󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * type の public staticなメソッドのうち、
+     * name という名前で args を直接受け入れることができるものを得る。
      * 
-     * @param type �^���B
-     * @param name �������郁�\�b�h���B
-     * @param args �����z��B
-     *             null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *             Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *             �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
+     * @param type 型情報。
+     * @param name 検索するメソッド名。
+     * @param args 引数配列。
+     *             null を含めても良いが、null を使用した場合は
+     *             Object のサブクラスであれば全てマッチしてしまうため、
+     *             目的のメソッド以外のものが見つかる可能性がある。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      */
     public static Method getMatchFullStaticMethod( Class    type,
                                                    String   name,
@@ -675,24 +671,24 @@ public class MethodUtil{
     }
 
     /**
-     * classname �Ŏ������N���X�� static ���\�b�h�̂����A
-     * name �Ƃ������O�� args �𒼐ڎ󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * classname で示されるクラスの static メソッドのうち、
+     * name という名前で args を直接受け入れることができるものを得る。
      * 
-     * @param classname �N���X���B
-     * @param name      �������郁�\�b�h���B
-     * @param args      �����z��B
-     *                  null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *                  Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *                  �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
-     * @param all       public �̃��\�b�h�݂̂���������Ȃ� false�B
-     *                  public, protected, private, �p�b�P�[�W�v���C�x�[�g��
-     *                  �S�Ẵ��\�b�h����������Ȃ� true�B
+     * @param classname クラス名。
+     * @param name      検索するメソッド名。
+     * @param args      引数配列。
+     *                  null を含めても良いが、null を使用した場合は
+     *                  Object のサブクラスであれば全てマッチしてしまうため、
+     *                  目的のメソッド以外のものが見つかる可能性がある。
+     * @param all       public のメソッドのみを検索するなら false。
+     *                  public, protected, private, パッケージプライベートの
+     *                  全てのメソッドを検索するなら true。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      * 
      * @exception ClassNotFoundException
-     *                 classname �Ŏ������N���X�����݂��Ȃ��ꍇ
+     *                 classname で示されるクラスが存在しない場合
      */
     public static Method getMatchFullStaticMethod( String   classname,
                                                    String   name,
@@ -707,21 +703,21 @@ public class MethodUtil{
 
 
     /**
-     * type �� static ���\�b�h�̂����Aname �Ƃ������O�� 
-     * args �𒼐ڎ󂯓���邱�Ƃ��ł�����̂𓾂�B
+     * type の static メソッドのうち、name という名前で 
+     * args を直接受け入れることができるものを得る。
      * 
-     * @param type �^���B 
-     * @param name �������郁�\�b�h���B
-     * @param args �����z��B
-     *             null ���܂߂Ă��ǂ����Anull ���g�p�����ꍇ��
-     *             Object �̃T�u�N���X�ł���ΑS�ă}�b�`���Ă��܂����߁A
-     *             �ړI�̃��\�b�h�ȊO�̂��̂�������\��������B
-     * @param all  public �̃��\�b�h�݂̂���������Ȃ� false�B
-     *             public, protected, private, �p�b�P�[�W�v���C�x�[�g��
-     *             �S�Ẵ��\�b�h����������Ȃ� true�B
+     * @param type 型情報。 
+     * @param name 検索するメソッド名。
+     * @param args 引数配列。
+     *             null を含めても良いが、null を使用した場合は
+     *             Object のサブクラスであれば全てマッチしてしまうため、
+     *             目的のメソッド以外のものが見つかる可能性がある。
+     * @param all  public のメソッドのみを検索するなら false。
+     *             public, protected, private, パッケージプライベートの
+     *             全てのメソッドを検索するなら true。
      * 
-     * @return args �������Ɏ�邱�Ƃ��ł��� name�Ƃ������O�� ���\�b�h�B
-     *         ������Ȃ���� null�B
+     * @return args を引数に取ることができる nameという名前の メソッド。
+     *         見つからなければ null。
      */
     public static Method getMatchFullStaticMethod( Class    type,
                                                    String   name,

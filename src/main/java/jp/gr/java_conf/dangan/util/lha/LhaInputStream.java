@@ -6,80 +6,74 @@
  * 
  * Copyright (C) 2002  Michel Ishizuka  All rights reserved.
  * 
- * ˆÈ‰º‚ÌğŒ‚É“¯ˆÓ‚·‚é‚È‚ç‚Îƒ\[ƒX‚ÆƒoƒCƒiƒŠŒ`®‚ÌÄ”z•z‚Æg—p‚ğ
- * •ÏX‚Ì—L–³‚É‚©‚©‚í‚ç‚¸‹–‰Â‚·‚éB
+ * ä»¥ä¸‹ã®æ¡ä»¶ã«åŒæ„ã™ã‚‹ãªã‚‰ã°ã‚½ãƒ¼ã‚¹ã¨ãƒã‚¤ãƒŠãƒªå½¢å¼ã®å†é…å¸ƒã¨ä½¿ç”¨ã‚’
+ * å¤‰æ›´ã®æœ‰ç„¡ã«ã‹ã‹ã‚ã‚‰ãšè¨±å¯ã™ã‚‹ã€‚
  * 
- * ‚PDƒ\[ƒXƒR[ƒh‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\¦‚Æ ‚±‚ÌğŒ‚ÌƒŠƒXƒg
- *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ğ•Û‚µ‚È‚­‚Ä‚Í‚È‚ç‚È‚¢B
+ * ï¼‘ï¼ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®å†é…å¸ƒã«ãŠã„ã¦è‘—ä½œæ¨©è¡¨ç¤ºã¨ ã“ã®æ¡ä»¶ã®ãƒªã‚¹ãƒˆ
+ *     ãŠã‚ˆã³ä¸‹è¨˜ã®å£°æ˜æ–‡ã‚’ä¿æŒã—ãªãã¦ã¯ãªã‚‰ãªã„ã€‚
  * 
- * ‚QDƒoƒCƒiƒŠŒ`®‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\¦‚Æ ‚±‚ÌğŒ‚ÌƒŠƒXƒg
- *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ğg—pà–¾‘‚à‚µ‚­‚Í ‚»‚Ì‘¼‚Ì”z•z•¨“à‚É
- *     ŠÜ‚Ş‘—¿‚É‹Lq‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢B
+ * ï¼’ï¼ãƒã‚¤ãƒŠãƒªå½¢å¼ã®å†é…å¸ƒã«ãŠã„ã¦è‘—ä½œæ¨©è¡¨ç¤ºã¨ ã“ã®æ¡ä»¶ã®ãƒªã‚¹ãƒˆ
+ *     ãŠã‚ˆã³ä¸‹è¨˜ã®å£°æ˜æ–‡ã‚’ä½¿ç”¨èª¬æ˜æ›¸ã‚‚ã—ãã¯ ãã®ä»–ã®é…å¸ƒç‰©å†…ã«
+ *     å«ã‚€è³‡æ–™ã«è¨˜è¿°ã—ãªã‘ã‚Œã°ãªã‚‰ãªã„ã€‚
  * 
- * ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚ÍÎ’Ë”üì—Ú‚É‚æ‚Á‚Ä–³•ÛØ‚Å’ñ‹Ÿ‚³‚êA“Á’è‚Ì–Ú
- * “I‚ğ’B¬‚Å‚«‚é‚Æ‚¢‚¤•ÛØA¤•i‰¿’l‚ª—L‚é‚Æ‚¢‚¤•ÛØ‚É‚Æ‚Ç‚Ü‚ç‚¸A
- * ‚¢‚©‚È‚é–¾¦“I‚¨‚æ‚ÑˆÃ¦“I‚È•ÛØ‚à‚µ‚È‚¢B
- * Î’Ë”üì—Ú‚Í ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚Ìg—p‚É‚æ‚é’¼Ú“IAŠÔÚ“IA‹ô”­
- * “IA“Áê‚ÈA“TŒ^“I‚ÈA‚ ‚é‚¢‚Í•K‘R“I‚È‘¹ŠQ(g—p‚É‚æ‚éƒf[ƒ^‚Ì
- * ‘¹¸A‹Æ–±‚Ì’†’f‚âŒ©‚Ü‚ê‚Ä‚¢‚½—˜‰v‚Ìˆâ¸A‘ã‘Ö»•i‚à‚µ‚­‚Í
- * ƒT[ƒrƒX‚Ì“±“ü”ï“™‚ªl‚¦‚ç‚ê‚é‚ªAŒˆ‚µ‚Ä‚»‚ê‚¾‚¯‚ÉŒÀ’è‚³‚ê‚È‚¢
- * ‘¹ŠQ)‚É‘Î‚µ‚ÄA‚¢‚©‚È‚é–‘Ô‚ÌŒ´ˆö‚Æ‚È‚Á‚½‚Æ‚µ‚Ä‚àAŒ_–ñã‚ÌÓ
- * ”C‚â–³‰ß¸Ó”C‚ğŠÜ‚Ş ‚¢‚©‚È‚éÓ”C‚ª‚ ‚ë‚¤‚Æ‚àA‚½‚Æ‚¦‚»‚ê‚ª•s
- * ³sˆ×‚Ì‚½‚ß‚Å‚ ‚Á‚½‚Æ‚µ‚Ä‚àA‚Ü‚½‚Í‚»‚Ì‚æ‚¤‚È‘¹ŠQ‚Ì‰Â”\«‚ª•ñ
- * ‚³‚ê‚Ä‚¢‚½‚Æ‚µ‚Ä‚àˆêØ‚ÌÓ”C‚ğ•‰‚í‚È‚¢‚à‚Ì‚Æ‚·‚éB
+ * ã“ã®ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã¯çŸ³å¡šç¾ç ç‘ ã«ã‚ˆã£ã¦ç„¡ä¿è¨¼ã§æä¾›ã•ã‚Œã€ç‰¹å®šã®ç›®
+ * çš„ã‚’é”æˆã§ãã‚‹ã¨ã„ã†ä¿è¨¼ã€å•†å“ä¾¡å€¤ãŒæœ‰ã‚‹ã¨ã„ã†ä¿è¨¼ã«ã¨ã©ã¾ã‚‰ãšã€
+ * ã„ã‹ãªã‚‹æ˜ç¤ºçš„ãŠã‚ˆã³æš—ç¤ºçš„ãªä¿è¨¼ã‚‚ã—ãªã„ã€‚
+ * çŸ³å¡šç¾ç ç‘ ã¯ ã“ã®ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã®ä½¿ç”¨ã«ã‚ˆã‚‹ç›´æ¥çš„ã€é–“æ¥çš„ã€å¶ç™º
+ * çš„ã€ç‰¹æ®Šãªã€å…¸å‹çš„ãªã€ã‚ã‚‹ã„ã¯å¿…ç„¶çš„ãªæå®³(ä½¿ç”¨ã«ã‚ˆã‚‹ãƒ‡ãƒ¼ã‚¿ã®
+ * æå¤±ã€æ¥­å‹™ã®ä¸­æ–­ã‚„è¦‹è¾¼ã¾ã‚Œã¦ã„ãŸåˆ©ç›Šã®éºå¤±ã€ä»£æ›¿è£½å“ã‚‚ã—ãã¯
+ * ã‚µãƒ¼ãƒ“ã‚¹ã®å°å…¥è²»ç­‰ãŒè€ƒãˆã‚‰ã‚Œã‚‹ãŒã€æ±ºã—ã¦ãã‚Œã ã‘ã«é™å®šã•ã‚Œãªã„
+ * æå®³)ã«å¯¾ã—ã¦ã€ã„ã‹ãªã‚‹äº‹æ…‹ã®åŸå› ã¨ãªã£ãŸã¨ã—ã¦ã‚‚ã€å¥‘ç´„ä¸Šã®è²¬
+ * ä»»ã‚„ç„¡éå¤±è²¬ä»»ã‚’å«ã‚€ ã„ã‹ãªã‚‹è²¬ä»»ãŒã‚ã‚ã†ã¨ã‚‚ã€ãŸã¨ãˆãã‚ŒãŒä¸
+ * æ­£è¡Œç‚ºã®ãŸã‚ã§ã‚ã£ãŸã¨ã—ã¦ã‚‚ã€ã¾ãŸã¯ãã®ã‚ˆã†ãªæå®³ã®å¯èƒ½æ€§ãŒå ±
+ * å‘Šã•ã‚Œã¦ã„ãŸã¨ã—ã¦ã‚‚ä¸€åˆ‡ã®è²¬ä»»ã‚’è² ã‚ãªã„ã‚‚ã®ã¨ã™ã‚‹ã€‚
  */
 
 package jp.gr.java_conf.dangan.util.lha;
 
-//import classes and interfaces
-import java.io.InputStream;
 import java.io.BufferedInputStream;
-import java.util.Properties;
-import jp.gr.java_conf.dangan.io.LimitedInputStream;
-import jp.gr.java_conf.dangan.io.DisconnectableInputStream;
-import jp.gr.java_conf.dangan.util.lha.LhaHeader;
-import jp.gr.java_conf.dangan.util.lha.LhaProperty;
-import jp.gr.java_conf.dangan.util.lha.CompressMethod;
-
 //import exceptions
 import java.io.IOException;
+//import classes and interfaces
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.lang.NullPointerException;
+import java.util.Properties;
 
-import java.lang.Error;
+import jp.gr.java_conf.dangan.io.DisconnectableInputStream;
+import jp.gr.java_conf.dangan.io.LimitedInputStream;
 
 
 /**
- * Ú‘±‚³‚ê‚½ƒXƒgƒŠ[ƒ€‚©‚çLHA‘ŒÉƒf[ƒ^‚ğ“Ç‚İ‚±‚İA
- * ƒGƒ“ƒgƒŠ‚ğ‰ğ“€‚µ‚Â‚Â“Ç‚İ‚Ş‚½‚ß‚Ìƒ†[ƒeƒBƒŠƒeƒBƒNƒ‰ƒXB<br>
- * java.util.zip.ZipInputStream ‚Æ—‚½ƒCƒ“ƒ^[ƒtƒFƒCƒX‚ğ‚Â‚æ‚¤‚Éì‚Á‚½B<br>
- * ‰ó‚ê‚½‘ŒÉ‚Ìˆ—‚ÉŠÖ‚µ‚Ä‚Í‰ó‚ê‚½ƒGƒ“ƒgƒŠˆÈ~‚Ì
- * ‰ó‚ê‚Ä‚¢‚È‚¢ƒGƒ“ƒgƒŠ‚à³í‚É“Ç‚İ‚±‚ß‚È‚¢‰Â”\«‚ª‚ ‚éB<br>
+ * æ¥ç¶šã•ã‚ŒãŸã‚¹ãƒˆãƒªãƒ¼ãƒ ã‹ã‚‰LHAæ›¸åº«ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿ã“ã¿ã€
+ * ã‚¨ãƒ³ãƒˆãƒªã‚’è§£å‡ã—ã¤ã¤èª­ã¿è¾¼ã‚€ãŸã‚ã®ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ã‚¯ãƒ©ã‚¹ã€‚<br>
+ * java.util.zip.ZipInputStream ã¨ä¼¼ãŸã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ã‚¤ã‚¹ã‚’æŒã¤ã‚ˆã†ã«ä½œã£ãŸã€‚<br>
+ * å£Šã‚ŒãŸæ›¸åº«ã®å‡¦ç†ã«é–¢ã—ã¦ã¯å£Šã‚ŒãŸã‚¨ãƒ³ãƒˆãƒªä»¥é™ã®
+ * å£Šã‚Œã¦ã„ãªã„ã‚¨ãƒ³ãƒˆãƒªã‚‚æ­£å¸¸ã«èª­ã¿ã“ã‚ãªã„å¯èƒ½æ€§ãŒã‚ã‚‹ã€‚<br>
  * 
  * <pre>
  * -- revision history --
  * $Log: LhaInputStream.java,v $
  * Revision 1.1.2.1  2003/07/20 13:22:31  dangan
  * [bug fix]
- *     getNextEntry() ‚Å CompressMethod.connectDecoder ‚É 
- *     this.limit ‚ğ“n‚·‚×‚«‚Æ‚±‚ë‚Å this.in ‚ğ“n‚µ‚Ä‚¢‚½B
+ *     getNextEntry() ã§ CompressMethod.connectDecoder ã« 
+ *     this.limit ã‚’æ¸¡ã™ã¹ãã¨ã“ã‚ã§ this.in ã‚’æ¸¡ã—ã¦ã„ãŸã€‚
  *
  * Revision 1.1  2002/12/08 00:00:00  dangan
  * [maintenance]
- *     LhaConstants ‚©‚ç CompressMethod ‚Ö‚ÌƒNƒ‰ƒX–¼‚Ì•ÏX‚É‡‚í‚¹‚ÄC³B
+ *     LhaConstants ã‹ã‚‰ CompressMethod ã¸ã®ã‚¯ãƒ©ã‚¹åã®å¤‰æ›´ã«åˆã‚ã›ã¦ä¿®æ­£ã€‚
  *
  * Revision 1.0  2002/08/05 00:00:00  dangan
  * add to version control
  * [change]
- *     ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚©‚ç ˆø”‚É String encode ‚ğæ‚é‚à‚Ì‚ğ”p~A
- *     Properties ‚ğˆø”‚Éæ‚é‚à‚Ì‚ğ’Ç‰ÁB
- *     ‘ŒÉI’[‚É’B‚µ‚½ê‡‚Í‚»‚êˆÈã“Ç‚İ‚ß‚È‚¢‚æ‚¤‚ÉC³B
- *     available() ‚ÌU‚é•‘‚¢‚ğ java.util.zip.ZipInputStream ‚Æ“¯‚¶‚æ‚¤‚É
- *     ƒGƒ“ƒgƒŠ‚ÌI’[‚É’B‚µ‚Ä‚¢‚È‚¢ê‡‚Í 1 ƒGƒ“ƒgƒŠ‚ÌI’[‚É’B‚µ‚½ê‡‚Í 0 ‚ğ•Ô‚·‚æ‚¤‚É•ÏXB
+ *     ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã‹ã‚‰ å¼•æ•°ã« String encode ã‚’å–ã‚‹ã‚‚ã®ã‚’å»ƒæ­¢ã€
+ *     Properties ã‚’å¼•æ•°ã«å–ã‚‹ã‚‚ã®ã‚’è¿½åŠ ã€‚
+ *     æ›¸åº«çµ‚ç«¯ã«é”ã—ãŸå ´åˆã¯ãã‚Œä»¥ä¸Šèª­ã¿è¾¼ã‚ãªã„ã‚ˆã†ã«ä¿®æ­£ã€‚
+ *     available() ã®æŒ¯ã‚‹èˆã„ã‚’ java.util.zip.ZipInputStream ã¨åŒã˜ã‚ˆã†ã«
+ *     ã‚¨ãƒ³ãƒˆãƒªã®çµ‚ç«¯ã«é”ã—ã¦ã„ãªã„å ´åˆã¯ 1 ã‚¨ãƒ³ãƒˆãƒªã®çµ‚ç«¯ã«é”ã—ãŸå ´åˆã¯ 0 ã‚’è¿”ã™ã‚ˆã†ã«å¤‰æ›´ã€‚
  * [maintenance]
- *     ƒ\[ƒX®”õ
- *     ƒ^ƒu”p~
- *     ƒ‰ƒCƒZƒ“ƒX•¶‚ÌC³
+ *     ã‚½ãƒ¼ã‚¹æ•´å‚™
+ *     ã‚¿ãƒ–å»ƒæ­¢
+ *     ãƒ©ã‚¤ã‚»ãƒ³ã‚¹æ–‡ã®ä¿®æ­£
  *
  * </pre>
  * 
@@ -99,17 +93,17 @@ public class LhaInputStream extends InputStream{
     //  private boolean reachedEndOfArchive
     //------------------------------------------------------------------
     /**
-     * LHA‘ŒÉŒ`®‚Ìƒf[ƒ^‚ğ‹Ÿ‹‹‚·‚éInputStreamB
+     * LHAæ›¸åº«å½¢å¼ã®ãƒ‡ãƒ¼ã‚¿ã‚’ä¾›çµ¦ã™ã‚‹InputStreamã€‚
      */
     private InputStream source;
 
     /**
-     * Šù‚ÉÅ‰‚ÌƒGƒ“ƒgƒŠ‚ğ“Ç‚İ‚ñ‚Å‚¢‚é‚©‚ğ¦‚·B
+     * æ—¢ã«æœ€åˆã®ã‚¨ãƒ³ãƒˆãƒªã‚’èª­ã¿è¾¼ã‚“ã§ã„ã‚‹ã‹ã‚’ç¤ºã™ã€‚
      */
     private boolean alreadyOpenedFirstEnrty;
 
     /**
-     * ‘ŒÉI’[‚É’B‚µ‚½‚©‚ğ¦‚·B
+     * æ›¸åº«çµ‚ç«¯ã«é”ã—ãŸã‹ã‚’ç¤ºã™ã€‚
      */
     private boolean reachedEndOfArchive;
 
@@ -124,20 +118,20 @@ public class LhaInputStream extends InputStream{
     //  private boolean reachedEndOfEntry
     //------------------------------------------------------------------
     /**
-     * LHA‘ŒÉ“à‚Ì‚PƒGƒ“ƒgƒŠ‚Ì‰ğ“€‚³‚ê‚½ƒf[ƒ^
-     * ‚ğ‹Ÿ‹‹‚·‚é InputStreamB
+     * LHAæ›¸åº«å†…ã®ï¼‘ã‚¨ãƒ³ãƒˆãƒªã®è§£å‡ã•ã‚ŒãŸãƒ‡ãƒ¼ã‚¿
+     * ã‚’ä¾›çµ¦ã™ã‚‹ InputStreamã€‚
      */
     private InputStream in;
 
     /**
-     * LHA‘ŒÉ“à‚Ì‚PƒGƒ“ƒgƒŠ‚Ìˆ³k‚³‚ê‚½ƒf[ƒ^
-     * ‚ğ‹Ÿ‹‹‚·‚éLimitedInputStreamB
-     * closeEntry ‚ÉƒXƒLƒbƒv‚·‚é‚½‚ßB
+     * LHAæ›¸åº«å†…ã®ï¼‘ã‚¨ãƒ³ãƒˆãƒªã®åœ§ç¸®ã•ã‚ŒãŸãƒ‡ãƒ¼ã‚¿
+     * ã‚’ä¾›çµ¦ã™ã‚‹LimitedInputStreamã€‚
+     * closeEntry æ™‚ã«ã‚¹ã‚­ãƒƒãƒ—ã™ã‚‹ãŸã‚ã€‚
      */
     private LimitedInputStream limit;
 
     /**
-     * Œ»İˆ—’†‚ÌƒGƒ“ƒgƒŠ‚ÌI’[‚É’B‚µ‚½‚É true ‚ÉƒZƒbƒg‚³‚ê‚éB
+     * ç¾åœ¨å‡¦ç†ä¸­ã®ã‚¨ãƒ³ãƒˆãƒªã®çµ‚ç«¯ã«é”ã—ãŸæ™‚ã« true ã«ã‚»ãƒƒãƒˆã•ã‚Œã‚‹ã€‚
      */
     private boolean reachedEndOfEntry;
 
@@ -149,7 +143,7 @@ public class LhaInputStream extends InputStream{
     //------------------------------------------------------------------
     //  private boolean markReachedEndOfEntry
     //------------------------------------------------------------------
-    /** reachEndOfEntry ‚ÌƒoƒbƒNƒAƒbƒv—p */
+    /** reachEndOfEntry ã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ç”¨ */
     private boolean markReachedEndOfEntry;
 
 
@@ -161,7 +155,7 @@ public class LhaInputStream extends InputStream{
     //  private Properties property
     //------------------------------------------------------------------
     /**
-     * Šeˆ³kŒ`®‚É‘Î‰‚µ‚½•œ†Ší‚Ì¶¬®“™‚ªŠÜ‚Ü‚ê‚éƒvƒƒpƒeƒB
+     * å„åœ§ç¸®å½¢å¼ã«å¯¾å¿œã—ãŸå¾©å·å™¨ã®ç”Ÿæˆå¼ç­‰ãŒå«ã¾ã‚Œã‚‹ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
      */
     private Properties property;
 
@@ -175,17 +169,17 @@ public class LhaInputStream extends InputStream{
     //  private void constructerHelper( InputStream in, Properties property )
     //------------------------------------------------------------------
     /**
-     * ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^B
-     * g—p•s‰ÂB
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
+     * ä½¿ç”¨ä¸å¯ã€‚
      */
     private LhaInputStream(){   }
 
     /**
-     * in ‚©‚ç LHA‘ŒÉ‚Ìƒf[ƒ^‚ğ“Ç‚İæ‚é InputStream ‚ğ\’z‚·‚éB<br>
-     * Šeˆ³kŒ`®‚É‘Î‰‚µ‚½•œ†Ší‚Ì¶¬®“™‚ğ‚ÂƒvƒƒpƒeƒB‚É‚Í
-     * LhaProperty.getProperties() ‚Å“¾‚ç‚ê‚½ƒvƒƒpƒeƒB‚ªg—p‚³‚ê‚éB<br>
+     * in ã‹ã‚‰ LHAæ›¸åº«ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿å–ã‚‹ InputStream ã‚’æ§‹ç¯‰ã™ã‚‹ã€‚<br>
+     * å„åœ§ç¸®å½¢å¼ã«å¯¾å¿œã—ãŸå¾©å·å™¨ã®ç”Ÿæˆå¼ç­‰ã‚’æŒã¤ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã«ã¯
+     * LhaProperty.getProperties() ã§å¾—ã‚‰ã‚ŒãŸãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãŒä½¿ç”¨ã•ã‚Œã‚‹ã€‚<br>
      * 
-     * @param in LHA‘ŒÉŒ`®‚Ìƒf[ƒ^‚ğ‹Ÿ‹‹‚·‚é“ü—ÍƒXƒgƒŠ[ƒ€
+     * @param in LHAæ›¸åº«å½¢å¼ã®ãƒ‡ãƒ¼ã‚¿ã‚’ä¾›çµ¦ã™ã‚‹å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
      * 
      * @see LhaProperty#getProperties()
      */
@@ -200,14 +194,14 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * in ‚©‚ç LHA‘ŒÉ‚Ìƒf[ƒ^‚ğ“Ç‚İæ‚é InputStream‚ğ\’z‚·‚éB<br>
+     * in ã‹ã‚‰ LHAæ›¸åº«ã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿å–ã‚‹ InputStreamã‚’æ§‹ç¯‰ã™ã‚‹ã€‚<br>
      * 
-     * @param in       LHA‘ŒÉŒ`®‚Ìƒf[ƒ^‚ğ‹Ÿ‹‹‚·‚é“ü—ÍƒXƒgƒŠ[ƒ€
-     * @param property Šeˆ³kŒ`®‚É‘Î‰‚µ‚½•œ†Ší‚Ì¶¬®“™‚ªŠÜ‚Ü‚ê‚éƒvƒƒpƒeƒB
+     * @param in       LHAæ›¸åº«å½¢å¼ã®ãƒ‡ãƒ¼ã‚¿ã‚’ä¾›çµ¦ã™ã‚‹å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
+     * @param property å„åœ§ç¸®å½¢å¼ã«å¯¾å¿œã—ãŸå¾©å·å™¨ã®ç”Ÿæˆå¼ç­‰ãŒå«ã¾ã‚Œã‚‹ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
      * 
      * @exception UnsupportedEncodingException
-     *                 property.getProperty( "lha.encoding" ) ‚Å“¾‚ç‚ê‚½
-     *                 ƒGƒ“ƒR[ƒfƒBƒ“ƒO–¼‚ªƒTƒ|[ƒg‚³‚ê‚È‚¢ê‡
+     *                 property.getProperty( "lha.encoding" ) ã§å¾—ã‚‰ã‚ŒãŸ
+     *                 ã‚¨ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°åãŒã‚µãƒãƒ¼ãƒˆã•ã‚Œãªã„å ´åˆ
      */
     public LhaInputStream( InputStream in, Properties property )
                                          throws UnsupportedEncodingException {
@@ -216,13 +210,13 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Ì‰Šú‰»ˆ—‚ğ’S“–‚·‚éƒƒ\ƒbƒhB
+     * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã®åˆæœŸåŒ–å‡¦ç†ã‚’æ‹…å½“ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã€‚
      * 
-     * @param in       LHA‘ŒÉŒ`®‚Ìƒf[ƒ^‚ğ‹Ÿ‹‹‚·‚é“ü—ÍƒXƒgƒŠ[ƒ€
-     * @param property Šeˆ³kŒ`®‚É‘Î‰‚µ‚½•œ†Ší‚Ì¶¬®“™‚ªŠÜ‚Ü‚ê‚éƒvƒƒpƒeƒB
+     * @param in       LHAæ›¸åº«å½¢å¼ã®ãƒ‡ãƒ¼ã‚¿ã‚’ä¾›çµ¦ã™ã‚‹å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
+     * @param property å„åœ§ç¸®å½¢å¼ã«å¯¾å¿œã—ãŸå¾©å·å™¨ã®ç”Ÿæˆå¼ç­‰ãŒå«ã¾ã‚Œã‚‹ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£
      * 
      * @exception UnsupportedEncodingException
-     *               encode ‚ªƒTƒ|[ƒg‚³‚ê‚È‚¢ê‡
+     *               encode ãŒã‚µãƒãƒ¼ãƒˆã•ã‚Œãªã„å ´åˆ
      */
     private void constructerHelper( InputStream in, Properties property )
                                         throws UnsupportedEncodingException {
@@ -233,7 +227,7 @@ public class LhaInputStream extends InputStream{
                 encoding = LhaProperty.getProperty( "lha.encoding" );
             }
 
-            //encoding–¼ƒ`ƒFƒbƒN
+            //encodingåãƒã‚§ãƒƒã‚¯
             encoding.getBytes( encoding );                                      //After Java 1.1 throws UnsupportedEncodingException
 
             if( in.markSupported() ){
@@ -266,13 +260,13 @@ public class LhaInputStream extends InputStream{
     //  public long skip( long length )
     //------------------------------------------------------------------
     /**
-     * Œ»İ‚ÌƒGƒ“ƒgƒŠ‚©‚ç 1ƒoƒCƒg‚Ìƒf[ƒ^‚ğ“Ç‚İ‚ŞB
+     * ç¾åœ¨ã®ã‚¨ãƒ³ãƒˆãƒªã‹ã‚‰ 1ãƒã‚¤ãƒˆã®ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ã€‚
      * 
-     * @return “Ç‚İ‚±‚Ü‚ê‚½ 1ƒoƒCƒg‚Ìƒf[ƒ^B<br>
-     *         Šù‚ÉƒGƒ“ƒgƒŠ‚ÌI’[‚É’B‚µ‚½ê‡‚Í -1
+     * @return èª­ã¿ã“ã¾ã‚ŒãŸ 1ãƒã‚¤ãƒˆã®ãƒ‡ãƒ¼ã‚¿ã€‚<br>
+     *         æ—¢ã«ã‚¨ãƒ³ãƒˆãƒªã®çµ‚ç«¯ã«é”ã—ãŸå ´åˆã¯ -1
      * 
-     * @exception IOException Œ»İ“Ç‚İ‚İ’†‚ÌƒGƒ“ƒgƒŠ‚ª–³‚¢‚©
-     *                        “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException ç¾åœ¨èª­ã¿è¾¼ã¿ä¸­ã®ã‚¨ãƒ³ãƒˆãƒªãŒç„¡ã„ã‹
+     *                        å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public int read() throws IOException {
         if( this.in != null ){
@@ -287,33 +281,33 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * Œ»İ‚ÌƒGƒ“ƒgƒŠ‚©‚ç buffer ‚ğ–‚½‚·‚æ‚¤‚Éƒf[ƒ^‚ğ“Ç‚İ‚ŞB
+     * ç¾åœ¨ã®ã‚¨ãƒ³ãƒˆãƒªã‹ã‚‰ buffer ã‚’æº€ãŸã™ã‚ˆã†ã«ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ã€‚
      * 
-     * @param buffer ƒf[ƒ^‚ğ“Ç‚İ‚Şƒoƒbƒtƒ@
+     * @param buffer ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ãƒãƒƒãƒ•ã‚¡
      * 
-     * @return “Ç‚İ‚±‚Ü‚ê‚½ƒf[ƒ^‚Ì—ÊB<br>
-     *         Šù‚ÉƒGƒ“ƒgƒŠ‚ÌI’[‚É’B‚µ‚½ê‡‚Í -1B
+     * @return èª­ã¿ã“ã¾ã‚ŒãŸãƒ‡ãƒ¼ã‚¿ã®é‡ã€‚<br>
+     *         æ—¢ã«ã‚¨ãƒ³ãƒˆãƒªã®çµ‚ç«¯ã«é”ã—ãŸå ´åˆã¯ -1ã€‚
      * 
-     * @exception IOException Œ»İ“Ç‚İ‚İ’†‚ÌƒGƒ“ƒgƒŠ‚ª–³‚¢‚©
-     *                        “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException ç¾åœ¨èª­ã¿è¾¼ã¿ä¸­ã®ã‚¨ãƒ³ãƒˆãƒªãŒç„¡ã„ã‹
+     *                        å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public int read( byte[] buffer ) throws IOException {
         return this.read( buffer, 0, buffer.length );                           //throws IOException
     }
 
     /**
-     * Œ»İ‚ÌƒGƒ“ƒgƒŠ‚©‚ç buffer ‚Ìindex‚Ö lengthƒoƒCƒg‚Ì
-     * ƒf[ƒ^‚ğ‚ğ“Ç‚İ‚ŞB
+     * ç¾åœ¨ã®ã‚¨ãƒ³ãƒˆãƒªã‹ã‚‰ buffer ã®indexã¸ lengthãƒã‚¤ãƒˆã®
+     * ãƒ‡ãƒ¼ã‚¿ã‚’ã‚’èª­ã¿è¾¼ã‚€ã€‚
      * 
-     * @param buffer ƒf[ƒ^‚ğ“Ç‚İ‚Şƒoƒbƒtƒ@
-     * @param index  buffer“à‚Ìƒf[ƒ^“Ç‚İ‚İŠJnˆÊ’u
-     * @param length “Ç‚İ‚Şƒf[ƒ^—Ê
+     * @param buffer ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ãƒãƒƒãƒ•ã‚¡
+     * @param index  bufferå†…ã®ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿é–‹å§‹ä½ç½®
+     * @param length èª­ã¿è¾¼ã‚€ãƒ‡ãƒ¼ã‚¿é‡
      * 
-     * @return “Ç‚İ‚±‚Ü‚ê‚½ƒf[ƒ^‚Ì—ÊB<br>
-     *         Šù‚ÉƒGƒ“ƒgƒŠ‚ÌI’[‚É’B‚µ‚½ê‡‚Í -1B
+     * @return èª­ã¿ã“ã¾ã‚ŒãŸãƒ‡ãƒ¼ã‚¿ã®é‡ã€‚<br>
+     *         æ—¢ã«ã‚¨ãƒ³ãƒˆãƒªã®çµ‚ç«¯ã«é”ã—ãŸå ´åˆã¯ -1ã€‚
      * 
-     * @exception IOException Œ»İ“Ç‚İ‚İ’†‚ÌƒGƒ“ƒgƒŠ‚ª–³‚¢‚©
-     *                        “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException ç¾åœ¨èª­ã¿è¾¼ã¿ä¸­ã®ã‚¨ãƒ³ãƒˆãƒªãŒç„¡ã„ã‹
+     *                        å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public int read( byte[] buffer, int index, int length ) throws IOException {
         if( this.in != null ){
@@ -328,14 +322,14 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * Œ»İ‚ÌƒGƒ“ƒgƒŠ‚Ìƒf[ƒ^‚ğ length ƒoƒCƒg“Ç‚İ‚Æ‚Î‚·B
+     * ç¾åœ¨ã®ã‚¨ãƒ³ãƒˆãƒªã®ãƒ‡ãƒ¼ã‚¿ã‚’ length ãƒã‚¤ãƒˆèª­ã¿ã¨ã°ã™ã€‚
      * 
-     * @param length “Ç‚İ‚Æ‚Î‚·ƒf[ƒ^—Ê
+     * @param length èª­ã¿ã¨ã°ã™ãƒ‡ãƒ¼ã‚¿é‡
      * 
-     * @return ÀÛ‚É“Ç‚İ‚Æ‚Î‚µ‚½ƒf[ƒ^—Ê
+     * @return å®Ÿéš›ã«èª­ã¿ã¨ã°ã—ãŸãƒ‡ãƒ¼ã‚¿é‡
      * 
-     * @exception IOException Œ»İ“Ç‚İ‚İ’†‚ÌƒGƒ“ƒgƒŠ‚ª–³‚¢‚©
-     *                        “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException ç¾åœ¨èª­ã¿è¾¼ã¿ä¸­ã®ã‚¨ãƒ³ãƒˆãƒªãŒç„¡ã„ã‹
+     *                        å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public long skip( long length ) throws IOException {
         if( this.in != null ){
@@ -367,15 +361,15 @@ public class LhaInputStream extends InputStream{
     //  public boolean markSupported()
     //------------------------------------------------------------------
     /**
-     * Œ»İ“Ç‚İæ‚è’†‚ÌƒGƒ“ƒgƒŠ‚ÌŒ»İˆÊ’u‚Éƒ}[ƒN‚ğİ’è‚µA
-     * reset() ‚Åƒ}[ƒN‚µ‚½“Ç‚İ‚İˆÊ’u‚É–ß‚ê‚é‚æ‚¤‚É‚·‚éB<br>
+     * ç¾åœ¨èª­ã¿å–ã‚Šä¸­ã®ã‚¨ãƒ³ãƒˆãƒªã®ç¾åœ¨ä½ç½®ã«ãƒãƒ¼ã‚¯ã‚’è¨­å®šã—ã€
+     * reset() ã§ãƒãƒ¼ã‚¯ã—ãŸèª­ã¿è¾¼ã¿ä½ç½®ã«æˆ»ã‚Œã‚‹ã‚ˆã†ã«ã™ã‚‹ã€‚<br>
      *
-     * @param readLimit ƒ}[ƒNˆÊ’u‚É–ß‚ê‚éŒÀŠE“Ç‚İ‚İ—ÊB
-     *                  ‚±‚ÌƒoƒCƒg”‚ğ’´‚¦‚Äƒf[ƒ^‚ğ“Ç‚İ‚ñ‚¾ê‡ 
-     *                  reset() ‚Å‚«‚é•ÛØ‚Í‚È‚¢B
+     * @param readLimit ãƒãƒ¼ã‚¯ä½ç½®ã«æˆ»ã‚Œã‚‹é™ç•Œèª­ã¿è¾¼ã¿é‡ã€‚
+     *                  ã“ã®ãƒã‚¤ãƒˆæ•°ã‚’è¶…ãˆã¦ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚“ã å ´åˆ 
+     *                  reset() ã§ãã‚‹ä¿è¨¼ã¯ãªã„ã€‚
      * 
      * @exception IllegalStateException
-     *                  Œ»İ“Ç‚İ‚İ’†‚ÌƒGƒ“ƒgƒŠ‚ª–³‚¢ê‡
+     *                  ç¾åœ¨èª­ã¿è¾¼ã¿ä¸­ã®ã‚¨ãƒ³ãƒˆãƒªãŒç„¡ã„å ´åˆ
      */
     public void mark( int readLimit ){
         if( this.in != null ){
@@ -387,11 +381,11 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * Œ»İ“Ç‚İæ‚è’†‚ÌƒGƒ“ƒgƒŠ‚Ì“Ç‚İ‚İˆÊ’u‚ğÅŒã‚É
-     * mark() ƒƒ\ƒbƒh‚ªŒÄ‚Ño‚³‚ê‚½‚Æ‚«‚ÌˆÊ’u‚Éİ’è‚·‚éB
+     * ç¾åœ¨èª­ã¿å–ã‚Šä¸­ã®ã‚¨ãƒ³ãƒˆãƒªã®èª­ã¿è¾¼ã¿ä½ç½®ã‚’æœ€å¾Œã«
+     * mark() ãƒ¡ã‚½ãƒƒãƒ‰ãŒå‘¼ã³å‡ºã•ã‚ŒãŸã¨ãã®ä½ç½®ã«è¨­å®šã™ã‚‹ã€‚
      * 
-     * @exception IOException Œ»İ“Ç‚İ‚İ’†‚ÌƒGƒ“ƒgƒŠ‚ª–³‚¢‚©
-     *                        “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException ç¾åœ¨èª­ã¿è¾¼ã¿ä¸­ã®ã‚¨ãƒ³ãƒˆãƒªãŒç„¡ã„ã‹
+     *                        å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public void reset() throws IOException {
         if( this.in != null ){
@@ -403,15 +397,15 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * Ú‘±‚³‚ê‚½“ü—ÍƒXƒgƒŠ[ƒ€‚ª mark()‚Æ
-     * reset()‚ğƒTƒ|[ƒg‚·‚é‚©‚ğ“¾‚éB<br>
-     * ƒwƒbƒ_“Ç‚İ‚İ‚É mark/reset ‚ª•K{‚Ì‚½‚ß
-     * ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Å“n‚³‚ê‚½ in ‚ª markSupported() ‚Å 
-     * false ‚ğ•Ô‚·ê‡A‚±‚ÌƒNƒ‰ƒX‚Í in ‚ğ mark/reset ‚ğƒTƒ|[ƒg‚·‚é
-     * BufferedInputStream ‚Åƒ‰ƒbƒv‚·‚éB
-     * ‚»‚Ì‚½‚ßA‚±‚Ìƒƒ\ƒbƒh‚Íí‚É true ‚ğ•Ô‚·B
+     * æ¥ç¶šã•ã‚ŒãŸå…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ãŒ mark()ã¨
+     * reset()ã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹ã‹ã‚’å¾—ã‚‹ã€‚<br>
+     * ãƒ˜ãƒƒãƒ€èª­ã¿è¾¼ã¿æ™‚ã« mark/reset ãŒå¿…é ˆã®ãŸã‚
+     * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã§æ¸¡ã•ã‚ŒãŸ in ãŒ markSupported() ã§ 
+     * false ã‚’è¿”ã™å ´åˆã€ã“ã®ã‚¯ãƒ©ã‚¹ã¯ in ã‚’ mark/reset ã‚’ã‚µãƒãƒ¼ãƒˆã™ã‚‹
+     * BufferedInputStream ã§ãƒ©ãƒƒãƒ—ã™ã‚‹ã€‚
+     * ãã®ãŸã‚ã€ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯å¸¸ã« true ã‚’è¿”ã™ã€‚
      * 
-     * @return í‚É true
+     * @return å¸¸ã« true
      */
     public boolean markSupported(){
         return this.source.markSupported();
@@ -427,13 +421,13 @@ public class LhaInputStream extends InputStream{
     //  public void close()
     //------------------------------------------------------------------
     /**
-     * Œ»İ“Ç‚İæ‚è’†‚ÌƒGƒ“ƒgƒŠ‚ÌI’[‚É’B‚µ‚½‚©‚ğ“¾‚éB<br>
-     * ƒuƒƒbƒN‚µ‚È‚¢‚Å“Ç‚İ‚ß‚éƒf[ƒ^—Ê‚ğ•Ô‚³‚È‚¢–‚É’ˆÓ‚·‚é‚±‚ÆB
+     * ç¾åœ¨èª­ã¿å–ã‚Šä¸­ã®ã‚¨ãƒ³ãƒˆãƒªã®çµ‚ç«¯ã«é”ã—ãŸã‹ã‚’å¾—ã‚‹ã€‚<br>
+     * ãƒ–ãƒ­ãƒƒã‚¯ã—ãªã„ã§èª­ã¿è¾¼ã‚ã‚‹ãƒ‡ãƒ¼ã‚¿é‡ã‚’è¿”ã•ãªã„äº‹ã«æ³¨æ„ã™ã‚‹ã“ã¨ã€‚
      * 
-     * @return Œ»İ“Ç‚İæ‚è’†‚ÌƒGƒ“ƒgƒŠ‚ÌI’[‚É’B‚µ‚½ê‡ 0 ’B‚µ‚Ä‚¢‚È‚¢ê‡ 1
+     * @return ç¾åœ¨èª­ã¿å–ã‚Šä¸­ã®ã‚¨ãƒ³ãƒˆãƒªã®çµ‚ç«¯ã«é”ã—ãŸå ´åˆ 0 é”ã—ã¦ã„ãªã„å ´åˆ 1
      * 
-     * @exception IOException Œ»İ“Ç‚İ‚İ’†‚ÌƒGƒ“ƒgƒŠ‚ª–³‚¢‚©
-     *                        “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException ç¾åœ¨èª­ã¿è¾¼ã¿ä¸­ã®ã‚¨ãƒ³ãƒˆãƒªãŒç„¡ã„ã‹
+     *                        å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      * 
      * @see java.util.zip.ZipInputStream#available()
      */
@@ -446,10 +440,10 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * ‚±‚Ì“ü—ÍƒXƒgƒŠ[ƒ€‚ğ•Â‚¶Ag—p‚µ‚Ä‚¢‚½
-     * ‘S‚Ä‚ÌƒŠƒ\[ƒX‚ğŠJ•ú‚·‚éB
+     * ã“ã®å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’é–‰ã˜ã€ä½¿ç”¨ã—ã¦ã„ãŸ
+     * å…¨ã¦ã®ãƒªã‚½ãƒ¼ã‚¹ã‚’é–‹æ”¾ã™ã‚‹ã€‚
      * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public void close() throws IOException {
         if( this.in != null ){
@@ -473,11 +467,11 @@ public class LhaInputStream extends InputStream{
     //  public void closeEntry()
     //------------------------------------------------------------------
     /**
-     * Ÿ‚ÌƒGƒ“ƒgƒŠ‚ğ‰ğ“€‚µ‚È‚ª‚ç“Ç‚İ‚±‚Ş‚æ‚¤‚ÉƒXƒgƒŠ[ƒ€‚ğİ’è‚·‚éB<br>
+     * æ¬¡ã®ã‚¨ãƒ³ãƒˆãƒªã‚’è§£å‡ã—ãªãŒã‚‰èª­ã¿ã“ã‚€ã‚ˆã†ã«ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’è¨­å®šã™ã‚‹ã€‚<br>
      * 
-     * @return ƒGƒ“ƒgƒŠ‚Ìî•ñ‚ğ‚Â LhaHeader
+     * @return ã‚¨ãƒ³ãƒˆãƒªã®æƒ…å ±ã‚’æŒã¤ LhaHeader
      * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public LhaHeader getNextEntry() throws IOException {
         if( !this.reachedEndOfArchive ){
@@ -514,11 +508,11 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * Ÿ‚ÌƒGƒ“ƒgƒŠ‚ğ‰ğ“€‚µ‚È‚¢‚Å“Ç‚İ‚±‚Ş‚æ‚¤‚ÉƒXƒgƒŠ[ƒ€‚ğİ’è‚·‚éB<br>
+     * æ¬¡ã®ã‚¨ãƒ³ãƒˆãƒªã‚’è§£å‡ã—ãªã„ã§èª­ã¿ã“ã‚€ã‚ˆã†ã«ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’è¨­å®šã™ã‚‹ã€‚<br>
      * 
-     * @return ƒGƒ“ƒgƒŠ‚Ìî•ñ‚ğ‚Â LhaHeader
+     * @return ã‚¨ãƒ³ãƒˆãƒªã®æƒ…å ±ã‚’æŒã¤ LhaHeader
      * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public LhaHeader getNextEntryWithoutExtract() throws IOException {
 
@@ -555,10 +549,10 @@ public class LhaInputStream extends InputStream{
     }
 
     /**
-     * Œ»İ“Ç‚İæ‚è’†‚ÌƒGƒ“ƒgƒŠ‚ğ•Â‚¶A
-     * Ÿ‚ÌƒGƒ“ƒgƒŠ‚ğ“Ç‚İ‚±‚ß‚é‚æ‚¤‚ÉƒXƒgƒŠ[ƒ€‚ğİ’è‚·‚éB
+     * ç¾åœ¨èª­ã¿å–ã‚Šä¸­ã®ã‚¨ãƒ³ãƒˆãƒªã‚’é–‰ã˜ã€
+     * æ¬¡ã®ã‚¨ãƒ³ãƒˆãƒªã‚’èª­ã¿ã“ã‚ã‚‹ã‚ˆã†ã«ã‚¹ãƒˆãƒªãƒ¼ãƒ ã‚’è¨­å®šã™ã‚‹ã€‚
      * 
-     * @exception IOException “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     * @exception IOException å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public void closeEntry() throws IOException {
         if( this.in != null ){

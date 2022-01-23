@@ -6,68 +6,54 @@
  * 
  * Copyright (C) 2002  Michel Ishizuka  All rights reserved.
  * 
- * ˆÈ‰º‚ÌğŒ‚É“¯ˆÓ‚·‚é‚È‚ç‚Îƒ\[ƒX‚ÆƒoƒCƒiƒŠŒ`®‚ÌÄ”z•z‚Æg—p‚ğ
- * •ÏX‚Ì—L–³‚É‚©‚©‚í‚ç‚¸‹–‰Â‚·‚éB
+ * ä»¥ä¸‹ã®æ¡ä»¶ã«åŒæ„ã™ã‚‹ãªã‚‰ã°ã‚½ãƒ¼ã‚¹ã¨ãƒã‚¤ãƒŠãƒªå½¢å¼ã®å†é…å¸ƒã¨ä½¿ç”¨ã‚’
+ * å¤‰æ›´ã®æœ‰ç„¡ã«ã‹ã‹ã‚ã‚‰ãšè¨±å¯ã™ã‚‹ã€‚
  * 
- * ˆÈ‰º‚ÌğŒ‚É“¯ˆÓ‚·‚é‚È‚ç‚Îƒ\[ƒX‚ÆƒoƒCƒiƒŠŒ`®‚ÌÄ”z•z‚Æg—p‚ğ
- * •ÏX‚Ì—L–³‚É‚©‚©‚í‚ç‚¸‹–‰Â‚·‚éB
+ * ä»¥ä¸‹ã®æ¡ä»¶ã«åŒæ„ã™ã‚‹ãªã‚‰ã°ã‚½ãƒ¼ã‚¹ã¨ãƒã‚¤ãƒŠãƒªå½¢å¼ã®å†é…å¸ƒã¨ä½¿ç”¨ã‚’
+ * å¤‰æ›´ã®æœ‰ç„¡ã«ã‹ã‹ã‚ã‚‰ãšè¨±å¯ã™ã‚‹ã€‚
  * 
- * ‚PDƒ\[ƒXƒR[ƒh‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\¦‚Æ ‚±‚ÌğŒ‚ÌƒŠƒXƒg
- *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ğ•Û‚µ‚È‚­‚Ä‚Í‚È‚ç‚È‚¢B
+ * ï¼‘ï¼ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®å†é…å¸ƒã«ãŠã„ã¦è‘—ä½œæ¨©è¡¨ç¤ºã¨ ã“ã®æ¡ä»¶ã®ãƒªã‚¹ãƒˆ
+ *     ãŠã‚ˆã³ä¸‹è¨˜ã®å£°æ˜æ–‡ã‚’ä¿æŒã—ãªãã¦ã¯ãªã‚‰ãªã„ã€‚
  * 
- * ‚QDƒoƒCƒiƒŠŒ`®‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\¦‚Æ ‚±‚ÌğŒ‚ÌƒŠƒXƒg
- *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ğg—pà–¾‘‚à‚µ‚­‚Í ‚»‚Ì‘¼‚Ì”z•z•¨“à‚É
- *     ŠÜ‚Ş‘—¿‚É‹Lq‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢B
+ * ï¼’ï¼ãƒã‚¤ãƒŠãƒªå½¢å¼ã®å†é…å¸ƒã«ãŠã„ã¦è‘—ä½œæ¨©è¡¨ç¤ºã¨ ã“ã®æ¡ä»¶ã®ãƒªã‚¹ãƒˆ
+ *     ãŠã‚ˆã³ä¸‹è¨˜ã®å£°æ˜æ–‡ã‚’ä½¿ç”¨èª¬æ˜æ›¸ã‚‚ã—ãã¯ ãã®ä»–ã®é…å¸ƒç‰©å†…ã«
+ *     å«ã‚€è³‡æ–™ã«è¨˜è¿°ã—ãªã‘ã‚Œã°ãªã‚‰ãªã„ã€‚
  * 
- * ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚ÍÎ’Ë”üì—Ú‚É‚æ‚Á‚Ä–³•ÛØ‚Å’ñ‹Ÿ‚³‚êA“Á’è‚Ì–Ú
- * “I‚ğ’B¬‚Å‚«‚é‚Æ‚¢‚¤•ÛØA¤•i‰¿’l‚ª—L‚é‚Æ‚¢‚¤•ÛØ‚É‚Æ‚Ç‚Ü‚ç‚¸A
- * ‚¢‚©‚È‚é–¾¦“I‚¨‚æ‚ÑˆÃ¦“I‚È•ÛØ‚à‚µ‚È‚¢B
- * Î’Ë”üì—Ú‚Í ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚Ìg—p‚É‚æ‚é’¼Ú“IAŠÔÚ“IA‹ô”­
- * “IA“Áê‚ÈA“TŒ^“I‚ÈA‚ ‚é‚¢‚Í•K‘R“I‚È‘¹ŠQ(g—p‚É‚æ‚éƒf[ƒ^‚Ì
- * ‘¹¸A‹Æ–±‚Ì’†’f‚âŒ©‚Ü‚ê‚Ä‚¢‚½—˜‰v‚Ìˆâ¸A‘ã‘Ö»•i‚à‚µ‚­‚Í
- * ƒT[ƒrƒX‚Ì“±“ü”ï“™‚ªl‚¦‚ç‚ê‚é‚ªAŒˆ‚µ‚Ä‚»‚ê‚¾‚¯‚ÉŒÀ’è‚³‚ê‚È‚¢
- * ‘¹ŠQ)‚É‘Î‚µ‚ÄA‚¢‚©‚È‚é–‘Ô‚ÌŒ´ˆö‚Æ‚È‚Á‚½‚Æ‚µ‚Ä‚àAŒ_–ñã‚ÌÓ
- * ”C‚â–³‰ß¸Ó”C‚ğŠÜ‚Ş ‚¢‚©‚È‚éÓ”C‚ª‚ ‚ë‚¤‚Æ‚àA‚½‚Æ‚¦‚»‚ê‚ª•s
- * ³sˆ×‚Ì‚½‚ß‚Å‚ ‚Á‚½‚Æ‚µ‚Ä‚àA‚Ü‚½‚Í‚»‚Ì‚æ‚¤‚È‘¹ŠQ‚Ì‰Â”\«‚ª•ñ
- * ‚³‚ê‚Ä‚¢‚½‚Æ‚µ‚Ä‚àˆêØ‚ÌÓ”C‚ğ•‰‚í‚È‚¢‚à‚Ì‚Æ‚·‚éB
+ * ã“ã®ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã¯çŸ³å¡šç¾ç ç‘ ã«ã‚ˆã£ã¦ç„¡ä¿è¨¼ã§æä¾›ã•ã‚Œã€ç‰¹å®šã®ç›®
+ * çš„ã‚’é”æˆã§ãã‚‹ã¨ã„ã†ä¿è¨¼ã€å•†å“ä¾¡å€¤ãŒæœ‰ã‚‹ã¨ã„ã†ä¿è¨¼ã«ã¨ã©ã¾ã‚‰ãšã€
+ * ã„ã‹ãªã‚‹æ˜ç¤ºçš„ãŠã‚ˆã³æš—ç¤ºçš„ãªä¿è¨¼ã‚‚ã—ãªã„ã€‚
+ * çŸ³å¡šç¾ç ç‘ ã¯ ã“ã®ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã®ä½¿ç”¨ã«ã‚ˆã‚‹ç›´æ¥çš„ã€é–“æ¥çš„ã€å¶ç™º
+ * çš„ã€ç‰¹æ®Šãªã€å…¸å‹çš„ãªã€ã‚ã‚‹ã„ã¯å¿…ç„¶çš„ãªæå®³(ä½¿ç”¨ã«ã‚ˆã‚‹ãƒ‡ãƒ¼ã‚¿ã®
+ * æå¤±ã€æ¥­å‹™ã®ä¸­æ–­ã‚„è¦‹è¾¼ã¾ã‚Œã¦ã„ãŸåˆ©ç›Šã®éºå¤±ã€ä»£æ›¿è£½å“ã‚‚ã—ãã¯
+ * ã‚µãƒ¼ãƒ“ã‚¹ã®å°å…¥è²»ç­‰ãŒè€ƒãˆã‚‰ã‚Œã‚‹ãŒã€æ±ºã—ã¦ãã‚Œã ã‘ã«é™å®šã•ã‚Œãªã„
+ * æå®³)ã«å¯¾ã—ã¦ã€ã„ã‹ãªã‚‹äº‹æ…‹ã®åŸå› ã¨ãªã£ãŸã¨ã—ã¦ã‚‚ã€å¥‘ç´„ä¸Šã®è²¬
+ * ä»»ã‚„ç„¡éå¤±è²¬ä»»ã‚’å«ã‚€ ã„ã‹ãªã‚‹è²¬ä»»ãŒã‚ã‚ã†ã¨ã‚‚ã€ãŸã¨ãˆãã‚ŒãŒä¸
+ * æ­£è¡Œç‚ºã®ãŸã‚ã§ã‚ã£ãŸã¨ã—ã¦ã‚‚ã€ã¾ãŸã¯ãã®ã‚ˆã†ãªæå®³ã®å¯èƒ½æ€§ãŒå ±
+ * å‘Šã•ã‚Œã¦ã„ãŸã¨ã—ã¦ã‚‚ä¸€åˆ‡ã®è²¬ä»»ã‚’è² ã‚ãªã„ã‚‚ã®ã¨ã™ã‚‹ã€‚
  */
 
 package jp.gr.java_conf.dangan.util.lha;
 
-//import classes and interfaces
-import jp.gr.java_conf.dangan.lang.reflect.Factory;
-import jp.gr.java_conf.dangan.util.lha.HashShort;
-import jp.gr.java_conf.dangan.util.lha.HashMethod;
-import jp.gr.java_conf.dangan.util.lha.LzssOutputStream;
-import jp.gr.java_conf.dangan.util.lha.LzssSearchMethod;
-
-//import exceptions
-import java.io.IOException;
-import java.lang.NoSuchMethodException;
-import java.lang.ClassNotFoundException;
-import java.lang.InstantiationException;
 import java.lang.reflect.InvocationTargetException;
 
-import java.lang.Error;
-import java.lang.NoSuchMethodError;
-import java.lang.InstantiationError;
-import java.lang.NoClassDefFoundError;
+//import classes and interfaces
+import jp.gr.java_conf.dangan.lang.reflect.Factory;
 
 /**
- * ƒnƒbƒVƒ…‚Æ“ñ•ª–Ø‚ğg‚Á‚½ LzssSearchMethod ‚ÌÀ‘•B<br>
+ * ãƒãƒƒã‚·ãƒ¥ã¨äºŒåˆ†æœ¨ã‚’ä½¿ã£ãŸ LzssSearchMethod ã®å®Ÿè£…ã€‚<br>
  * <pre>
- * ƒf[ƒ^ˆ³kƒnƒ“ƒhƒuƒbƒN[‰ü’è‘æ“ñ”Å]
- *        M.ƒlƒ‹ƒ\ƒ“/J.-L.ƒQƒBƒŠ[ ’˜
- *                ”‹Œ´„uERŒû‰p –ó
+ * ãƒ‡ãƒ¼ã‚¿åœ§ç¸®ãƒãƒ³ãƒ‰ãƒ–ãƒƒã‚¯[æ”¹å®šç¬¬äºŒç‰ˆ]
+ *        M.ãƒãƒ«ã‚½ãƒ³/J.-L.ã‚²ã‚£ãƒªãƒ¼ è‘—
+ *                è©åŸå‰›å¿—ãƒ»å±±å£è‹± è¨³
  *                  ISBN4-8101-8605-9
- *                             5728‰~(Å”²‚«,“–•û‚Ìw“ü“–‚Ì‰¿Ši)
+ *                             5728å††(ç¨æŠœã,å½“æ–¹ã®è³¼å…¥å½“æ™‚ã®ä¾¡æ ¼)
  * </pre>
- * ‚ğQl‚É‚µ‚½B<br>
- * “ñ•ª–Ø‚Å‚ÍAÅ’·ˆê’v‚ğŒ©‚Â‚¯‚é‚±‚Æ‚Í‚Å‚«‚é‚ªA
- * Å‚à‹ß‚¢ˆê’v‚ğŒ©‚Â‚¯‚ç‚ê‚é‚Æ‚ÍŒÀ‚ç‚È‚¢‚½‚ßA
- * LZSS‚Å ˆê’vˆÊ’u‚ª‹ß‚¢êŠ‚É•Î‚é–‚ğ
- * —˜—p‚·‚é‚æ‚¤‚È -lh5- ‚Ì‚æ‚¤‚Èˆ³k–@‚Å‚ÍA
- * ˆ³k—¦‚Í‚¢‚­‚ç‚©’á‰º‚·‚éB
+ * ã‚’å‚è€ƒã«ã—ãŸã€‚<br>
+ * äºŒåˆ†æœ¨ã§ã¯ã€æœ€é•·ä¸€è‡´ã‚’è¦‹ã¤ã‘ã‚‹ã“ã¨ã¯ã§ãã‚‹ãŒã€
+ * æœ€ã‚‚è¿‘ã„ä¸€è‡´ã‚’è¦‹ã¤ã‘ã‚‰ã‚Œã‚‹ã¨ã¯é™ã‚‰ãªã„ãŸã‚ã€
+ * LZSSã§ ä¸€è‡´ä½ç½®ãŒè¿‘ã„å ´æ‰€ã«åã‚‹äº‹ã‚’
+ * åˆ©ç”¨ã™ã‚‹ã‚ˆã†ãª -lh5- ã®ã‚ˆã†ãªåœ§ç¸®æ³•ã§ã¯ã€
+ * åœ§ç¸®ç‡ã¯ã„ãã‚‰ã‹ä½ä¸‹ã™ã‚‹ã€‚
  * 
  * <pre>
  * -- revision history --
@@ -75,11 +61,11 @@ import java.lang.NoClassDefFoundError;
  * Revision 1.0  2002/08/05 00:00:00  dangan
  * add to version control
  * [change]
- *     LzssSearchMethod ‚ÌƒCƒ“ƒ^ƒtƒFƒCƒX•ÏX‚É‚ ‚í‚¹‚ÄƒCƒ“ƒ^ƒtƒFƒCƒX•ÏX
+ *     LzssSearchMethod ã®ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ã‚¤ã‚¹å¤‰æ›´ã«ã‚ã‚ã›ã¦ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ã‚¤ã‚¹å¤‰æ›´
  * [maintenance]
- *     ƒ\[ƒX®”õ
- *     ƒ^ƒu”p~
- *     ƒ‰ƒCƒZƒ“ƒX•¶‚ÌC³
+ *     ã‚½ãƒ¼ã‚¹æ•´å‚™
+ *     ã‚¿ãƒ–å»ƒæ­¢
+ *     ãƒ©ã‚¤ã‚»ãƒ³ã‚¹æ–‡ã®ä¿®æ­£
  *
  * </pre>
  * 
@@ -96,16 +82,16 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //  private static final int ROOT_NODE
     //------------------------------------------------------------------
     /**
-     * g—p‚³‚ê‚Ä‚¢‚È‚¢–‚ğ¦‚·’lB
-     * parent[node] ‚É UNUSED ‚ª‚ ‚éê‡‚Í node ‚Í–¢g—p‚Ìnode‚Å‚ ‚éB
-     * small[node], large[node] ‚É UNUSED ‚ª‚ ‚éê‡‚Í
-     * node ‚ª‚»‚¿‚ç‘¤‚Ìqƒm[ƒh‚ğ‚½‚È‚¢–³‚¢–‚ğ¦‚·B
+     * ä½¿ç”¨ã•ã‚Œã¦ã„ãªã„äº‹ã‚’ç¤ºã™å€¤ã€‚
+     * parent[node] ã« UNUSED ãŒã‚ã‚‹å ´åˆã¯ node ã¯æœªä½¿ç”¨ã®nodeã§ã‚ã‚‹ã€‚
+     * small[node], large[node] ã« UNUSED ãŒã‚ã‚‹å ´åˆã¯
+     * node ãŒãã¡ã‚‰å´ã®å­ãƒãƒ¼ãƒ‰ã‚’æŒãŸãªã„ç„¡ã„äº‹ã‚’ç¤ºã™ã€‚
      */
     private static final int UNUSED = -1;
 
     /**
-     * “ñ•ª–Ø‚Ìª‚ğ¦‚·’lB
-     * parent[node] ‚É ROOT_NODE ‚ª‚ ‚éê‡‚Í node ‚Í“ñ•ª–Ø‚Ìª‚Å‚ ‚éB
+     * äºŒåˆ†æœ¨ã®æ ¹ã‚’ç¤ºã™å€¤ã€‚
+     * parent[node] ã« ROOT_NODE ãŒã‚ã‚‹å ´åˆã¯ node ã¯äºŒåˆ†æœ¨ã®æ ¹ã§ã‚ã‚‹ã€‚
      */
     private static final int ROOT_NODE = -2;
 
@@ -120,19 +106,19 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //  private int Threshold
     //------------------------------------------------------------------
     /**
-     * LZSS«‘ƒTƒCƒYB
+     * LZSSè¾æ›¸ã‚µã‚¤ã‚ºã€‚
      */
     private int DictionarySize;
 
     /**
-     * LZSSˆ³k‚Ég—p‚³‚ê‚é’lB
-     * Å‘åˆê’v’·‚ğ¦‚·B
+     * LZSSåœ§ç¸®ã«ä½¿ç”¨ã•ã‚Œã‚‹å€¤ã€‚
+     * æœ€å¤§ä¸€è‡´é•·ã‚’ç¤ºã™ã€‚
      */
     private int MaxMatch;
 
     /**
-     * LZSSˆ³k‚Ég—p‚³‚ê‚éè‡’lB
-     * ˆê’v’·‚ª ‚±‚Ì’lˆÈã‚Å‚ ‚ê‚ÎAˆ³kƒR[ƒh‚ğo—Í‚·‚éB
+     * LZSSåœ§ç¸®ã«ä½¿ç”¨ã•ã‚Œã‚‹é–¾å€¤ã€‚
+     * ä¸€è‡´é•·ãŒ ã“ã®å€¤ä»¥ä¸Šã§ã‚ã‚Œã°ã€åœ§ç¸®ã‚³ãƒ¼ãƒ‰ã‚’å‡ºåŠ›ã™ã‚‹ã€‚
      */
     private int Threshold;
 
@@ -146,18 +132,18 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //  private int DictionaryLimit
     //------------------------------------------------------------------
     /**
-     * LZSSˆ³k‚ğ{‚·‚½‚ß‚Ìƒoƒbƒtƒ@B
-     * ‘O”¼‚Í«‘—ÌˆæA
-     * Œã”¼‚Íˆ³k‚ğ{‚·‚½‚ß‚Ìƒf[ƒ^‚Ì“ü‚Á‚½ƒoƒbƒtƒ@B
-     * LzssSearchMethod‚ÌÀ‘•“à‚Å‚Í“Ç‚İ‚İ‚Ì‚İ‹–‚³‚ê‚éB
+     * LZSSåœ§ç¸®ã‚’æ–½ã™ãŸã‚ã®ãƒãƒƒãƒ•ã‚¡ã€‚
+     * å‰åŠã¯è¾æ›¸é ˜åŸŸã€
+     * å¾ŒåŠã¯åœ§ç¸®ã‚’æ–½ã™ãŸã‚ã®ãƒ‡ãƒ¼ã‚¿ã®å…¥ã£ãŸãƒãƒƒãƒ•ã‚¡ã€‚
+     * LzssSearchMethodã®å®Ÿè£…å†…ã§ã¯èª­ã¿è¾¼ã¿ã®ã¿è¨±ã•ã‚Œã‚‹ã€‚
      */
     private byte[] TextBuffer;
 
     /**
-     * «‘‚ÌŒÀŠEˆÊ’uB 
-     * TextBuffer‘O”¼‚Ì«‘—Ìˆæ‚Éƒf[ƒ^‚ª–³‚¢ê‡‚É
-     * «‘—Ìˆæ‚É‚ ‚é•s’è‚Ìƒf[ƒ^(Java‚Å‚Í0)‚ğg—p
-     * ‚µ‚Äˆ³k‚ªs‚í‚ê‚é‚Ì‚ğ—}~‚·‚éB
+     * è¾æ›¸ã®é™ç•Œä½ç½®ã€‚ 
+     * TextBufferå‰åŠã®è¾æ›¸é ˜åŸŸã«ãƒ‡ãƒ¼ã‚¿ãŒç„¡ã„å ´åˆã«
+     * è¾æ›¸é ˜åŸŸã«ã‚ã‚‹ä¸å®šã®ãƒ‡ãƒ¼ã‚¿(Javaã§ã¯0)ã‚’ä½¿ç”¨
+     * ã—ã¦åœ§ç¸®ãŒè¡Œã‚ã‚Œã‚‹ã®ã‚’æŠ‘æ­¢ã™ã‚‹ã€‚
      */
     private int DictionaryLimit;
 
@@ -171,14 +157,14 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //  private int[] hashTable
     //------------------------------------------------------------------
     /**
-     * ƒnƒbƒVƒ…ŠÖ”
+     * ãƒãƒƒã‚·ãƒ¥é–¢æ•°
      */
     private HashMethod hashMethod;
 
     /**
-     * ƒnƒbƒVƒ…ƒe[ƒuƒ‹
-     * “Yš‚ÍƒnƒbƒVƒ…’lA“à—e‚ÍŒÂX‚ÌƒnƒbƒVƒ…’l‚ğ‚Â
-     * “ñ•ª–Ø‚Ìª‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’uB
+     * ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«
+     * æ·»å­—ã¯ãƒãƒƒã‚·ãƒ¥å€¤ã€å†…å®¹ã¯å€‹ã€…ã®ãƒãƒƒã‚·ãƒ¥å€¤ã‚’æŒã¤
+     * äºŒåˆ†æœ¨ã®æ ¹ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®ã€‚
      */
     private int[] hashTable;
 
@@ -194,25 +180,25 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //  private int[] dummy
     //------------------------------------------------------------------
     /**
-     * e‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u‚ğ¦‚·B
-     * “Y‚¦š‚Íƒm[ƒh”Ô†A“à—e‚Íeƒm[ƒh‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * è¦ªã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®ã‚’ç¤ºã™ã€‚
+     * æ·»ãˆå­—ã¯ãƒãƒ¼ãƒ‰ç•ªå·ã€å†…å®¹ã¯è¦ªãƒãƒ¼ãƒ‰ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      */
     private int[] parent;
 
     /**
-     * ¬‚³‚¢q‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u‚ğ¦‚·B
-     * “Y‚¦š‚Íƒm[ƒh”Ô†A“à—e‚Í¬‚³‚¢qƒm[ƒhƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * å°ã•ã„å­ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®ã‚’ç¤ºã™ã€‚
+     * æ·»ãˆå­—ã¯ãƒãƒ¼ãƒ‰ç•ªå·ã€å†…å®¹ã¯å°ã•ã„å­ãƒãƒ¼ãƒ‰ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      */
     private int[] small;
 
     /**
-     * ‘å‚«‚¢q‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u‚ğ¦‚·B
-     * “Y‚¦š‚Íƒm[ƒh”Ô†A“à—e‚Í‘å‚«‚¢qƒm[ƒhƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * å¤§ãã„å­ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®ã‚’ç¤ºã™ã€‚
+     * æ·»ãˆå­—ã¯ãƒãƒ¼ãƒ‰ç•ªå·ã€å†…å®¹ã¯å¤§ãã„å­ãƒãƒ¼ãƒ‰ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      */
     private int[] large;
 
     /**
-     * slide —p‚Ìƒoƒbƒtƒ@
+     * slide ç”¨ã®ãƒãƒƒãƒ•ã‚¡
      */
     private int[] dummy;
 
@@ -228,19 +214,19 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //                                  String HashMethodClassName )
     //------------------------------------------------------------------
     /**
-     * ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^B
-     * g—p•s‰Â
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚
+     * ä½¿ç”¨ä¸å¯
      */
     private HashAndBinaryTreeSearch(){  }
 
     /**
-     * ƒnƒbƒVƒ…‚Æ“ñ•ª–Ø‚ğg—p‚µ‚½ŒŸõ‹@\‚ğ\’z‚·‚éB<br>
-     * ƒnƒbƒVƒ…ŠÖ”‚ÍƒfƒtƒHƒ‹ƒg‚Ì‚à‚Ì‚ğg—p‚·‚éB
+     * ãƒãƒƒã‚·ãƒ¥ã¨äºŒåˆ†æœ¨ã‚’ä½¿ç”¨ã—ãŸæ¤œç´¢æ©Ÿæ§‹ã‚’æ§‹ç¯‰ã™ã‚‹ã€‚<br>
+     * ãƒãƒƒã‚·ãƒ¥é–¢æ•°ã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚‚ã®ã‚’ä½¿ç”¨ã™ã‚‹ã€‚
      * 
-     * @param DictionarySize      «‘ƒTƒCƒY
-     * @param MaxMatch            Å’·ˆê’v’·
-     * @param Threshold           ˆ³kA”ñˆ³k‚Ìè‡’l
-     * @param TextBuffer          LZSSˆ³k‚ğ{‚·‚½‚ß‚Ìƒoƒbƒtƒ@
+     * @param DictionarySize      è¾æ›¸ã‚µã‚¤ã‚º
+     * @param MaxMatch            æœ€é•·ä¸€è‡´é•·
+     * @param Threshold           åœ§ç¸®ã€éåœ§ç¸®ã®é–¾å€¤
+     * @param TextBuffer          LZSSåœ§ç¸®ã‚’æ–½ã™ãŸã‚ã®ãƒãƒƒãƒ•ã‚¡
      */
     public HashAndBinaryTreeSearch( int    DictionarySize,
                                     int    MaxMatch,
@@ -255,24 +241,24 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     }
 
     /**
-     * ƒnƒbƒVƒ…‚Æ“ñ•ª–Ø‚ğg—p‚µ‚½ LzssSearchMethod ‚ğ\’z‚·‚éB
+     * ãƒãƒƒã‚·ãƒ¥ã¨äºŒåˆ†æœ¨ã‚’ä½¿ç”¨ã—ãŸ LzssSearchMethod ã‚’æ§‹ç¯‰ã™ã‚‹ã€‚
      * 
-     * @param DictionarySize      «‘ƒTƒCƒY
-     * @param MaxMatch            Å’·ˆê’v’·
-     * @param Threshold           ˆ³kA”ñˆ³k‚Ìè‡’l
-     * @param TextBuffer          LZSSˆ³k‚ğ{‚·‚½‚ß‚Ìƒoƒbƒtƒ@
-     * @param HashMethodClassName HashŠÖ”‚ğ’ñ‹Ÿ‚·‚éƒNƒ‰ƒX–¼
+     * @param DictionarySize      è¾æ›¸ã‚µã‚¤ã‚º
+     * @param MaxMatch            æœ€é•·ä¸€è‡´é•·
+     * @param Threshold           åœ§ç¸®ã€éåœ§ç¸®ã®é–¾å€¤
+     * @param TextBuffer          LZSSåœ§ç¸®ã‚’æ–½ã™ãŸã‚ã®ãƒãƒƒãƒ•ã‚¡
+     * @param HashMethodClassName Hashé–¢æ•°ã‚’æä¾›ã™ã‚‹ã‚¯ãƒ©ã‚¹å
      * 
      * @exception NoClassDefFoundError
-     *              HashMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              Œ©‚Â‚©‚ç‚È‚¢ê‡B
+     *              HashMethodClassName ã§ä¸ãˆã‚‰ã‚ŒãŸã‚¯ãƒ©ã‚¹ãŒ
+     *              è¦‹ã¤ã‹ã‚‰ãªã„å ´åˆã€‚
      * @exception InstantiationError
-     *              HashMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              abstract class ‚Å‚ ‚é‚½‚ßƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚Å‚«‚È‚¢ê‡B
+     *              HashMethodClassName ã§ä¸ãˆã‚‰ã‚ŒãŸã‚¯ãƒ©ã‚¹ãŒ
+     *              abstract class ã§ã‚ã‚‹ãŸã‚ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã§ããªã„å ´åˆã€‚
      * @exception NoSuchMethodError
-     *              HashMethodClassName ‚Å—^‚¦‚ç‚ê‚½ƒNƒ‰ƒX‚ª
-     *              ƒRƒ“ƒXƒgƒ‰ƒNƒ^ HashMethod( byte[] )
-     *              ‚ğ‚½‚È‚¢ê‡
+     *              HashMethodClassName ã§ä¸ãˆã‚‰ã‚ŒãŸã‚¯ãƒ©ã‚¹ãŒ
+     *              ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ HashMethod( byte[] )
+     *              ã‚’æŒãŸãªã„å ´åˆ
      */
     public HashAndBinaryTreeSearch( int    DictionarySize,
                                     int    MaxMatch,
@@ -301,13 +287,13 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
             throw new InstantiationError( exception.getMessage() );
         }
 
-        //  ƒnƒbƒVƒ…ƒe[ƒuƒ‹‚Ì‰Šú‰»
+        //  ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆæœŸåŒ–
         this.hashTable = new int[ this.hashMethod.tableSize() ];
         for( int i = 0 ; i < this.hashTable.length ; i++ ){
             this.hashTable[i] = HashAndBinaryTreeSearch.UNUSED;
         }
 
-        //  “ñ•ª–Ø‚Ì‰Šú‰»
+        //  äºŒåˆ†æœ¨ã®åˆæœŸåŒ–
         this.parent = new int[ DictionarySize ];
         this.large  = new int[ DictionarySize ];
         this.small  = new int[ DictionarySize ];
@@ -327,19 +313,19 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //  public int putRequires()
     //------------------------------------------------------------------
     /**
-     * position ‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚ğ
-     * ƒnƒbƒVƒ…‚Æ“ñ•ª–Ø‚ğg—p‚µ‚½ŒŸõ‹@\‚É“o˜^‚·‚éB<br>
+     * position ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’
+     * ãƒãƒƒã‚·ãƒ¥ã¨äºŒåˆ†æœ¨ã‚’ä½¿ç”¨ã—ãŸæ¤œç´¢æ©Ÿæ§‹ã«ç™»éŒ²ã™ã‚‹ã€‚<br>
      * 
-     * @param position TextBuffer“à‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * @param position TextBufferå†…ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      */
     public void put( int position ){
 
         //------------------------------------------------------------------
-        //  “ñ•ª–Ø‚©‚çÅ‚àŒÃ‚¢ƒf[ƒ^ƒpƒ^ƒ“‚ğíœ
+        //  äºŒåˆ†æœ¨ã‹ã‚‰æœ€ã‚‚å¤ã„ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’å‰Šé™¤
         this.deleteNode( position - this.DictionarySize );
 
         //------------------------------------------------------------------
-        //  “ñ•ª–Ø‚©‚ç position ‚ğ‘}“ü‚·‚éˆÊ’u‚ğŒŸõ
+        //  äºŒåˆ†æœ¨ã‹ã‚‰ position ã‚’æŒ¿å…¥ã™ã‚‹ä½ç½®ã‚’æ¤œç´¢
         int hash       = this.hashMethod.hash( position );
         int parentpos  = this.hashTable[ hash ];
         int scanpos    = this.hashTable[ hash ];
@@ -356,7 +342,7 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
                 s++;
                 p++;
                 if( max <= p ){
-                    //Š®‘Sˆê’v‚ğ”­Œ©
+                    //å®Œå…¨ä¸€è‡´ã‚’ç™ºè¦‹
                     this.replaceNode( scanpos, position );
                     return;
                 }
@@ -369,7 +355,7 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
         }
 
         //------------------------------------------------------------------
-        //  position ‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚ğ “ñ•ª–Ø‚É“o˜^
+        //  position ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’ äºŒåˆ†æœ¨ã«ç™»éŒ²
         if( this.hashTable[ hash ] != HashAndBinaryTreeSearch.UNUSED ){
             this.addNode( parentpos, position, p - position );
         }else{
@@ -382,19 +368,19 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     }
 
     /**
-     * ƒnƒbƒVƒ…‚Æ“ñ•ª–Ø‚ğg—p‚µ‚½ŒŸõ‹@\‚É“o˜^‚³‚ê‚½
-     * ƒf[ƒ^ƒpƒ^ƒ“‚©‚ç position ‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚Æ
-     * Å’·‚Ìˆê’v‚ğ‚Â‚à‚Ì‚ğŒŸõ‚µA
-     * “¯‚É position ‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚ğ 
-     * ƒnƒbƒVƒ…‚Æ“ñ•ª–Ø‚ğg—p‚µ‚½ŒŸõ‹@\‚É“o˜^‚·‚éB<br>
+     * ãƒãƒƒã‚·ãƒ¥ã¨äºŒåˆ†æœ¨ã‚’ä½¿ç”¨ã—ãŸæ¤œç´¢æ©Ÿæ§‹ã«ç™»éŒ²ã•ã‚ŒãŸ
+     * ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‹ã‚‰ position ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã¨
+     * æœ€é•·ã®ä¸€è‡´ã‚’æŒã¤ã‚‚ã®ã‚’æ¤œç´¢ã—ã€
+     * åŒæ™‚ã« position ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’ 
+     * ãƒãƒƒã‚·ãƒ¥ã¨äºŒåˆ†æœ¨ã‚’ä½¿ç”¨ã—ãŸæ¤œç´¢æ©Ÿæ§‹ã«ç™»éŒ²ã™ã‚‹ã€‚<br>
      * 
-     * @param position TextBuffer“à‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’uB
+     * @param position TextBufferå†…ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®ã€‚
      * 
-     * @return ˆê’v‚ªŒ©‚Â‚©‚Á‚½ê‡‚Í
+     * @return ä¸€è‡´ãŒè¦‹ã¤ã‹ã£ãŸå ´åˆã¯
      *         LzssOutputStream.createSearchReturn 
-     *         ‚É‚æ‚Á‚Ä¶¬‚³‚ê‚½ˆê’vˆÊ’u‚Æˆê’v’·‚Ìî•ñ‚ğ‚Â’lA
-     *         ˆê’v‚ªŒ©‚Â‚©‚ç‚È‚©‚Á‚½ê‡‚Í
-     *         LzssOutputStream.NOMATCHB
+     *         ã«ã‚ˆã£ã¦ç”Ÿæˆã•ã‚ŒãŸä¸€è‡´ä½ç½®ã¨ä¸€è‡´é•·ã®æƒ…å ±ã‚’æŒã¤å€¤ã€
+     *         ä¸€è‡´ãŒè¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸå ´åˆã¯
+     *         LzssOutputStream.NOMATCHã€‚
      * 
      * @see LzssOutputStream#createSearchReturn(int,int)
      * @see LzssOutputStream#NOMATCH
@@ -402,11 +388,11 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     public int searchAndPut( int position ){
 
         //------------------------------------------------------------------
-        //  “ñ•ª–Ø‚©‚çÅ‚àŒÃ‚¢ƒf[ƒ^ƒpƒ^ƒ“‚ğíœ
+        //  äºŒåˆ†æœ¨ã‹ã‚‰æœ€ã‚‚å¤ã„ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’å‰Šé™¤
         this.deleteNode( position - this.DictionarySize );
 
         //------------------------------------------------------------------
-        //  “ñ•ª–Ø‚©‚çÅ’·ˆê’v‚ğŒŸõ
+        //  äºŒåˆ†æœ¨ã‹ã‚‰æœ€é•·ä¸€è‡´ã‚’æ¤œç´¢
         int hash       = this.hashMethod.hash( position );
         int matchlen   = -1;
         int matchpos   = this.hashTable[ hash ];
@@ -425,7 +411,7 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
                 s++;
                 p++;
                 if( max <= p ){
-                    //Š®‘Sˆê’v‚ğ”­Œ©
+                    //å®Œå…¨ä¸€è‡´ã‚’ç™ºè¦‹
                     this.replaceNode( matchpos, position );
                     return LzssOutputStream.createSearchReturn( matchlen, matchpos );
                 }
@@ -446,7 +432,7 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
         }
 
         //------------------------------------------------------------------
-        //  position ‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚ğ “ñ•ª–Ø‚É“o˜^
+        //  position ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’ äºŒåˆ†æœ¨ã«ç™»éŒ²
         if( this.hashTable[ hash ] != HashAndBinaryTreeSearch.UNUSED ){
             this.addNode( parentpos, position, len );
         }else{
@@ -458,8 +444,8 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
         }
 
         //------------------------------------------------------------------
-        //  ƒƒ\ƒbƒh‚Ìæ“ª‚Åíœ‚³‚ê‚½
-        //  Å‚à‰“‚¢ƒf[ƒ^ƒpƒ^ƒ“‚Æ”äŠr
+        //  ãƒ¡ã‚½ãƒƒãƒ‰ã®å…ˆé ­ã§å‰Šé™¤ã•ã‚ŒãŸ
+        //  æœ€ã‚‚é ã„ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã¨æ¯”è¼ƒ
         scanpos  = position - this.DictionarySize;
         if( this.DictionaryLimit <= scanpos ){
             len = 0;
@@ -475,7 +461,7 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
         }
 
         //------------------------------------------------------------------
-        //  Å’·ˆê’v‚ğŒÄ‚Ño‚µŒ³‚É•Ô‚·B
+        //  æœ€é•·ä¸€è‡´ã‚’å‘¼ã³å‡ºã—å…ƒã«è¿”ã™ã€‚
         if( this.Threshold <= matchlen ){
             return LzssOutputStream.createSearchReturn( matchlen, matchpos );
         }else{
@@ -484,19 +470,19 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     }
 
     /**
-     * ƒnƒbƒVƒ…‚Æ“ñ•ª–Ø‚ğg—p‚µ‚½ŒŸõ‹@\‚É“o˜^‚³‚ê‚½ƒf[ƒ^ƒpƒ^ƒ“‚ğŒŸõ‚µ
-     * position ‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚ÆÅ’·‚Ìˆê’v‚ğ‚Â‚à‚Ì‚ğ“¾‚éB<br>
-     * TextBuffer.length &lt position + MaxMatch ‚Æ‚È‚é‚æ‚¤‚È position ‚Å‚ÍA
-     * “ñ•ª–Ø‚ğŠ®‘S‚É‘–¸‚µ‚È‚¢‚½‚ßÅ’·ˆê’v‚ğ“¾‚ç‚ê‚é‚Æ‚ÍŒÀ‚ç‚È‚¢B<br>
+     * ãƒãƒƒã‚·ãƒ¥ã¨äºŒåˆ†æœ¨ã‚’ä½¿ç”¨ã—ãŸæ¤œç´¢æ©Ÿæ§‹ã«ç™»éŒ²ã•ã‚ŒãŸãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’æ¤œç´¢ã—
+     * position ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã¨æœ€é•·ã®ä¸€è‡´ã‚’æŒã¤ã‚‚ã®ã‚’å¾—ã‚‹ã€‚<br>
+     * TextBuffer.length &lt position + MaxMatch ã¨ãªã‚‹ã‚ˆã†ãª position ã§ã¯ã€
+     * äºŒåˆ†æœ¨ã‚’å®Œå…¨ã«èµ°æŸ»ã—ãªã„ãŸã‚æœ€é•·ä¸€è‡´ã‚’å¾—ã‚‰ã‚Œã‚‹ã¨ã¯é™ã‚‰ãªã„ã€‚<br>
      * 
-     * @param position   TextBuffer“à‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’uB
-     * @param lastPutPos ÅŒã‚É“o˜^‚µ‚½ƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’uB
+     * @param position   TextBufferå†…ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®ã€‚
+     * @param lastPutPos æœ€å¾Œã«ç™»éŒ²ã—ãŸãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®ã€‚
      * 
-     * @return ˆê’v‚ªŒ©‚Â‚©‚Á‚½ê‡‚Í
+     * @return ä¸€è‡´ãŒè¦‹ã¤ã‹ã£ãŸå ´åˆã¯
      *         LzssOutputStream.createSearchReturn 
-     *         ‚É‚æ‚Á‚Ä¶¬‚³‚ê‚½ˆê’vˆÊ’u‚Æˆê’v’·‚Ìî•ñ‚ğ‚Â’lA
-     *         ˆê’v‚ªŒ©‚Â‚©‚ç‚È‚©‚Á‚½ê‡‚Í
-     *         LzssOutputStream.NOMATCHB
+     *         ã«ã‚ˆã£ã¦ç”Ÿæˆã•ã‚ŒãŸä¸€è‡´ä½ç½®ã¨ä¸€è‡´é•·ã®æƒ…å ±ã‚’æŒã¤å€¤ã€
+     *         ä¸€è‡´ãŒè¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸå ´åˆã¯
+     *         LzssOutputStream.NOMATCHã€‚
      * 
      * @see LzssOutputStream#createSearchReturn(int,int)
      * @see LzssOutputStream#NOMATCH
@@ -504,8 +490,8 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     public int search( int position, int lastPutPos ){
 
         //------------------------------------------------------------------
-        //  “ñ•ª–Ø‚É“o˜^‚³‚ê‚Ä‚¢‚È‚¢ƒf[ƒ^ƒpƒ^ƒ“‚ğ
-        //  ’Pƒ‚È’€ŸŒŸõ‚ÅŒŸõ‚·‚éB
+        //  äºŒåˆ†æœ¨ã«ç™»éŒ²ã•ã‚Œã¦ã„ãªã„ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’
+        //  å˜ç´”ãªé€æ¬¡æ¤œç´¢ã§æ¤œç´¢ã™ã‚‹ã€‚
         int matchlen   = this.Threshold - 1;
         int matchpos   = position;
         int scanpos    = position - 1;
@@ -534,7 +520,7 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
         }
 
         //------------------------------------------------------------------
-        //  “ñ•ª–Ø‚ğ’Tõ
+        //  äºŒåˆ†æœ¨ã‚’æ¢ç´¢
         if( this.hashMethod.hashRequires() <= this.TextBuffer.length - position ){
             int hash  = this.hashMethod.hash( position );
             scanpos   = this.hashTable[ hash ];
@@ -569,7 +555,7 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
         }
 
         //------------------------------------------------------------------
-        //  Å’·ˆê’v‚ğŒÄ‚Ño‚µŒ³‚É•Ô‚·B
+        //  æœ€é•·ä¸€è‡´ã‚’å‘¼ã³å‡ºã—å…ƒã«è¿”ã™ã€‚
         if( this.Threshold <= matchlen ){
             return LzssOutputStream.createSearchReturn( matchlen, matchpos );
         }else{
@@ -578,9 +564,9 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     }
 
     /**
-     * TextBuffer“à‚Ì position ‚Ü‚Å‚Ìƒf[ƒ^‚ğ‘O•û‚ÖˆÚ“®‚·‚éÛA
-     * ‚»‚ê‚É‰‚¶‚Ä ƒnƒbƒVƒ…‚Æ“ñ•ª–Ø‚ğg—p‚µ‚½ŒŸõ‹@\‚ğ\¬‚·‚éƒf[ƒ^‚à
-     * TextBuffer“à‚Ìƒf[ƒ^‚Æ–µ‚‚µ‚È‚¢‚æ‚¤‚É‘O•û‚ÖˆÚ“®‚·‚éˆ—‚ğs‚¤B 
+     * TextBufferå†…ã® position ã¾ã§ã®ãƒ‡ãƒ¼ã‚¿ã‚’å‰æ–¹ã¸ç§»å‹•ã™ã‚‹éš›ã€
+     * ãã‚Œã«å¿œã˜ã¦ ãƒãƒƒã‚·ãƒ¥ã¨äºŒåˆ†æœ¨ã‚’ä½¿ç”¨ã—ãŸæ¤œç´¢æ©Ÿæ§‹ã‚’æ§‹æˆã™ã‚‹ãƒ‡ãƒ¼ã‚¿ã‚‚
+     * TextBufferå†…ã®ãƒ‡ãƒ¼ã‚¿ã¨çŸ›ç›¾ã—ãªã„ã‚ˆã†ã«å‰æ–¹ã¸ç§»å‹•ã™ã‚‹å‡¦ç†ã‚’è¡Œã†ã€‚ 
      */
     public void slide(){
         this.DictionaryLimit = Math.max( 0, this.DictionaryLimit - this.DictionarySize );
@@ -592,13 +578,13 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     }
 
     /**
-     * put() ‚Ü‚½‚Í searchAndPut() ‚ğg—p‚µ‚Ä
-     * ƒf[ƒ^ƒpƒ^ƒ“‚ğ“ñ•ª–Ø‚É“o˜^‚·‚éÛ‚É
-     * •K—v‚Æ‚·‚éƒf[ƒ^—Ê‚ğ“¾‚éB<br>
-     * “ñ•ª–Ø‚Í“o˜^‚ÌÛ‚Éƒf[ƒ^ƒpƒ^ƒ“‚ğ\¬‚·‚é 
-     * ‘S‚Ä(MaxMatchƒoƒCƒg)‚Ìƒf[ƒ^‚ğ•K—v‚Æ‚·‚éB
+     * put() ã¾ãŸã¯ searchAndPut() ã‚’ä½¿ç”¨ã—ã¦
+     * ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’äºŒåˆ†æœ¨ã«ç™»éŒ²ã™ã‚‹éš›ã«
+     * å¿…è¦ã¨ã™ã‚‹ãƒ‡ãƒ¼ã‚¿é‡ã‚’å¾—ã‚‹ã€‚<br>
+     * äºŒåˆ†æœ¨ã¯ç™»éŒ²ã®éš›ã«ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’æ§‹æˆã™ã‚‹ 
+     * å…¨ã¦(MaxMatchãƒã‚¤ãƒˆ)ã®ãƒ‡ãƒ¼ã‚¿ã‚’å¿…è¦ã¨ã™ã‚‹ã€‚
      * 
-     * @return ƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Å—^‚¦‚½ MaxMatch
+     * @return ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã§ä¸ãˆãŸ MaxMatch
      */
     public int putRequires(){
         return this.MaxMatch;
@@ -616,15 +602,15 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //  private void replaceNode( int oldpos, int newpos )
     //------------------------------------------------------------------
     /**
-     * parentpos ‚Ìƒf[ƒ^ƒpƒ^ƒ“‚Ìq‚Æ‚µ‚Ä 
-     * position ‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚ğ“ñ•ª–Ø‚É“o˜^‚·‚éB<br>
-     * parentpos ‚Æ position ‚Ìƒf[ƒ^ƒpƒ^ƒ“‚Í len ƒoƒCƒgˆê’v‚·‚éB
-     * position ‚ÌˆÊ’u‚Ìƒm[ƒh‚Í‚ ‚ç‚©‚¶‚ß deleteNode “™‚Å
-     * UNUSED ‚Ìó‘Ô‚É‚µ‚Ä‚¨‚­‚±‚ÆB
+     * parentpos ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®å­ã¨ã—ã¦ 
+     * position ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’äºŒåˆ†æœ¨ã«ç™»éŒ²ã™ã‚‹ã€‚<br>
+     * parentpos ã¨ position ã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã¯ len ãƒã‚¤ãƒˆä¸€è‡´ã™ã‚‹ã€‚
+     * position ã®ä½ç½®ã®ãƒãƒ¼ãƒ‰ã¯ã‚ã‚‰ã‹ã˜ã‚ deleteNode ç­‰ã§
+     * UNUSED ã®çŠ¶æ…‹ã«ã—ã¦ãŠãã“ã¨ã€‚
      * 
-     * @param parentpos e‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÌTextBuffer“à‚ÌŠJnˆÊ’u
-     * @param position  V‹K’Ç‰Á‚·‚éƒf[ƒ^ƒpƒ^ƒ“‚ÌTextBuffer“à‚ÌŠJnˆÊ’u
-     * @param len       e‚Ìƒf[ƒ^ƒpƒ^ƒ“‚ÆV‹K’Ç‰Á‚·‚éƒf[ƒ^ƒpƒ^ƒ“‚Ìˆê’v’·
+     * @param parentpos è¦ªã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®TextBufferå†…ã®é–‹å§‹ä½ç½®
+     * @param position  æ–°è¦è¿½åŠ ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®TextBufferå†…ã®é–‹å§‹ä½ç½®
+     * @param len       è¦ªã®ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã¨æ–°è¦è¿½åŠ ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®ä¸€è‡´é•·
      */
     private void addNode( int parentpos, int position, int len ){
         int parentnode = parentpos & ( this.DictionarySize - 1 );
@@ -641,9 +627,9 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     }
 
     /**
-     * position ‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚ğ“ñ•ª–Ø‚©‚çíœ‚·‚éB<br>
+     * position ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã‚’äºŒåˆ†æœ¨ã‹ã‚‰å‰Šé™¤ã™ã‚‹ã€‚<br>
      * 
-     * @param position íœ‚·‚éƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * @param position å‰Šé™¤ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      */
     private void deleteNode( int position ){
         int node = position & ( this.DictionarySize - 1 );
@@ -665,11 +651,11 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     }
 
     /**
-     * q‚É newpos ‚µ‚©‚½‚È‚¢ oldpos ‚ğ, newpos ‚Å’u‚«Š·‚¦‚éB
-     * oldpos ‚Í“ñ•ª–Ø‚©‚çíœ‚³‚ê‚éB
+     * å­ã« newpos ã—ã‹æŒãŸãªã„ oldpos ã‚’, newpos ã§ç½®ãæ›ãˆã‚‹ã€‚
+     * oldpos ã¯äºŒåˆ†æœ¨ã‹ã‚‰å‰Šé™¤ã•ã‚Œã‚‹ã€‚
      * 
-     * @param oldpos íœ‚·‚éƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
-     * @param newpos oldpos‚É’u‚«Š·‚í‚éƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * @param oldpos å‰Šé™¤ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
+     * @param newpos oldposã«ç½®ãæ›ã‚ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      */
     private void contractNode( int oldpos, int newpos ){
         int oldnode    = oldpos    & ( this.DictionarySize - 1 );
@@ -695,14 +681,14 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     }
 
     /**
-     * oldpos ‚ğ“ñ•ª–Ø‚ÉŠÜ‚Ü‚ê‚È‚¢V‚µ‚¢ƒf[ƒ^ƒpƒ^ƒ“ newpos ‚Å’u‚«Š·‚¦‚éB
-     * newpos ‚ª“ñ•ª–Ø‚ÉŠÜ‚Ü‚ê‚Ä‚¢‚é‚æ‚¤‚Èê‡‚É‚ÍA
-     * ‚¢‚Á‚½‚ñdeleteNode(newpos) ‚·‚é‚È‚Ç‚µ‚ÄA
-     * “ñ•ª–Ø‚©‚çŠO‚·•K—v‚ª‚ ‚éB
-     * oldpos ‚Í“ñ•ª–Ø‚©‚çíœ‚³‚ê‚éB
+     * oldpos ã‚’äºŒåˆ†æœ¨ã«å«ã¾ã‚Œãªã„æ–°ã—ã„ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ newpos ã§ç½®ãæ›ãˆã‚‹ã€‚
+     * newpos ãŒäºŒåˆ†æœ¨ã«å«ã¾ã‚Œã¦ã„ã‚‹ã‚ˆã†ãªå ´åˆã«ã¯ã€
+     * ã„ã£ãŸã‚“deleteNode(newpos) ã™ã‚‹ãªã©ã—ã¦ã€
+     * äºŒåˆ†æœ¨ã‹ã‚‰å¤–ã™å¿…è¦ãŒã‚ã‚‹ã€‚
+     * oldpos ã¯äºŒåˆ†æœ¨ã‹ã‚‰å‰Šé™¤ã•ã‚Œã‚‹ã€‚
      * 
-     * @param oldpos íœ‚·‚éƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
-     * @param newpos oldpos‚É’u‚«Š·‚í‚éƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * @param oldpos å‰Šé™¤ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
+     * @param newpos oldposã«ç½®ãæ›ã‚ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      */
     private void replaceNode( int oldpos, int newpos ){
         int oldnode    = oldpos    & ( this.DictionarySize - 1 );
@@ -745,15 +731,15 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
     //  private void slideTree( int[] src, int[] dst, int start, int end, int width )
     //------------------------------------------------------------------
     /**
-     * deleteNode( position ) ‚µ‚½‚Æ‚«‚ÉA
-     * small ‚Æ large ‚Ì—¼•û‚Ì—t‚ªŒ©‚Â‚©‚Á‚½ê‡A
-     * position ‚Ì‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚Æ
-     * ’u‚«Š·‚¦‚é‚×‚« ƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u‚ğ’T‚µo‚·B
+     * deleteNode( position ) ã—ãŸã¨ãã«ã€
+     * small ã¨ large ã®ä¸¡æ–¹ã®è‘‰ãŒè¦‹ã¤ã‹ã£ãŸå ´åˆã€
+     * position ã®ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã¨
+     * ç½®ãæ›ãˆã‚‹ã¹ã ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®ã‚’æ¢ã—å‡ºã™ã€‚
      * 
-     * @param position ’u‚«Š·‚¦‚ç‚ê‚éƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * @param position ç½®ãæ›ãˆã‚‰ã‚Œã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      * 
-     * @return position ‚Ì‚©‚çn‚Ü‚éƒf[ƒ^ƒpƒ^ƒ“‚Æ
-     *         ’u‚«Š·‚¦‚é‚×‚« ƒf[ƒ^ƒpƒ^ƒ“‚ÌŠJnˆÊ’u
+     * @return position ã®ã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã¨
+     *         ç½®ãæ›ãˆã‚‹ã¹ã ãƒ‡ãƒ¼ã‚¿ãƒ‘ã‚¿ãƒ³ã®é–‹å§‹ä½ç½®
      */
     private int findNext( int position ){
         int node = position & ( this.DictionarySize - 1 );
@@ -770,9 +756,9 @@ public class HashAndBinaryTreeSearch implements LzssSearchMethod{
 
 
     /**
-     * slide() ‚ÉA“ñ•ª–Ø‚ÌŠe—v‘f‚ğˆÚ“®‚³‚¹‚é‚½‚ß‚Ég—p‚·‚éB
+     * slide() æ™‚ã«ã€äºŒåˆ†æœ¨ã®å„è¦ç´ ã‚’ç§»å‹•ã•ã›ã‚‹ãŸã‚ã«ä½¿ç”¨ã™ã‚‹ã€‚
      * 
-     * @param array ‘–¸‚·‚é”z—ñ
+     * @param array èµ°æŸ»ã™ã‚‹é…åˆ—
      */
     private void slideTree( int[] array ){
         for( int i = 0 ; i < array.length ; i++ ){

@@ -6,45 +6,43 @@
  * 
  * Copyright (C) 2001-2002  Michel Ishizuka  All rights reserved.
  * 
- * ˆÈ‰º‚ÌğŒ‚É“¯ˆÓ‚·‚é‚È‚ç‚Îƒ\[ƒX‚ÆƒoƒCƒiƒŠŒ`®‚ÌÄ”z•z‚Æg—p‚ğ
- * •ÏX‚Ì—L–³‚É‚©‚©‚í‚ç‚¸‹–‰Â‚·‚éB
+ * ä»¥ä¸‹ã®æ¡ä»¶ã«åŒæ„ã™ã‚‹ãªã‚‰ã°ã‚½ãƒ¼ã‚¹ã¨ãƒã‚¤ãƒŠãƒªå½¢å¼ã®å†é…å¸ƒã¨ä½¿ç”¨ã‚’
+ * å¤‰æ›´ã®æœ‰ç„¡ã«ã‹ã‹ã‚ã‚‰ãšè¨±å¯ã™ã‚‹ã€‚
  * 
- * ‚PDƒ\[ƒXƒR[ƒh‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\¦‚Æ ‚±‚ÌğŒ‚ÌƒŠƒXƒg
- *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ğ•Û‚µ‚È‚­‚Ä‚Í‚È‚ç‚È‚¢B
+ * ï¼‘ï¼ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®å†é…å¸ƒã«ãŠã„ã¦è‘—ä½œæ¨©è¡¨ç¤ºã¨ ã“ã®æ¡ä»¶ã®ãƒªã‚¹ãƒˆ
+ *     ãŠã‚ˆã³ä¸‹è¨˜ã®å£°æ˜æ–‡ã‚’ä¿æŒã—ãªãã¦ã¯ãªã‚‰ãªã„ã€‚
  * 
- * ‚QDƒoƒCƒiƒŠŒ`®‚ÌÄ”z•z‚É‚¨‚¢‚Ä’˜ìŒ •\¦‚Æ ‚±‚ÌğŒ‚ÌƒŠƒXƒg
- *     ‚¨‚æ‚Ñ‰º‹L‚Ìº–¾•¶‚ğg—pà–¾‘‚à‚µ‚­‚Í ‚»‚Ì‘¼‚Ì”z•z•¨“à‚É
- *     ŠÜ‚Ş‘—¿‚É‹Lq‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢B
+ * ï¼’ï¼ãƒã‚¤ãƒŠãƒªå½¢å¼ã®å†é…å¸ƒã«ãŠã„ã¦è‘—ä½œæ¨©è¡¨ç¤ºã¨ ã“ã®æ¡ä»¶ã®ãƒªã‚¹ãƒˆ
+ *     ãŠã‚ˆã³ä¸‹è¨˜ã®å£°æ˜æ–‡ã‚’ä½¿ç”¨èª¬æ˜æ›¸ã‚‚ã—ãã¯ ãã®ä»–ã®é…å¸ƒç‰©å†…ã«
+ *     å«ã‚€è³‡æ–™ã«è¨˜è¿°ã—ãªã‘ã‚Œã°ãªã‚‰ãªã„ã€‚
  * 
- * ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚ÍÎ’Ë”üì—Ú‚É‚æ‚Á‚Ä–³•ÛØ‚Å’ñ‹Ÿ‚³‚êA“Á’è‚Ì–Ú
- * “I‚ğ’B¬‚Å‚«‚é‚Æ‚¢‚¤•ÛØA¤•i‰¿’l‚ª—L‚é‚Æ‚¢‚¤•ÛØ‚É‚Æ‚Ç‚Ü‚ç‚¸A
- * ‚¢‚©‚È‚é–¾¦“I‚¨‚æ‚ÑˆÃ¦“I‚È•ÛØ‚à‚µ‚È‚¢B
- * Î’Ë”üì—Ú‚Í ‚±‚Ìƒ\ƒtƒgƒEƒFƒA‚Ìg—p‚É‚æ‚é’¼Ú“IAŠÔÚ“IA‹ô”­
- * “IA“Áê‚ÈA“TŒ^“I‚ÈA‚ ‚é‚¢‚Í•K‘R“I‚È‘¹ŠQ(g—p‚É‚æ‚éƒf[ƒ^‚Ì
- * ‘¹¸A‹Æ–±‚Ì’†’f‚âŒ©‚Ü‚ê‚Ä‚¢‚½—˜‰v‚Ìˆâ¸A‘ã‘Ö»•i‚à‚µ‚­‚Í
- * ƒT[ƒrƒX‚Ì“±“ü”ï“™‚ªl‚¦‚ç‚ê‚é‚ªAŒˆ‚µ‚Ä‚»‚ê‚¾‚¯‚ÉŒÀ’è‚³‚ê‚È‚¢
- * ‘¹ŠQ)‚É‘Î‚µ‚ÄA‚¢‚©‚È‚é–‘Ô‚ÌŒ´ˆö‚Æ‚È‚Á‚½‚Æ‚µ‚Ä‚àAŒ_–ñã‚ÌÓ
- * ”C‚â–³‰ß¸Ó”C‚ğŠÜ‚Ş ‚¢‚©‚È‚éÓ”C‚ª‚ ‚ë‚¤‚Æ‚àA‚½‚Æ‚¦‚»‚ê‚ª•s
- * ³sˆ×‚Ì‚½‚ß‚Å‚ ‚Á‚½‚Æ‚µ‚Ä‚àA‚Ü‚½‚Í‚»‚Ì‚æ‚¤‚È‘¹ŠQ‚Ì‰Â”\«‚ª•ñ
- * ‚³‚ê‚Ä‚¢‚½‚Æ‚µ‚Ä‚àˆêØ‚ÌÓ”C‚ğ•‰‚í‚È‚¢‚à‚Ì‚Æ‚·‚éB
+ * ã“ã®ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã¯çŸ³å¡šç¾ç ç‘ ã«ã‚ˆã£ã¦ç„¡ä¿è¨¼ã§æä¾›ã•ã‚Œã€ç‰¹å®šã®ç›®
+ * çš„ã‚’é”æˆã§ãã‚‹ã¨ã„ã†ä¿è¨¼ã€å•†å“ä¾¡å€¤ãŒæœ‰ã‚‹ã¨ã„ã†ä¿è¨¼ã«ã¨ã©ã¾ã‚‰ãšã€
+ * ã„ã‹ãªã‚‹æ˜ç¤ºçš„ãŠã‚ˆã³æš—ç¤ºçš„ãªä¿è¨¼ã‚‚ã—ãªã„ã€‚
+ * çŸ³å¡šç¾ç ç‘ ã¯ ã“ã®ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ã®ä½¿ç”¨ã«ã‚ˆã‚‹ç›´æ¥çš„ã€é–“æ¥çš„ã€å¶ç™º
+ * çš„ã€ç‰¹æ®Šãªã€å…¸å‹çš„ãªã€ã‚ã‚‹ã„ã¯å¿…ç„¶çš„ãªæå®³(ä½¿ç”¨ã«ã‚ˆã‚‹ãƒ‡ãƒ¼ã‚¿ã®
+ * æå¤±ã€æ¥­å‹™ã®ä¸­æ–­ã‚„è¦‹è¾¼ã¾ã‚Œã¦ã„ãŸåˆ©ç›Šã®éºå¤±ã€ä»£æ›¿è£½å“ã‚‚ã—ãã¯
+ * ã‚µãƒ¼ãƒ“ã‚¹ã®å°å…¥è²»ç­‰ãŒè€ƒãˆã‚‰ã‚Œã‚‹ãŒã€æ±ºã—ã¦ãã‚Œã ã‘ã«é™å®šã•ã‚Œãªã„
+ * æå®³)ã«å¯¾ã—ã¦ã€ã„ã‹ãªã‚‹äº‹æ…‹ã®åŸå› ã¨ãªã£ãŸã¨ã—ã¦ã‚‚ã€å¥‘ç´„ä¸Šã®è²¬
+ * ä»»ã‚„ç„¡éå¤±è²¬ä»»ã‚’å«ã‚€ ã„ã‹ãªã‚‹è²¬ä»»ãŒã‚ã‚ã†ã¨ã‚‚ã€ãŸã¨ãˆãã‚ŒãŒä¸
+ * æ­£è¡Œç‚ºã®ãŸã‚ã§ã‚ã£ãŸã¨ã—ã¦ã‚‚ã€ã¾ãŸã¯ãã®ã‚ˆã†ãªæå®³ã®å¯èƒ½æ€§ãŒå ±
+ * å‘Šã•ã‚Œã¦ã„ãŸã¨ã—ã¦ã‚‚ä¸€åˆ‡ã®è²¬ä»»ã‚’è² ã‚ãªã„ã‚‚ã®ã¨ã™ã‚‹ã€‚
  */
 
 package jp.gr.java_conf.dangan.io;
 
+import java.io.EOFException;
+//import exceptions
+import java.io.IOException;
 //import classes and interfaces
 import java.io.InputStream;
 import java.io.OutputStream;
 
-//import exceptions
-import java.io.IOException;
-import java.io.EOFException;
-import java.lang.ArrayIndexOutOfBoundsException;
-
 
 /**
- * ƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
- * ƒoƒCƒg”z—ñ‚â InputStream, OutputStream
- * ‚ÉƒAƒNƒZƒX‚·‚éƒƒ\ƒbƒh‚ğ’ñ‹Ÿ‚·‚éƒ†[ƒeƒBƒŠƒeƒBƒNƒ‰ƒXB
+ * ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+ * ãƒã‚¤ãƒˆé…åˆ—ã‚„ InputStream, OutputStream
+ * ã«ã‚¢ã‚¯ã‚»ã‚¹ã™ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰ã‚’æä¾›ã™ã‚‹ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ã‚¯ãƒ©ã‚¹ã€‚
  * 
  * <pre>
  * -- revision history --
@@ -52,9 +50,9 @@ import java.lang.ArrayIndexOutOfBoundsException;
  * Revision 1.0  2002/07/24 00:00:00  dangan
  * add to version control
  * [change]
- *     writeByte(), readByte() ‚ğ“P‹B
+ *     writeByte(), readByte() ã‚’æ’¤å»ã€‚
  * [maintenance]
- *     ƒ\[ƒX®”õ
+ *     ã‚½ãƒ¼ã‚¹æ•´å‚™
  *
  * </pre>
  * 
@@ -70,7 +68,7 @@ public class LittleEndian{
     //  private LittleEndian()
     //------------------------------------------------------------------
     /**
-     * ƒfƒtƒHƒ‹ƒgƒRƒ“ƒXƒgƒ‰ƒNƒ^Bg—p•s‰ÂB
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã€‚ä½¿ç”¨ä¸å¯ã€‚
      */
     private LittleEndian(){ }
 
@@ -85,18 +83,18 @@ public class LittleEndian{
     //  public static final long readLong( byte[] ByteArray, int index )
     //------------------------------------------------------------------
     /**
-     * ByteArray ‚Ì index ‚ÌˆÊ’u‚©‚ç ƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 2ƒoƒCƒg’l‚ğ“Ç‚İo‚·B“Ç‚İo‚³‚ê‚½ 2ƒoƒCƒg’l‚Í 
-     * 0x0000`0xFFFF‚Éƒ}ƒbƒv‚³‚ê‚éB
+     * ByteArray ã® index ã®ä½ç½®ã‹ã‚‰ ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 2ãƒã‚¤ãƒˆå€¤ã‚’èª­ã¿å‡ºã™ã€‚èª­ã¿å‡ºã•ã‚ŒãŸ 2ãƒã‚¤ãƒˆå€¤ã¯ 
+     * 0x0000ã€œ0xFFFFã«ãƒãƒƒãƒ—ã•ã‚Œã‚‹ã€‚
      *
-     * @param ByteArray ƒoƒCƒg”z—ñ
-     * @param index     ByteArray“à‚Ìƒf[ƒ^‚ÌŠJnˆÊ’u
+     * @param ByteArray ãƒã‚¤ãƒˆé…åˆ—
+     * @param index     ByteArrayå†…ã®ãƒ‡ãƒ¼ã‚¿ã®é–‹å§‹ä½ç½®
      * 
-     * @return “Ç‚İo‚³‚ê‚½2ƒoƒCƒg’l
+     * @return èª­ã¿å‡ºã•ã‚ŒãŸ2ãƒã‚¤ãƒˆå€¤
      * 
      * @exception ArrayIndexOutOfBoundsException
-     *                  index‚©‚çn‚Ü‚éƒf[ƒ^‚ª 
-     *                  ByteArray‚Ì”ÍˆÍ“à‚É–³‚¢ê‡B
+     *                  indexã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãŒ 
+     *                  ByteArrayã®ç¯„å›²å†…ã«ç„¡ã„å ´åˆã€‚
      */
     public static final int readShort( byte[] ByteArray, int index ){
         return   ( ByteArray[index]       & 0xFF )
@@ -104,17 +102,17 @@ public class LittleEndian{
     }
 
     /**
-     * ByteArray ‚Ì index ‚ÌˆÊ’u‚©‚çƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 4ƒoƒCƒg’l‚ğ“Ç‚İo‚·B
+     * ByteArray ã® index ã®ä½ç½®ã‹ã‚‰ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 4ãƒã‚¤ãƒˆå€¤ã‚’èª­ã¿å‡ºã™ã€‚
      *
-     * @param ByteArray ƒoƒCƒg”z—ñ
-     * @param index     ByteArray“à‚Ìƒf[ƒ^‚ÌŠJnˆÊ’u
+     * @param ByteArray ãƒã‚¤ãƒˆé…åˆ—
+     * @param index     ByteArrayå†…ã®ãƒ‡ãƒ¼ã‚¿ã®é–‹å§‹ä½ç½®
      * 
-     * @return “Ç‚İo‚³‚ê‚½4ƒoƒCƒg’l
+     * @return èª­ã¿å‡ºã•ã‚ŒãŸ4ãƒã‚¤ãƒˆå€¤
      * 
      * @exception ArrayIndexOutOfBoundsException
-     *                  index‚©‚çn‚Ü‚éƒf[ƒ^‚ª 
-     *                  ByteArray‚Ì”ÍˆÍ“à‚É–³‚¢ê‡B
+     *                  indexã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãŒ 
+     *                  ByteArrayã®ç¯„å›²å†…ã«ç„¡ã„å ´åˆã€‚
      */
     public static final int readInt( byte[] ByteArray, int index ){
         return   (   ByteArray[index]     & 0xFF )
@@ -124,17 +122,17 @@ public class LittleEndian{
     }
 
     /**
-     * ByteArray ‚Ì index ‚ÌˆÊ’u‚©‚çƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 8ƒoƒCƒg’l‚ğ“Ç‚İo‚·B
+     * ByteArray ã® index ã®ä½ç½®ã‹ã‚‰ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 8ãƒã‚¤ãƒˆå€¤ã‚’èª­ã¿å‡ºã™ã€‚
      * 
-     * @param ByteArray ƒoƒCƒg”z—ñ
-     * @param index     ByteArray“à‚Ìƒf[ƒ^‚ÌŠJnˆÊ’u
+     * @param ByteArray ãƒã‚¤ãƒˆé…åˆ—
+     * @param index     ByteArrayå†…ã®ãƒ‡ãƒ¼ã‚¿ã®é–‹å§‹ä½ç½®
      * 
-     * @return “Ç‚İo‚³‚ê‚½8ƒoƒCƒg’l
+     * @return èª­ã¿å‡ºã•ã‚ŒãŸ8ãƒã‚¤ãƒˆå€¤
      * 
      * @exception ArrayIndexOutOfBoundsException
-     *                  index‚©‚çn‚Ü‚éƒf[ƒ^‚ª 
-     *                  ByteArray‚Ì”ÍˆÍ“à‚É–³‚¢ê‡B
+     *                  indexã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãŒ 
+     *                  ByteArrayã®ç¯„å›²å†…ã«ç„¡ã„å ´åˆã€‚
      */
     public static final long readLong( byte[] ByteArray, int index ){
         return   ( (long)LittleEndian.readInt( ByteArray, index ) & 0xFFFFFFFFL )
@@ -152,19 +150,19 @@ public class LittleEndian{
     //  public static final long readLong( InputStream in )
     //------------------------------------------------------------------
     /**
-     * “ü—ÍƒXƒgƒŠ[ƒ€ in ‚©‚ç ƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 2byte’l‚ğ“Ç‚İo‚·B
+     * å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ  in ã‹ã‚‰ ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 2byteå€¤ã‚’èª­ã¿å‡ºã™ã€‚
      * 
-     * @param in “ü—ÍƒXƒgƒŠ[ƒ€
+     * @param in å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
      * 
-     * @return “Ç‚İo‚³‚ê‚½2byte’l
+     * @return èª­ã¿å‡ºã•ã‚ŒãŸ2byteå€¤
      * 
      * @exception EOFException
-     *                  Šù‚É End Of Stream‚É’B‚µ‚Ä‚¢‚½‚©A
-     *                  “Ç‚İ‚İ‚Ì“r’†‚Å End Of Stream‚É’B‚µ‚½B
-     *                  “Ç‚İ‚İ“r’†‚Ìƒf[ƒ^‚ÍÁ¸‚·‚éB
+     *                  æ—¢ã« End Of Streamã«é”ã—ã¦ã„ãŸã‹ã€
+     *                  èª­ã¿è¾¼ã¿ã®é€”ä¸­ã§ End Of Streamã«é”ã—ãŸã€‚
+     *                  èª­ã¿è¾¼ã¿é€”ä¸­ã®ãƒ‡ãƒ¼ã‚¿ã¯æ¶ˆå¤±ã™ã‚‹ã€‚
      * @exception IOException
-     *                  “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     *                  å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public static final int  readShort( InputStream in )
                                                 throws IOException {
@@ -180,19 +178,19 @@ public class LittleEndian{
     }
 
     /**
-     * “ü—ÍƒXƒgƒŠ[ƒ€ in ‚©‚ç ƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 4byte’l‚ğ“Ç‚İo‚·B
+     * å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ  in ã‹ã‚‰ ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 4byteå€¤ã‚’èª­ã¿å‡ºã™ã€‚
      * 
-     * @param in “ü—ÍƒXƒgƒŠ[ƒ€
+     * @param in å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
      * 
-     * @return “Ç‚İo‚³‚ê‚½4byte’l
+     * @return èª­ã¿å‡ºã•ã‚ŒãŸ4byteå€¤
      * 
      * @exception EOFException
-     *                  Šù‚É End Of Stream‚É’B‚µ‚Ä‚¢‚½‚©A
-     *                  “Ç‚İ‚İ‚Ì“r’†‚Å End Of Stream‚É’B‚µ‚½B
-     *                  “Ç‚İ‚İ“r’†‚Ìƒf[ƒ^‚ÍÁ¸‚·‚éB
+     *                  æ—¢ã« End Of Streamã«é”ã—ã¦ã„ãŸã‹ã€
+     *                  èª­ã¿è¾¼ã¿ã®é€”ä¸­ã§ End Of Streamã«é”ã—ãŸã€‚
+     *                  èª­ã¿è¾¼ã¿é€”ä¸­ã®ãƒ‡ãƒ¼ã‚¿ã¯æ¶ˆå¤±ã™ã‚‹ã€‚
      * @exception IOException
-     *                  “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     *                  å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public static final int  readInt( InputStream in )
                                                 throws IOException {
@@ -212,19 +210,19 @@ public class LittleEndian{
     }
 
     /**
-     * “ü—ÍƒXƒgƒŠ[ƒ€ in ‚©‚ç ƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 8byte’l‚ğ“Ç‚İo‚·B
+     * å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ  in ã‹ã‚‰ ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 8byteå€¤ã‚’èª­ã¿å‡ºã™ã€‚
      * 
-     * @param in “ü—ÍƒXƒgƒŠ[ƒ€
+     * @param in å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
      * 
-     * @return “Ç‚İo‚³‚ê‚½8byte’l
+     * @return èª­ã¿å‡ºã•ã‚ŒãŸ8byteå€¤
      * 
      * @exception EOFException
-     *                  Šù‚É End Of Stream‚É’B‚µ‚Ä‚¢‚½‚©A
-     *                  “Ç‚İ‚İ‚Ì“r’†‚Å End Of Stream‚É’B‚µ‚½B
-     *                  “Ç‚İ‚İ“r’†‚Ìƒf[ƒ^‚ÍÁ¸‚·‚éB
+     *                  æ—¢ã« End Of Streamã«é”ã—ã¦ã„ãŸã‹ã€
+     *                  èª­ã¿è¾¼ã¿ã®é€”ä¸­ã§ End Of Streamã«é”ã—ãŸã€‚
+     *                  èª­ã¿è¾¼ã¿é€”ä¸­ã®ãƒ‡ãƒ¼ã‚¿ã¯æ¶ˆå¤±ã™ã‚‹ã€‚
      * @exception IOException
-     *                  “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     *                  å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public static final long readLong( InputStream in )
                                                 throws IOException {
@@ -245,16 +243,16 @@ public class LittleEndian{
     //  public static final void writeLong( byte[] ByteArray, int index, long value )
     //------------------------------------------------------------------
     /**
-     * ByteArray ‚Ì index ‚ÌˆÊ’u‚ÉƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 2byte’l‚ğ‘‚«o‚·B
+     * ByteArray ã® index ã®ä½ç½®ã«ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 2byteå€¤ã‚’æ›¸ãå‡ºã™ã€‚
      * 
-     * @param ByteArray ƒoƒCƒg”z—ñ
-     * @param index     ByteArray“à‚Ìƒf[ƒ^‚ğ‘‚«‚±‚ŞˆÊ’u
-     * @param value     ‘‚«‚±‚Ş 2byte’l
+     * @param ByteArray ãƒã‚¤ãƒˆé…åˆ—
+     * @param index     ByteArrayå†…ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãã“ã‚€ä½ç½®
+     * @param value     æ›¸ãã“ã‚€ 2byteå€¤
      * 
      * @exception ArrayIndexOutOfBoundsException
-     *                  index‚©‚çn‚Ü‚éƒf[ƒ^‚ª 
-     *                  ByteArray‚Ì”ÍˆÍ“à‚É–³‚¢ê‡B
+     *                  indexã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãŒ 
+     *                  ByteArrayã®ç¯„å›²å†…ã«ç„¡ã„å ´åˆã€‚
      */
     public static final void writeShort( byte[] ByteArray, 
                                          int    index, 
@@ -269,16 +267,16 @@ public class LittleEndian{
     }
 
     /**
-     * ByteArray ‚Ì index ‚ÌˆÊ’u‚ÉƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 4byte’l‚ğ‘‚«o‚·B
+     * ByteArray ã® index ã®ä½ç½®ã«ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 4byteå€¤ã‚’æ›¸ãå‡ºã™ã€‚
      * 
-     * @param ByteArray ƒoƒCƒg”z—ñ
-     * @param index     ByteArray“à‚Ìƒf[ƒ^‚ğ‘‚«‚±‚ŞˆÊ’u
-     * @param value     ‘‚«‚±‚Ş 4byte’l
+     * @param ByteArray ãƒã‚¤ãƒˆé…åˆ—
+     * @param index     ByteArrayå†…ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãã“ã‚€ä½ç½®
+     * @param value     æ›¸ãã“ã‚€ 4byteå€¤
      * 
      * @exception ArrayIndexOutOfBoundsException
-     *                  index‚©‚çn‚Ü‚éƒf[ƒ^‚ª 
-     *                  ByteArray‚Ì”ÍˆÍ“à‚É–³‚¢ê‡B
+     *                  indexã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãŒ 
+     *                  ByteArrayã®ç¯„å›²å†…ã«ç„¡ã„å ´åˆã€‚
      */
     public static final void writeInt( byte[] ByteArray, 
                                        int    index, 
@@ -295,16 +293,16 @@ public class LittleEndian{
     }
 
     /**
-     * ByteArray ‚Ì index ‚ÌˆÊ’u‚ÉƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 8byte’l‚ğ‘‚«o‚·B
+     * ByteArray ã® index ã®ä½ç½®ã«ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 8byteå€¤ã‚’æ›¸ãå‡ºã™ã€‚
      * 
-     * @param ByteArray ƒoƒCƒg”z—ñ
-     * @param index     ByteArray“à‚Ìƒf[ƒ^‚ğ‘‚«‚±‚ŞˆÊ’u
-     * @param value     ‘‚«‚±‚Ş 8byte’l
+     * @param ByteArray ãƒã‚¤ãƒˆé…åˆ—
+     * @param index     ByteArrayå†…ã®ãƒ‡ãƒ¼ã‚¿ã‚’æ›¸ãã“ã‚€ä½ç½®
+     * @param value     æ›¸ãã“ã‚€ 8byteå€¤
      * 
      * @exception ArrayIndexOutOfBoundsException
-     *                  index‚©‚çn‚Ü‚éƒf[ƒ^‚ª 
-     *                  ByteArray‚Ì”ÍˆÍ“à‚É–³‚¢ê‡B
+     *                  indexã‹ã‚‰å§‹ã¾ã‚‹ãƒ‡ãƒ¼ã‚¿ãŒ 
+     *                  ByteArrayã®ç¯„å›²å†…ã«ç„¡ã„å ´åˆã€‚
      */
     public static final void writeLong( byte[] ByteArray, 
                                         int    index, 
@@ -328,14 +326,14 @@ public class LittleEndian{
     //  public static final void writeLong( OutputStream out, long value )
     //------------------------------------------------------------------
     /**
-     * o—ÍƒXƒgƒŠ[ƒ€ out ‚É ƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 2ƒoƒCƒg‘‚«o‚·B
+     * å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ  out ã« ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 2ãƒã‚¤ãƒˆæ›¸ãå‡ºã™ã€‚
      * 
-     * @param out   o—ÍƒXƒgƒŠ[ƒ€
-     * @param value ‘‚«o‚·2ƒoƒCƒg’l
+     * @param out   å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
+     * @param value æ›¸ãå‡ºã™2ãƒã‚¤ãƒˆå€¤
      *
      * @exception IOException
-     *                  “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     *                  å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public static final void writeShort( OutputStream out, int value )
                                                 throws IOException {
@@ -344,14 +342,14 @@ public class LittleEndian{
     }
 
     /**
-     * o—ÍƒXƒgƒŠ[ƒ€ out ‚É ƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 4ƒoƒCƒg’l‚ğ‘‚«o‚·B
+     * å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ  out ã« ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 4ãƒã‚¤ãƒˆå€¤ã‚’æ›¸ãå‡ºã™ã€‚
      * 
-     * @param out   o—ÍƒXƒgƒŠ[ƒ€
-     * @param value ‘‚«o‚·1ƒoƒCƒg’l
+     * @param out   å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
+     * @param value æ›¸ãå‡ºã™1ãƒã‚¤ãƒˆå€¤
      *
      * @exception IOException
-     *                  “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     *                  å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public static final void writeInt( OutputStream out, int value )
                                                 throws IOException {
@@ -362,14 +360,14 @@ public class LittleEndian{
     }
 
     /**
-     * o—ÍƒXƒgƒŠ[ƒ€ out ‚É ƒŠƒgƒ‹ƒGƒ“ƒfƒBƒAƒ“‚Å
-     * 8ƒoƒCƒg’l‚ğ‘‚«o‚·B
+     * å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ  out ã« ãƒªãƒˆãƒ«ã‚¨ãƒ³ãƒ‡ã‚£ã‚¢ãƒ³ã§
+     * 8ãƒã‚¤ãƒˆå€¤ã‚’æ›¸ãå‡ºã™ã€‚
      * 
-     * @param out   o—ÍƒXƒgƒŠ[ƒ€
-     * @param value ‘‚«o‚·1ƒoƒCƒg’l
+     * @param out   å‡ºåŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ 
+     * @param value æ›¸ãå‡ºã™1ãƒã‚¤ãƒˆå€¤
      *
      * @exception IOException
-     *                  “üo—ÍƒGƒ‰[‚ª”­¶‚µ‚½ê‡
+     *                  å…¥å‡ºåŠ›ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆ
      */
     public static final void writeLong( OutputStream out, long value )
                                                 throws IOException {
